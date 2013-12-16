@@ -1,0 +1,81 @@
+
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js" ></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" ></script>
+		<script type="text/javascript" src="https://bridge.paymill.com/" ></script>
+		<title>My ParseApp site</title>
+		<script type="text/javascript">
+			var PAYMILL_PUBLIC_KEY = '71467590131d4c17ef4381366b7be796';
+		</script>
+	</head>
+	<body>
+
+
+		<br />
+		<form id="payment-form" action="#" method="POST">
+
+			<input class="card-amount-int" type="hidden" value="15" />
+			<input class="card-currency" type="hidden" value="EUR" />
+
+			<div class="form-row">
+				<label>Card number</label>
+				<input class="card-number" type="text" size="20" value="4111111111111111" />
+			</div>
+
+			<div class="form-row">
+				<label>CVC</label>
+				<input class="card-cvc" type="text" size="4" value="111" />
+			</div>
+
+			<div class="form-row">
+				<label>Name</label>
+				<input class="card-holdername" type="text" size="4" value="Visa" />
+			</div>
+
+			<div class="form-row">
+				<label>Expiry date (MM/YYYY)</label>
+				<input class="card-expiry-month" type="text" size="2" value="02" />
+				<span/>
+				<input class="card-expiry-year" type="text" size="4" value="2020"  />
+			</div>
+
+
+			<button class="submit-button" type="submit" >Submit</button>
+
+		</form>
+		<div class = "payment-errors" ></div>
+		<script type="text/javascript">
+		$(document).ready(function() {
+				$("#payment-form").submit(function(event) {
+				// Deactivate submit button to avoid further clicks
+					$('.submit-button').attr("disabled", "disabled");
+						paymill.createToken({
+						  number: $('.card-number').val(),  // required, ohne Leerzeichen und Bindestriche
+						  exp_month: $('.card-expiry-month').val(),   // required
+						  exp_year: $('.card-expiry-year').val(),     // required, vierstellig z.B. "2016"
+						  cvc: $('.card-cvc').val(),                  // required
+						  amount_int: $('.card-amount-int').val(),    // required, integer, z.B. "15" für 0,15 Euro 
+						  currency: $('.card-currency').val(),    // required, ISO 4217 z.B. "EUR" od. "GBP"
+						  cardholder: $('.card-holdername').val() // optional
+						}, PaymillResponseHandler);                   // Info dazu weiter unten
+					return false;
+				});
+		});
+
+		function PaymillResponseHandler(error, result) {
+			  if (error) {
+					// Shows the error above the form
+					$(".payment-errors").text(error.apierror);
+					$(".submit-button").removeAttr("disabled");
+			  } else {
+					var form = $("#payment-form");
+					// Output token
+					var token = result.token;
+					// Insert token into form in order to submit to server
+					form.append("");
+			}
+		}
+		</script>
+	</body>
+</html>
