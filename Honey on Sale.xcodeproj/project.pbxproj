@@ -117,14 +117,11 @@
 		B2784A481860A4FB0057F064 /* Honey on Sale */ = {
 			isa = PBXGroup;
 			children = (
+				B2784A7D1860A6430057F064 /* Controllers */,
 				B2784A511860A4FC0057F064 /* AppDelegate.h */,
 				B2784A521860A4FC0057F064 /* AppDelegate.m */,
 				B2784A541860A4FC0057F064 /* Main_iPhone.storyboard */,
 				B2784A571860A4FC0057F064 /* Main_iPad.storyboard */,
-				B2784A5A1860A4FC0057F064 /* MasterViewController.h */,
-				B2784A5B1860A4FC0057F064 /* MasterViewController.m */,
-				B2784A5D1860A4FC0057F064 /* DetailViewController.h */,
-				B2784A5E1860A4FC0057F064 /* DetailViewController.m */,
 				B2784A601860A4FC0057F064 /* Images.xcassets */,
 				B2784A491860A4FC0057F064 /* Supporting Files */,
 			);
@@ -158,6 +155,17 @@
 				B2784A701860A4FC0057F064 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2784A7D1860A6430057F064 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2784A5A1860A4FC0057F064 /* MasterViewController.h */,
+				B2784A5B1860A4FC0057F064 /* MasterViewController.m */,
+				B2784A5D1860A4FC0057F064 /* DetailViewController.h */,
+				B2784A5E1860A4FC0057F064 /* DetailViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
