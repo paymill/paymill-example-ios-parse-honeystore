@@ -7,16 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"uii9EaqHnJ5fiez0hZOgc5KdIz5Fw9uIXIn24SMY"
-                  clientKey:@"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 	
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 	    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -24,13 +20,7 @@
 	    splitViewController.delegate = (id)navigationController.topViewController;
         
         
-	}
-    PFQuery *query = [PFQuery queryWithClassName:@"ItemForSale"];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *gameScore, NSError *error) {
-        // Do something with the returned PFObject in the gameScore variable.
-        NSLog(@"%@", gameScore);
-    }];
-    return YES;
+	}     return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
