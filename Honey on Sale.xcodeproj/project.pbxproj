@@ -27,8 +27,12 @@
 		B2784A861883F8F00057F064 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A851883F8DF0057F064 /* PayMillSDK.framework */; };
 		B2784A8D18840AD50057F064 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A8C18840AD50057F064 /* StoreController.m */; };
 		B2784A8E18840AD50057F064 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A8C18840AD50057F064 /* StoreController.m */; };
-		B2784A91188410C90057F064 /* HoneyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A90188410C90057F064 /* HoneyBox.m */; };
-		B2784A92188410C90057F064 /* HoneyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A90188410C90057F064 /* HoneyBox.m */; };
+		B2784A91188410C90057F064 /* ItemForSale.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A90188410C90057F064 /* ItemForSale.m */; };
+		B2784A92188410C90057F064 /* ItemForSale.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A90188410C90057F064 /* ItemForSale.m */; };
+		B2784A95188425000057F064 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A94188425000057F064 /* Parser.m */; };
+		B2784A96188425000057F064 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A94188425000057F064 /* Parser.m */; };
+		B2784A9818842C590057F064 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9718842C590057F064 /* CFNetwork.framework */; };
+		B2784A9A18842C890057F064 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9918842C880057F064 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +73,13 @@
 		B2784A851883F8DF0057F064 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
 		B2784A8B18840AD50057F064 /* StoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreController.h; sourceTree = "<group>"; };
 		B2784A8C18840AD50057F064 /* StoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreController.m; sourceTree = "<group>"; };
-		B2784A8F188410C90057F064 /* HoneyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoneyBox.h; sourceTree = "<group>"; };
-		B2784A90188410C90057F064 /* HoneyBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoneyBox.m; sourceTree = "<group>"; };
+		B2784A8F188410C90057F064 /* ItemForSale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemForSale.h; sourceTree = "<group>"; };
+		B2784A90188410C90057F064 /* ItemForSale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemForSale.m; sourceTree = "<group>"; };
+		B2784A93188425000057F064 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		B2784A94188425000057F064 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		B2784A9718842C590057F064 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B2784A9918842C880057F064 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B2784A9B18842CC20057F064 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +87,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */,
+				B2784A9A18842C890057F064 /* SystemConfiguration.framework in Frameworks */,
+				B2784A9818842C590057F064 /* CFNetwork.framework in Frameworks */,
 				B2784A861883F8F00057F064 /* PayMillSDK.framework in Frameworks */,
 				B2784A821883F8D70057F064 /* Parse.framework in Frameworks */,
-				B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */,
 				B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */,
 				B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */,
 			);
@@ -122,6 +133,9 @@
 		B2784A411860A4FB0057F064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2784A9B18842CC20057F064 /* libxml2.dylib */,
+				B2784A9918842C880057F064 /* SystemConfiguration.framework */,
+				B2784A9718842C590057F064 /* CFNetwork.framework */,
 				B2784A831883F8DF0057F064 /* PayMillSDK */,
 				B2784A811883F8D70057F064 /* Parse.framework */,
 				B2784A421860A4FB0057F064 /* Foundation.framework */,
@@ -200,8 +214,10 @@
 			children = (
 				B2784A8B18840AD50057F064 /* StoreController.h */,
 				B2784A8C18840AD50057F064 /* StoreController.m */,
-				B2784A8F188410C90057F064 /* HoneyBox.h */,
-				B2784A90188410C90057F064 /* HoneyBox.m */,
+				B2784A8F188410C90057F064 /* ItemForSale.h */,
+				B2784A90188410C90057F064 /* ItemForSale.m */,
+				B2784A93188425000057F064 /* Parser.h */,
+				B2784A94188425000057F064 /* Parser.m */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -309,7 +325,8 @@
 				B2784A4F1860A4FC0057F064 /* main.m in Sources */,
 				B2784A5F1860A4FC0057F064 /* DetailViewController.m in Sources */,
 				B2784A8D18840AD50057F064 /* StoreController.m in Sources */,
-				B2784A91188410C90057F064 /* HoneyBox.m in Sources */,
+				B2784A95188425000057F064 /* Parser.m in Sources */,
+				B2784A91188410C90057F064 /* ItemForSale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2784A96188425000057F064 /* Parser.m in Sources */,
 				B2784A741860A4FC0057F064 /* Honey_on_SaleTests.m in Sources */,
 				B2784A8E18840AD50057F064 /* StoreController.m in Sources */,
-				B2784A92188410C90057F064 /* HoneyBox.m in Sources */,
+				B2784A92188410C90057F064 /* ItemForSale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,7 @@
 //  Controller.m
 //  Honey on Sale
 //
-//  Created by Lubomir Velkov on 13.01.14.
+//  Created by Vladimir Marinov on 13.01.14.
 //  Copyright (c) 2014 г. Vladimir Marinov. All rights reserved.
 //
 
@@ -32,7 +32,7 @@ StoreController *instance;
 
 	PFQuery *query = [PFQuery queryWithClassName:@"ItemForSale"];
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-		<#code#>
+		
 	}];
 }
 @end
