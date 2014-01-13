@@ -19,8 +19,8 @@
 		225604B61876F86C00F0B637 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B51876F86C00F0B637 /* Security.framework */; };
 		225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B71876F87300F0B637 /* StoreKit.framework */; };
 		225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B91876F87900F0B637 /* SystemConfiguration.framework */; };
-		225604C718848E7900F0B637 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* DetailViewController.m */; };
-		225604C818848E7900F0B637 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* DetailViewController.m */; };
+		225604C718848E7900F0B637 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* OrderViewController.m */; };
+		225604C818848E7900F0B637 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* OrderViewController.m */; };
 		225604C918848E7900F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C418848E7900F0B637 /* ProductTableViewCell.m */; };
 		225604CA18848E7900F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C418848E7900F0B637 /* ProductTableViewCell.m */; };
 		225604CB18848E7900F0B637 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C618848E7900F0B637 /* StoreViewController.m */; };
@@ -76,8 +76,8 @@
 		225604B51876F86C00F0B637 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		225604B71876F87300F0B637 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		225604B91876F87900F0B637 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		225604C118848E7900F0B637 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		225604C218848E7900F0B637 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		225604C118848E7900F0B637 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		225604C218848E7900F0B637 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		225604C318848E7900F0B637 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		225604C418848E7900F0B637 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		225604C518848E7900F0B637 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 		225604C018848E7900F0B637 /* UIClasses */ = {
 			isa = PBXGroup;
 			children = (
-				225604C118848E7900F0B637 /* DetailViewController.h */,
-				225604C218848E7900F0B637 /* DetailViewController.m */,
+				225604C118848E7900F0B637 /* OrderViewController.h */,
+				225604C218848E7900F0B637 /* OrderViewController.m */,
 				225604C318848E7900F0B637 /* ProductTableViewCell.h */,
 				225604C418848E7900F0B637 /* ProductTableViewCell.m */,
 				225604C518848E7900F0B637 /* StoreViewController.h */,
@@ -400,7 +400,7 @@
 			files = (
 				B2784A531860A4FC0057F064 /* AppDelegate.m in Sources */,
 				B2784A4F1860A4FC0057F064 /* main.m in Sources */,
-				225604C718848E7900F0B637 /* DetailViewController.m in Sources */,
+				225604C718848E7900F0B637 /* OrderViewController.m in Sources */,
 				225604C918848E7900F0B637 /* ProductTableViewCell.m in Sources */,
 				225604CB18848E7900F0B637 /* StoreViewController.m in Sources */,
 				225604D018848E8F00F0B637 /* MBProgressHUD.m in Sources */,
@@ -414,7 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2784A741860A4FC0057F064 /* Honey_on_SaleTests.m in Sources */,
-				225604C818848E7900F0B637 /* DetailViewController.m in Sources */,
+				225604C818848E7900F0B637 /* OrderViewController.m in Sources */,
 				225604CA18848E7900F0B637 /* ProductTableViewCell.m in Sources */,
 				225604CC18848E7900F0B637 /* StoreViewController.m in Sources */,
 				225604D118848E8F00F0B637 /* MBProgressHUD.m in Sources */,

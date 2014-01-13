@@ -1,30 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tNC-2k-ZOW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jB9-TE-Den">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Store View Controller-->
-        <scene sceneID="oAs-qP-82y">
+        <!--Store View Controller - Honey On Sale-->
+        <scene sceneID="LDY-6Z-wBD">
             <objects>
-                <tableViewController storyboardIdentifier="®" id="tNC-2k-ZOW" customClass="StoreViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lBG-SD-mD0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                <tableViewController id="ddS-w5-89k" customClass="StoreViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FqT-a9-CDa">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="tNC-2k-ZOW" id="0tu-ur-ChM"/>
-                            <outlet property="delegate" destination="tNC-2k-ZOW" id="AxP-D2-1TO"/>
-                        </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Honey On Sale" id="rbk-15-nno"/>
                     <connections>
-                        <outlet property="productsTable" destination="lBG-SD-mD0" id="MAq-vB-DA9"/>
+                        <outlet property="productsTable" destination="FqT-a9-CDa" id="VPS-pM-0Up"/>
+                        <segue destination="lCe-ja-gFA" kind="push" identifier="orderProduct" id="NWd-hl-TvG"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xe1-aF-WCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnN-gC-2nI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="-129"/>
+            <point key="canvasLocation" x="273" y="-525"/>
+        </scene>
+        <!--View Controller - Order-->
+        <scene sceneID="Qpo-Oq-aT5">
+            <objects>
+                <viewController id="lCe-ja-gFA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Sq-Yh-Qel">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Order" id="Sgn-oS-Bcm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEF-WW-8bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="-514"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iAo-xE-9Vc">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="jB9-TE-Den" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zoz-2O-M6R">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ddS-w5-89k" kind="relationship" relationship="rootViewController" id="Qas-o8-4zC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z82-rD-VAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-261" y="-525"/>
         </scene>
     </scenes>
     <classes>
