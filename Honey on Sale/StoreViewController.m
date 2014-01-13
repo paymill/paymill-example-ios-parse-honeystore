@@ -2,20 +2,21 @@
 //  MasterViewController.m
 //  Honey on Sale
 //
-//  Created by Lubomir Velkov on 17.12.13.
+//  Created by Vladimir Marinov on 17.12.13.
 //  Copyright (c) 2013 г. Vladimir Marinov. All rights reserved.
 //
 
-#import "MasterViewController.h"
-
+#import "StoreViewController.h"
 #import "DetailViewController.h"
+#import "StoreController.h"
 
-@interface MasterViewController () {
+
+@interface StoreViewController () {
     NSMutableArray *_objects;
 }
 @end
 
-@implementation MasterViewController
+@implementation StoreViewController
 
 - (void)awakeFromNib
 {
@@ -30,11 +31,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	[[StoreController getInstance] fillWithData];
+	
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 	self.navigationItem.rightBarButtonItem = addButton;
 	self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+	
+	
 }
 
 - (void)didReceiveMemoryWarning

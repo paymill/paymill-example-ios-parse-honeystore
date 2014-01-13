@@ -2,7 +2,7 @@
 //  Honey_on_SaleTests.m
 //  Honey on SaleTests
 //
-//  Created by Lubomir Velkov on 17.12.13.
+//  Created by Vladimir Marinov on 17.12.13.
 //  Copyright (c) 2013 г. Vladimir Marinov. All rights reserved.
 //
 
