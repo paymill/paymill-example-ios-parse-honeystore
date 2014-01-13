@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225604A41874866200F0B637 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225604A31874866200F0B637 /* MainStoryBoard.storyboard */; };
+		225604A61876EAFE00F0B637 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604A51876EAFE00F0B637 /* Parse.framework */; };
+		225604A81876EB1000F0B637 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604A71876EB1000F0B637 /* PayMillSDK.framework */; };
+		225604AA1876F82300F0B637 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604A91876F82300F0B637 /* AudioToolbox.framework */; };
+		225604AC1876F82B00F0B637 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604AB1876F82B00F0B637 /* CFNetwork.framework */; };
+		225604AE1876F84000F0B637 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604AD1876F84000F0B637 /* CoreLocation.framework */; };
+		225604B01876F84D00F0B637 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604AF1876F84D00F0B637 /* libz.1.1.3.dylib */; };
+		225604B21876F85400F0B637 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B11876F85400F0B637 /* MobileCoreServices.framework */; };
+		225604B41876F86500F0B637 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B31876F86500F0B637 /* QuartzCore.framework */; };
+		225604B61876F86C00F0B637 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B51876F86C00F0B637 /* Security.framework */; };
+		225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B71876F87300F0B637 /* StoreKit.framework */; };
+		225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B91876F87900F0B637 /* SystemConfiguration.framework */; };
 		B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A421860A4FB0057F064 /* Foundation.framework */; };
 		B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A441860A4FB0057F064 /* CoreGraphics.framework */; };
 		B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A461860A4FB0057F064 /* UIKit.framework */; };
 		B2784A4D1860A4FC0057F064 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2784A4B1860A4FC0057F064 /* InfoPlist.strings */; };
 		B2784A4F1860A4FC0057F064 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A4E1860A4FC0057F064 /* main.m */; };
 		B2784A531860A4FC0057F064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A521860A4FC0057F064 /* AppDelegate.m */; };
-		B2784A561860A4FC0057F064 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2784A541860A4FC0057F064 /* Main_iPhone.storyboard */; };
-		B2784A591860A4FC0057F064 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2784A571860A4FC0057F064 /* Main_iPad.storyboard */; };
 		B2784A5C1860A4FC0057F064 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A5B1860A4FC0057F064 /* MasterViewController.m */; };
 		B2784A5F1860A4FC0057F064 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A5E1860A4FC0057F064 /* DetailViewController.m */; };
 		B2784A611860A4FC0057F064 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2784A601860A4FC0057F064 /* Images.xcassets */; };
@@ -36,6 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		225604A31874866200F0B637 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
+		225604A51876EAFE00F0B637 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		225604A71876EB1000F0B637 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PayMillSDK.framework; path = PayMillSDK/PayMillSDK.framework; sourceTree = "<group>"; };
+		225604A91876F82300F0B637 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		225604AB1876F82B00F0B637 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		225604AD1876F84000F0B637 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		225604AF1876F84D00F0B637 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		225604B11876F85400F0B637 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		225604B31876F86500F0B637 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		225604B51876F86C00F0B637 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		225604B71876F87300F0B637 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		225604B91876F87900F0B637 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B2784A3F1860A4FB0057F064 /* Honey on Sale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey on Sale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2784A421860A4FB0057F064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2784A441860A4FB0057F064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,8 +68,6 @@
 		B2784A501860A4FC0057F064 /* Honey on Sale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Honey on Sale-Prefix.pch"; sourceTree = "<group>"; };
 		B2784A511860A4FC0057F064 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2784A521860A4FC0057F064 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B2784A551860A4FC0057F064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		B2784A581860A4FC0057F064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B2784A5A1860A4FC0057F064 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		B2784A5B1860A4FC0057F064 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		B2784A5D1860A4FC0057F064 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -65,7 +85,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */,
+				225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */,
+				225604B61876F86C00F0B637 /* Security.framework in Frameworks */,
+				225604B41876F86500F0B637 /* QuartzCore.framework in Frameworks */,
+				225604B21876F85400F0B637 /* MobileCoreServices.framework in Frameworks */,
+				225604B01876F84D00F0B637 /* libz.1.1.3.dylib in Frameworks */,
+				225604AE1876F84000F0B637 /* CoreLocation.framework in Frameworks */,
 				B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */,
+				225604AC1876F82B00F0B637 /* CFNetwork.framework in Frameworks */,
+				225604AA1876F82300F0B637 /* AudioToolbox.framework in Frameworks */,
+				225604A81876EB1000F0B637 /* PayMillSDK.framework in Frameworks */,
+				225604A61876EAFE00F0B637 /* Parse.framework in Frameworks */,
 				B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */,
 				B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */,
 			);
@@ -87,6 +118,15 @@
 		B2784A361860A4FB0057F064 = {
 			isa = PBXGroup;
 			children = (
+				225604B91876F87900F0B637 /* SystemConfiguration.framework */,
+				225604B71876F87300F0B637 /* StoreKit.framework */,
+				225604B51876F86C00F0B637 /* Security.framework */,
+				225604B31876F86500F0B637 /* QuartzCore.framework */,
+				225604B11876F85400F0B637 /* MobileCoreServices.framework */,
+				225604AF1876F84D00F0B637 /* libz.1.1.3.dylib */,
+				225604AD1876F84000F0B637 /* CoreLocation.framework */,
+				225604AB1876F82B00F0B637 /* CFNetwork.framework */,
+				225604A91876F82300F0B637 /* AudioToolbox.framework */,
 				B2784A481860A4FB0057F064 /* Honey on Sale */,
 				B2784A6D1860A4FC0057F064 /* Honey on SaleTests */,
 				B2784A411860A4FB0057F064 /* Frameworks */,
@@ -106,6 +146,8 @@
 		B2784A411860A4FB0057F064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				225604A71876EB1000F0B637 /* PayMillSDK.framework */,
+				225604A51876EAFE00F0B637 /* Parse.framework */,
 				B2784A421860A4FB0057F064 /* Foundation.framework */,
 				B2784A441860A4FB0057F064 /* CoreGraphics.framework */,
 				B2784A461860A4FB0057F064 /* UIKit.framework */,
@@ -120,10 +162,9 @@
 				B2784A7D1860A6430057F064 /* Controllers */,
 				B2784A511860A4FC0057F064 /* AppDelegate.h */,
 				B2784A521860A4FC0057F064 /* AppDelegate.m */,
-				B2784A541860A4FC0057F064 /* Main_iPhone.storyboard */,
-				B2784A571860A4FC0057F064 /* Main_iPad.storyboard */,
 				B2784A601860A4FC0057F064 /* Images.xcassets */,
 				B2784A491860A4FC0057F064 /* Supporting Files */,
+				225604A31874866200F0B637 /* MainStoryBoard.storyboard */,
 			);
 			path = "Honey on Sale";
 			sourceTree = "<group>";
@@ -244,10 +285,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2784A591860A4FC0057F064 /* Main_iPad.storyboard in Resources */,
 				B2784A611860A4FC0057F064 /* Images.xcassets in Resources */,
-				B2784A561860A4FC0057F064 /* Main_iPhone.storyboard in Resources */,
 				B2784A4D1860A4FC0057F064 /* InfoPlist.strings in Resources */,
+				225604A41874866200F0B637 /* MainStoryBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,22 +340,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B2784A541860A4FC0057F064 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2784A551860A4FC0057F064 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		B2784A571860A4FC0057F064 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2784A581860A4FC0057F064 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		B2784A701860A4FC0057F064 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -360,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -406,6 +430,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/PayMillSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Honey on Sale/Honey on Sale-Prefix.pch";
 				INFOPLIST_FILE = "Honey on Sale/Honey on Sale-Info.plist";
@@ -419,6 +448,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/PayMillSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Honey on Sale/Honey on Sale-Prefix.pch";
 				INFOPLIST_FILE = "Honey on Sale/Honey on Sale-Info.plist";
@@ -488,6 +522,7 @@
 				B2784A791860A4FC0057F064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2784A7A1860A4FC0057F064 /* Build configuration list for PBXNativeTarget "Honey on SaleTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +531,7 @@
 				B2784A7C1860A4FC0057F064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
