@@ -15,7 +15,7 @@
 		B2784A531860A4FC0057F064 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A521860A4FC0057F064 /* AppDelegate.m */; };
 		B2784A561860A4FC0057F064 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2784A541860A4FC0057F064 /* Main_iPhone.storyboard */; };
 		B2784A591860A4FC0057F064 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2784A571860A4FC0057F064 /* Main_iPad.storyboard */; };
-		B2784A5C1860A4FC0057F064 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A5B1860A4FC0057F064 /* MasterViewController.m */; };
+		B2784A5C1860A4FC0057F064 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A5B1860A4FC0057F064 /* StoreViewController.m */; };
 		B2784A5F1860A4FC0057F064 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A5E1860A4FC0057F064 /* DetailViewController.m */; };
 		B2784A611860A4FC0057F064 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2784A601860A4FC0057F064 /* Images.xcassets */; };
 		B2784A681860A4FC0057F064 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A671860A4FC0057F064 /* XCTest.framework */; };
@@ -25,8 +25,10 @@
 		B2784A741860A4FC0057F064 /* Honey_on_SaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A731860A4FC0057F064 /* Honey_on_SaleTests.m */; };
 		B2784A821883F8D70057F064 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A811883F8D70057F064 /* Parse.framework */; };
 		B2784A861883F8F00057F064 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A851883F8DF0057F064 /* PayMillSDK.framework */; };
-		B2784A8D18840AD50057F064 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A8C18840AD50057F064 /* Controller.m */; };
-		B2784A8E18840AD50057F064 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A8C18840AD50057F064 /* Controller.m */; };
+		B2784A8D18840AD50057F064 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A8C18840AD50057F064 /* StoreController.m */; };
+		B2784A8E18840AD50057F064 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A8C18840AD50057F064 /* StoreController.m */; };
+		B2784A91188410C90057F064 /* HoneyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A90188410C90057F064 /* HoneyBox.m */; };
+		B2784A92188410C90057F064 /* HoneyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A90188410C90057F064 /* HoneyBox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +54,8 @@
 		B2784A521860A4FC0057F064 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B2784A551860A4FC0057F064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B2784A581860A4FC0057F064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B2784A5A1860A4FC0057F064 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		B2784A5B1860A4FC0057F064 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B2784A5A1860A4FC0057F064 /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		B2784A5B1860A4FC0057F064 /* StoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		B2784A5D1860A4FC0057F064 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B2784A5E1860A4FC0057F064 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B2784A601860A4FC0057F064 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -65,8 +67,10 @@
 		B2784A811883F8D70057F064 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B2784A841883F8DF0057F064 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PayMillSDK.bundle; sourceTree = "<group>"; };
 		B2784A851883F8DF0057F064 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
-		B2784A8B18840AD50057F064 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
-		B2784A8C18840AD50057F064 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		B2784A8B18840AD50057F064 /* StoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreController.h; sourceTree = "<group>"; };
+		B2784A8C18840AD50057F064 /* StoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreController.m; sourceTree = "<group>"; };
+		B2784A8F188410C90057F064 /* HoneyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoneyBox.h; sourceTree = "<group>"; };
+		B2784A90188410C90057F064 /* HoneyBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoneyBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +178,8 @@
 		B2784A7D1860A6430057F064 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B2784A5A1860A4FC0057F064 /* MasterViewController.h */,
-				B2784A5B1860A4FC0057F064 /* MasterViewController.m */,
+				B2784A5A1860A4FC0057F064 /* StoreViewController.h */,
+				B2784A5B1860A4FC0057F064 /* StoreViewController.m */,
 				B2784A5D1860A4FC0057F064 /* DetailViewController.h */,
 				B2784A5E1860A4FC0057F064 /* DetailViewController.m */,
 			);
@@ -194,8 +198,10 @@
 		B2784A8A18840AD50057F064 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				B2784A8B18840AD50057F064 /* Controller.h */,
-				B2784A8C18840AD50057F064 /* Controller.m */,
+				B2784A8B18840AD50057F064 /* StoreController.h */,
+				B2784A8C18840AD50057F064 /* StoreController.m */,
+				B2784A8F188410C90057F064 /* HoneyBox.h */,
+				B2784A90188410C90057F064 /* HoneyBox.m */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -299,10 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2784A531860A4FC0057F064 /* AppDelegate.m in Sources */,
-				B2784A5C1860A4FC0057F064 /* MasterViewController.m in Sources */,
+				B2784A5C1860A4FC0057F064 /* StoreViewController.m in Sources */,
 				B2784A4F1860A4FC0057F064 /* main.m in Sources */,
 				B2784A5F1860A4FC0057F064 /* DetailViewController.m in Sources */,
-				B2784A8D18840AD50057F064 /* Controller.m in Sources */,
+				B2784A8D18840AD50057F064 /* StoreController.m in Sources */,
+				B2784A91188410C90057F064 /* HoneyBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2784A741860A4FC0057F064 /* Honey_on_SaleTests.m in Sources */,
-				B2784A8E18840AD50057F064 /* Controller.m in Sources */,
+				B2784A8E18840AD50057F064 /* StoreController.m in Sources */,
+				B2784A92188410C90057F064 /* HoneyBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
