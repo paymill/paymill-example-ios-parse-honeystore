@@ -53,8 +53,8 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - Actions
-- (void)checkoutObjects:(id)sender{
-   // [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+- (void)checkoutObjects:(UIButton*)sender{
+  [self performSegueWithIdentifier:@"CheckOutSeque" sender:sender];
    
 }
 - (void)refreshObjects:(id)sender{

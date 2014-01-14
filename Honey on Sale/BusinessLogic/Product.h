@@ -17,7 +17,7 @@
 @property(nonatomic,strong) NSString* name;
 @property(nonatomic,strong) NSString* currency;
 @property(nonatomic,assign) CGFloat amount;
-@property(nonatomic,strong) PFFile* image;
+@property(nonatomic,strong) NSData* imageData;
 @property(nonatomic,strong) NSString* description;
 
 + (Product*)parse:(PFObject*)dict;

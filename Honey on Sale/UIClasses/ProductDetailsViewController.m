@@ -44,8 +44,8 @@
 	UIBarButtonItem *checkoutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(checkoutObjects:)];
 	self.navigationItem.rightBarButtonItem = checkoutButton;
 }
-- (void)checkoutObjects:(id)sender{
-	// [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+- (void)checkoutObjects:(UIButton*)sender{
+	[self performSegueWithIdentifier:@"CheckOutSeque" sender:sender];
 	
 }
 - (void)viewDidLoad

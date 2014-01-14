@@ -19,8 +19,8 @@
 		225604B61876F86C00F0B637 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B51876F86C00F0B637 /* Security.framework */; };
 		225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B71876F87300F0B637 /* StoreKit.framework */; };
 		225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B91876F87900F0B637 /* SystemConfiguration.framework */; };
-		225604C718848E7900F0B637 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* OrderViewController.m */; };
-		225604C818848E7900F0B637 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* OrderViewController.m */; };
+		225604C718848E7900F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* ProductDetailsViewController.m */; };
+		225604C818848E7900F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* ProductDetailsViewController.m */; };
 		225604C918848E7900F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C418848E7900F0B637 /* ProductTableViewCell.m */; };
 		225604CA18848E7900F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C418848E7900F0B637 /* ProductTableViewCell.m */; };
 		225604CB18848E7900F0B637 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C618848E7900F0B637 /* StoreViewController.m */; };
@@ -51,6 +51,7 @@
 		B2784A861883F8F00057F064 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A851883F8DF0057F064 /* PayMillSDK.framework */; };
 		B2784A9818842C590057F064 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9718842C590057F064 /* CFNetwork.framework */; };
 		B2784A9A18842C890057F064 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9918842C880057F064 /* SystemConfiguration.framework */; };
+		B2784A9F18856ED50057F064 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A9E18856ED50057F064 /* CheckOutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +77,8 @@
 		225604B51876F86C00F0B637 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		225604B71876F87300F0B637 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		225604B91876F87900F0B637 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		225604C118848E7900F0B637 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
-		225604C218848E7900F0B637 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		225604C118848E7900F0B637 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
+		225604C218848E7900F0B637 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
 		225604C318848E7900F0B637 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		225604C418848E7900F0B637 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		225604C518848E7900F0B637 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
@@ -112,6 +113,8 @@
 		B2784A9718842C590057F064 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B2784A9918842C880057F064 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B2784A9B18842CC20057F064 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B2784A9D18856ED50057F064 /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOutViewController.h; sourceTree = "<group>"; };
+		B2784A9E18856ED50057F064 /* CheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,12 +159,14 @@
 		225604C018848E7900F0B637 /* UIClasses */ = {
 			isa = PBXGroup;
 			children = (
-				225604C118848E7900F0B637 /* OrderViewController.h */,
-				225604C218848E7900F0B637 /* OrderViewController.m */,
+				225604C118848E7900F0B637 /* ProductDetailsViewController.h */,
+				225604C218848E7900F0B637 /* ProductDetailsViewController.m */,
 				225604C318848E7900F0B637 /* ProductTableViewCell.h */,
 				225604C418848E7900F0B637 /* ProductTableViewCell.m */,
 				225604C518848E7900F0B637 /* StoreViewController.h */,
 				225604C618848E7900F0B637 /* StoreViewController.m */,
+				B2784A9D18856ED50057F064 /* CheckOutViewController.h */,
+				B2784A9E18856ED50057F064 /* CheckOutViewController.m */,
 			);
 			path = UIClasses;
 			sourceTree = "<group>";
@@ -398,9 +403,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2784A9F18856ED50057F064 /* CheckOutViewController.m in Sources */,
 				B2784A531860A4FC0057F064 /* AppDelegate.m in Sources */,
 				B2784A4F1860A4FC0057F064 /* main.m in Sources */,
-				225604C718848E7900F0B637 /* OrderViewController.m in Sources */,
+				225604C718848E7900F0B637 /* ProductDetailsViewController.m in Sources */,
 				225604C918848E7900F0B637 /* ProductTableViewCell.m in Sources */,
 				225604CB18848E7900F0B637 /* StoreViewController.m in Sources */,
 				225604D018848E8F00F0B637 /* MBProgressHUD.m in Sources */,
@@ -414,7 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2784A741860A4FC0057F064 /* Honey_on_SaleTests.m in Sources */,
-				225604C818848E7900F0B637 /* OrderViewController.m in Sources */,
+				225604C818848E7900F0B637 /* ProductDetailsViewController.m in Sources */,
 				225604CA18848E7900F0B637 /* ProductTableViewCell.m in Sources */,
 				225604CC18848E7900F0B637 /* StoreViewController.m in Sources */,
 				225604D118848E8F00F0B637 /* MBProgressHUD.m in Sources */,
