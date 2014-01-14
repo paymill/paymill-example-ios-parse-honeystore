@@ -7,13 +7,12 @@
 //
 
 @class Product;
-@class PFImageView;
 
 @interface ProductTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIButton *orderButton;
 @property (nonatomic, strong) UILabel *priceLabel;
-@property (nonatomic, retain) PFImageView *previewImageView;
+@property (nonatomic, retain) UIImageView *previewImageView;
 
 - (void)configureProduct:(Product *)product;
 + (CGFloat)rowHeight;

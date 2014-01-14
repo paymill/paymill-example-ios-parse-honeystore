@@ -13,6 +13,6 @@
 @interface StoreViewController : UITableViewController
 
 @property(strong,nonatomic) DetailViewController *detailViewController;
-@property(strong,nonatomic) IBOutlet UITableView *productsTable;
+@property(weak,nonatomic) IBOutlet UITableView *productsTable;
 
 @end

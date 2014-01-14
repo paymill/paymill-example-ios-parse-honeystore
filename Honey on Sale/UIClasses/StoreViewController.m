@@ -7,7 +7,7 @@
 //
 
 #import "StoreViewController.h"
-#import "OrderViewController.h"
+#import "ProductDetailsViewController.h"
 #import "StoreController.h"
 #import "MBProgressHUD.h"
 #import "ProductTableViewCell.h"
@@ -31,8 +31,12 @@
 {
     [super viewDidLoad];
 
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshObjects:)];
-	self.navigationItem.rightBarButtonItem = addButton;
+	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshObjects:)];
+	self.navigationItem.leftBarButtonItem = refreshButton;
+
+	UIBarButtonItem *checkoutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(checkoutObjects:)];
+	self.navigationItem.rightBarButtonItem = checkoutButton;
+
 	self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.productsTable.backgroundColor = [UIColor whiteColor];
 }
@@ -42,7 +46,6 @@
     if([StoreController getInstance].Products == Nil){
         [self refreshObjects:nil];
     }
- 
 }
 - (void)didReceiveMemoryWarning
 {
@@ -50,6 +53,10 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - Actions
+- (void)checkoutObjects:(id)sender{
+   // [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+   
+}
 - (void)refreshObjects:(id)sender{
     [MBProgressHUD showHUDAddedTo:self.view animated:NO];
     [[StoreController getInstance] pullItemsWithComplte:^(NSError *error) {
@@ -58,9 +65,8 @@
         [self.productsTable reloadData];
     }];
 }
-- (void)orderProduct:(id)sender{
-    OrderViewController *orderController = [[OrderViewController alloc] init];//initWithProduct:self.objects[button.tag]];
-    [self.navigationController pushViewController:orderController animated:YES];
+- (void)orderProduct:(UIButton*)button{
+	[self performSegueWithIdentifier:@"OrderProductSeque" sender:button];
 }
 
 #pragma mark - Table View
@@ -93,15 +99,13 @@
     return cell;
 }
 
-
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"orderProduct"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = [StoreController getInstance].Products[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+    if ([[segue identifier] isEqualToString:@"OrderProductSeque"]) {
+		UIControl *senderControl = (UIControl*)sender;
+		Product *product = [StoreController getInstance].Products[senderControl.tag];
+ 		ProductDetailsViewController *cvc = (ProductDetailsViewController *)[segue destinationViewController];
+		[cvc setSelectedProduct: product];
     }
 }
 

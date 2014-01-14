@@ -8,7 +8,6 @@
 
 #import "ProductTableViewCell.h"
 #import "Product.h"
-#import <Parse/Parse.h>
 
 #define ROW_MARGIN 6.0f
 #define ROW_HEIGHT 173.0f
@@ -42,7 +41,7 @@
         
         [self addSubview:self.orderButton];
         
-        self.previewImageView = [[PFImageView alloc] init];
+        self.previewImageView = [[UIImageView alloc] init];
         [self addSubview:self.previewImageView];
     }
     return self;
@@ -93,14 +92,13 @@
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[backgroundImage resizableImageWithCapInsets:backgroundInsets]];
     self.backgroundView = backgroundImageView;
 
-    self.previewImageView.file = product.image;
     self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.previewImageView loadInBackground];
+    self.previewImageView.image = [UIImage imageWithData:product.imageData];
     
     self.priceLabel.text = [NSString stringWithFormat:@"%.2f %@", product.amount, product.currency];
 
     self.textLabel.text = product.name;
-    self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:19.0f];
+    self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0f];
     self.textLabel.textColor = [UIColor colorWithRed:82.0f/255.0f green:87.0f/255.0f blue:90.0f/255.0f alpha:1.0f];
     self.textLabel.shadowColor = [UIColor colorWithWhite:1.0f alpha:0.7f];
     self.textLabel.shadowOffset = CGSizeMake(0.0f, 0.5f);

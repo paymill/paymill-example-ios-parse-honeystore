@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OrderViewController : UIViewController <UISplitViewControllerDelegate>
+@class Product;
+@interface ProductDetailsViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property(strong,nonatomic) id detailItem;
+- (void)setSelectedProduct:(Product*)product;
 
-@property(weak,nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+
 @end
