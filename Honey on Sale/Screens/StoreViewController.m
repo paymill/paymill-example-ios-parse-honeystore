@@ -30,7 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.navigationController.navigationBarHidden = NO;
+    
 	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
 

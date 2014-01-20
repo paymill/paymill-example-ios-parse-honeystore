@@ -8,13 +8,17 @@
 
 #import "ProductDetailsViewController.h"
 #import "Product.h"
+#import "StoreController.h"
+#import "MLPAccessoryBadge.h"
+
 
 @interface ProductDetailsViewController ()
 
-@property(weak,nonatomic) IBOutlet UITextView *descriptionView;
-@property(weak,nonatomic) IBOutlet UIButton *addToCartButton;
-@property(weak,nonatomic) IBOutlet UIImageView *imageView;
-@property(weak,nonatomic) IBOutlet UILabel *amountLabel;
+@property (nonatomic, weak) IBOutlet UITextView *descriptionView;
+@property (nonatomic, weak) IBOutlet UIButton *addToCartButton;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UILabel *amountLabel;
+@property (nonatomic, strong) IBOutlet MLPAccessoryBadge *numberBadge;
 
 - (void)configureView;
 
@@ -26,6 +30,24 @@
 
 #pragma mark - Managing the detail item
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	self.navigationController.navigationBar.translucent = NO;
+	[self configureView];
+    
+    if (!self.numberBadge) {
+        self.numberBadge = [[MLPAccessoryBadge alloc] initWithFrame:CGRectZero];
+    }
+    self.numberBadge.center = CGPointMake(30.0, 6);
+    self.numberBadge.badgeMinimumSize = CGSizeMake(1.0, 1.0);
+    self.numberBadge.backgroundColor = [UIColor redColor];
+    self.numberBadge.shadowAlpha = 0.9;
+    self.numberBadge.cornerRadius = 5.0f;
+    self.numberBadge.strokeColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar addSubview:self.numberBadge];
+    [self.numberBadge setTextWithIntegerValue:9];
+}
 
 
 - (void)setSelectedProduct:(Product*)product{
@@ -44,17 +66,15 @@
 	UIBarButtonItem *checkoutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(checkoutObjects:)];
 	self.navigationItem.rightBarButtonItem = checkoutButton;
 }
+// Add Selected Item To Cart
+- (IBAction)addToCart:(id)sender {
+    [[StoreController getInstance] addToCartProduct:self.product]; 
+    
+}
+
 - (void)checkoutObjects:(UIButton*)sender{
 	[self performSegueWithIdentifier:@"CheckOutSeque" sender:sender];
 	
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	self.navigationController.navigationBar.translucent = NO;
-	if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-	[self configureView];
 }
 
 - (void)didReceiveMemoryWarning

@@ -19,12 +19,6 @@
 		225604B61876F86C00F0B637 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B51876F86C00F0B637 /* Security.framework */; };
 		225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B71876F87300F0B637 /* StoreKit.framework */; };
 		225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B91876F87900F0B637 /* SystemConfiguration.framework */; };
-		225604C718848E7900F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* ProductDetailsViewController.m */; };
-		225604C818848E7900F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C218848E7900F0B637 /* ProductDetailsViewController.m */; };
-		225604C918848E7900F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C418848E7900F0B637 /* ProductTableViewCell.m */; };
-		225604CA18848E7900F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C418848E7900F0B637 /* ProductTableViewCell.m */; };
-		225604CB18848E7900F0B637 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C618848E7900F0B637 /* StoreViewController.m */; };
-		225604CC18848E7900F0B637 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604C618848E7900F0B637 /* StoreViewController.m */; };
 		225604D018848E8F00F0B637 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604CF18848E8F00F0B637 /* MBProgressHUD.m */; };
 		225604D118848E8F00F0B637 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604CF18848E8F00F0B637 /* MBProgressHUD.m */; };
 		225604D918848E9B00F0B637 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604D418848E9B00F0B637 /* Product.m */; };
@@ -36,6 +30,22 @@
 		225604E51884A2EA00F0B637 /* product.png in Resources */ = {isa = PBXBuildFile; fileRef = 225604E21884A2EA00F0B637 /* product.png */; };
 		225604E61884A2EA00F0B637 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225604E31884A2EA00F0B637 /* product@2x.png */; };
 		225604E71884A2EA00F0B637 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225604E31884A2EA00F0B637 /* product@2x.png */; };
+		225604F1188DC6FD00F0B637 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EA188DC6FD00F0B637 /* CheckOutViewController.m */; };
+		225604F2188DC6FD00F0B637 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EA188DC6FD00F0B637 /* CheckOutViewController.m */; };
+		225604F3188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */; };
+		225604F4188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */; };
+		225604F5188DC6FD00F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EE188DC6FD00F0B637 /* ProductTableViewCell.m */; };
+		225604F6188DC6FD00F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EE188DC6FD00F0B637 /* ProductTableViewCell.m */; };
+		225604F7188DC6FD00F0B637 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604F0188DC6FD00F0B637 /* StoreViewController.m */; };
+		225604F8188DC6FD00F0B637 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604F0188DC6FD00F0B637 /* StoreViewController.m */; };
+		225604FC188DCBC900F0B637 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604FB188DCBC900F0B637 /* LoginScreenViewController.m */; };
+		225604FD188DCBC900F0B637 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604FB188DCBC900F0B637 /* LoginScreenViewController.m */; };
+		225604FF188DCF6600F0B637 /* honey-for-sale-sign.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 225604FE188DCF6600F0B637 /* honey-for-sale-sign.jpg */; };
+		22560500188DCF6600F0B637 /* honey-for-sale-sign.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 225604FE188DCF6600F0B637 /* honey-for-sale-sign.jpg */; };
+		22560502188DD5D700F0B637 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22560501188DD5D700F0B637 /* CoreData.framework */; };
+		22560504188DD66000F0B637 /* PayMillSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22560503188DD66000F0B637 /* PayMillSDK.bundle */; };
+		22560508188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */; };
+		22560509188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */; };
 		B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A421860A4FB0057F064 /* Foundation.framework */; };
 		B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A441860A4FB0057F064 /* CoreGraphics.framework */; };
 		B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A461860A4FB0057F064 /* UIKit.framework */; };
@@ -51,7 +61,6 @@
 		B2784A861883F8F00057F064 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A851883F8DF0057F064 /* PayMillSDK.framework */; };
 		B2784A9818842C590057F064 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9718842C590057F064 /* CFNetwork.framework */; };
 		B2784A9A18842C890057F064 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9918842C880057F064 /* SystemConfiguration.framework */; };
-		B2784A9F18856ED50057F064 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2784A9E18856ED50057F064 /* CheckOutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,12 +86,6 @@
 		225604B51876F86C00F0B637 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		225604B71876F87300F0B637 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		225604B91876F87900F0B637 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		225604C118848E7900F0B637 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
-		225604C218848E7900F0B637 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
-		225604C318848E7900F0B637 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
-		225604C418848E7900F0B637 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
-		225604C518848E7900F0B637 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
-		225604C618848E7900F0B637 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		225604CE18848E8F00F0B637 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		225604CF18848E8F00F0B637 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		225604D318848E9B00F0B637 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -92,6 +95,21 @@
 		225604DF188493A800F0B637 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		225604E21884A2EA00F0B637 /* product.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product.png; sourceTree = "<group>"; };
 		225604E31884A2EA00F0B637 /* product@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "product@2x.png"; sourceTree = "<group>"; };
+		225604E9188DC6FD00F0B637 /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckOutViewController.h; path = ../CheckOutViewController.h; sourceTree = "<group>"; };
+		225604EA188DC6FD00F0B637 /* CheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckOutViewController.m; path = ../CheckOutViewController.m; sourceTree = "<group>"; };
+		225604EB188DC6FD00F0B637 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
+		225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
+		225604ED188DC6FD00F0B637 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
+		225604EE188DC6FD00F0B637 /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
+		225604EF188DC6FD00F0B637 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		225604F0188DC6FD00F0B637 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		225604FA188DCBC900F0B637 /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
+		225604FB188DCBC900F0B637 /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
+		225604FE188DCF6600F0B637 /* honey-for-sale-sign.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "honey-for-sale-sign.jpg"; sourceTree = "<group>"; };
+		22560501188DD5D700F0B637 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		22560503188DD66000F0B637 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = PayMillSDK.bundle; path = ../../PayMillSDK/PayMillSDK.bundle; sourceTree = "<group>"; };
+		22560506188DDB4F00F0B637 /* MLPAccessoryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAccessoryBadge.h; sourceTree = "<group>"; };
+		22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPAccessoryBadge.m; sourceTree = "<group>"; };
 		B2784A3F1860A4FB0057F064 /* Honey on Sale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey on Sale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2784A421860A4FB0057F064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2784A441860A4FB0057F064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,8 +131,6 @@
 		B2784A9718842C590057F064 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B2784A9918842C880057F064 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B2784A9B18842CC20057F064 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		B2784A9D18856ED50057F064 /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckOutViewController.h; sourceTree = "<group>"; };
-		B2784A9E18856ED50057F064 /* CheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckOutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22560502188DD5D700F0B637 /* CoreData.framework in Frameworks */,
 				225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */,
 				225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */,
 				225604B61876F86C00F0B637 /* Security.framework in Frameworks */,
@@ -156,21 +173,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		225604C018848E7900F0B637 /* UIClasses */ = {
-			isa = PBXGroup;
-			children = (
-				225604C118848E7900F0B637 /* ProductDetailsViewController.h */,
-				225604C218848E7900F0B637 /* ProductDetailsViewController.m */,
-				225604C318848E7900F0B637 /* ProductTableViewCell.h */,
-				225604C418848E7900F0B637 /* ProductTableViewCell.m */,
-				225604C518848E7900F0B637 /* StoreViewController.h */,
-				225604C618848E7900F0B637 /* StoreViewController.m */,
-				B2784A9D18856ED50057F064 /* CheckOutViewController.h */,
-				B2784A9E18856ED50057F064 /* CheckOutViewController.m */,
-			);
-			path = UIClasses;
-			sourceTree = "<group>";
-		};
 		225604CD18848E8F00F0B637 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,12 +196,49 @@
 		225604E11884A2EA00F0B637 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22560503188DD66000F0B637 /* PayMillSDK.bundle */,
+				225604FE188DCF6600F0B637 /* honey-for-sale-sign.jpg */,
 				225604E21884A2EA00F0B637 /* product.png */,
 				225604E31884A2EA00F0B637 /* product@2x.png */,
 			);
 			name = Resources;
 			path = "Honey on Sale/Resources";
 			sourceTree = SOURCE_ROOT;
+		};
+		225604E8188DC6FD00F0B637 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				225604F9188DC71E00F0B637 /* Payment */,
+				225604EB188DC6FD00F0B637 /* ProductDetailsViewController.h */,
+				225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */,
+				225604ED188DC6FD00F0B637 /* ProductTableViewCell.h */,
+				225604EE188DC6FD00F0B637 /* ProductTableViewCell.m */,
+				225604EF188DC6FD00F0B637 /* StoreViewController.h */,
+				225604F0188DC6FD00F0B637 /* StoreViewController.m */,
+				225604FA188DCBC900F0B637 /* LoginScreenViewController.h */,
+				225604FB188DCBC900F0B637 /* LoginScreenViewController.m */,
+			);
+			name = Screens;
+			path = "Honey on Sale/Screens";
+			sourceTree = SOURCE_ROOT;
+		};
+		225604F9188DC71E00F0B637 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				225604E9188DC6FD00F0B637 /* CheckOutViewController.h */,
+				225604EA188DC6FD00F0B637 /* CheckOutViewController.m */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		22560505188DDB4E00F0B637 /* MLPAccessoryBadge */ = {
+			isa = PBXGroup;
+			children = (
+				22560506188DDB4F00F0B637 /* MLPAccessoryBadge.h */,
+				22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */,
+			);
+			path = MLPAccessoryBadge;
+			sourceTree = "<group>";
 		};
 		B2784A361860A4FB0057F064 = {
 			isa = PBXGroup;
@@ -225,6 +264,8 @@
 		B2784A411860A4FB0057F064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2784A831883F8DF0057F064 /* PayMillSDK */,
+				22560501188DD5D700F0B637 /* CoreData.framework */,
 				225604B91876F87900F0B637 /* SystemConfiguration.framework */,
 				225604B71876F87300F0B637 /* StoreKit.framework */,
 				225604B51876F86C00F0B637 /* Security.framework */,
@@ -239,7 +280,6 @@
 				B2784A9B18842CC20057F064 /* libxml2.dylib */,
 				B2784A9918842C880057F064 /* SystemConfiguration.framework */,
 				B2784A9718842C590057F064 /* CFNetwork.framework */,
-				B2784A831883F8DF0057F064 /* PayMillSDK */,
 				B2784A811883F8D70057F064 /* Parse.framework */,
 				B2784A421860A4FB0057F064 /* Foundation.framework */,
 				B2784A441860A4FB0057F064 /* CoreGraphics.framework */,
@@ -254,7 +294,9 @@
 			children = (
 				225604D218848E9B00F0B637 /* BusinessLogic */,
 				225604CD18848E8F00F0B637 /* MBProgressHUD */,
-				225604C018848E7900F0B637 /* UIClasses */,
+				22560505188DDB4E00F0B637 /* MLPAccessoryBadge */,
+				225604E8188DC6FD00F0B637 /* Screens */,
+				225604E11884A2EA00F0B637 /* Resources */,
 			);
 			path = "Honey on Sale";
 			sourceTree = "<group>";
@@ -279,7 +321,6 @@
 			children = (
 				B2784A731860A4FC0057F064 /* Honey_on_SaleTests.m */,
 				B2784A6E1860A4FC0057F064 /* Supporting Files */,
-				225604E11884A2EA00F0B637 /* Resources */,
 			);
 			path = "Honey on SaleTests";
 			sourceTree = "<group>";
@@ -378,11 +419,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22560504188DD66000F0B637 /* PayMillSDK.bundle in Resources */,
 				B2784A4D1860A4FC0057F064 /* InfoPlist.strings in Resources */,
 				225604A41874866200F0B637 /* MainStoryBoard.storyboard in Resources */,
 				225604E0188493A800F0B637 /* Default-568h@2x.png in Resources */,
 				225604E41884A2EA00F0B637 /* product.png in Resources */,
 				225604E61884A2EA00F0B637 /* product@2x.png in Resources */,
+				225604FF188DCF6600F0B637 /* honey-for-sale-sign.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +436,7 @@
 				B2784A721860A4FC0057F064 /* InfoPlist.strings in Resources */,
 				225604E51884A2EA00F0B637 /* product.png in Resources */,
 				225604E71884A2EA00F0B637 /* product@2x.png in Resources */,
+				22560500188DCF6600F0B637 /* honey-for-sale-sign.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,15 +447,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2784A9F18856ED50057F064 /* CheckOutViewController.m in Sources */,
 				B2784A531860A4FC0057F064 /* AppDelegate.m in Sources */,
 				B2784A4F1860A4FC0057F064 /* main.m in Sources */,
-				225604C718848E7900F0B637 /* ProductDetailsViewController.m in Sources */,
-				225604C918848E7900F0B637 /* ProductTableViewCell.m in Sources */,
-				225604CB18848E7900F0B637 /* StoreViewController.m in Sources */,
 				225604D018848E8F00F0B637 /* MBProgressHUD.m in Sources */,
 				225604D918848E9B00F0B637 /* Product.m in Sources */,
 				225604DD18848E9B00F0B637 /* StoreController.m in Sources */,
+				225604F1188DC6FD00F0B637 /* CheckOutViewController.m in Sources */,
+				225604F3188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */,
+				225604F5188DC6FD00F0B637 /* ProductTableViewCell.m in Sources */,
+				225604F7188DC6FD00F0B637 /* StoreViewController.m in Sources */,
+				225604FC188DCBC900F0B637 /* LoginScreenViewController.m in Sources */,
+				22560508188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,12 +466,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2784A741860A4FC0057F064 /* Honey_on_SaleTests.m in Sources */,
-				225604C818848E7900F0B637 /* ProductDetailsViewController.m in Sources */,
-				225604CA18848E7900F0B637 /* ProductTableViewCell.m in Sources */,
-				225604CC18848E7900F0B637 /* StoreViewController.m in Sources */,
 				225604D118848E8F00F0B637 /* MBProgressHUD.m in Sources */,
 				225604DA18848E9B00F0B637 /* Product.m in Sources */,
 				225604DE18848E9B00F0B637 /* StoreController.m in Sources */,
+				225604F2188DC6FD00F0B637 /* CheckOutViewController.m in Sources */,
+				225604F4188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */,
+				225604F6188DC6FD00F0B637 /* ProductTableViewCell.m in Sources */,
+				225604F8188DC6FD00F0B637 /* StoreViewController.m in Sources */,
+				225604FD188DCBC900F0B637 /* LoginScreenViewController.m in Sources */,
+				22560509188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

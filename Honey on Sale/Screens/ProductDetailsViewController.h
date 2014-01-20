@@ -14,5 +14,4 @@
 - (void)setSelectedProduct:(Product*)product;
 
 
-
 @end

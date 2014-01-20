@@ -8,14 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+@class Product;
+
 @interface StoreController : NSObject
 
 typedef void (^ControllerCompleteBlock)(NSError *error);
 
-// this is items from Parse, that are visible for sale
+// tems from Parse, that are visible for sale
 @property (nonatomic, strong, readonly, getter = getProducts) NSArray* Products;
 
+// items in card
+@property (nonatomic, strong) NSMutableArray *itemsInCard;
+
+//PayMill public key
+@property (nonatomic, strong) NSString *payMillPublicKey;
+
+// pull items from backend
 - (void)pullItemsWithComplte:(ControllerCompleteBlock)complete;
+
+
+- (void)addToCartProduct:(Product*)product;
+
 + (StoreController*)getInstance;
 
 @end

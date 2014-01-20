@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="jB9-TE-Den">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="jB9-TE-Den">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Login Screen View Controller-->
+        <scene sceneID="qH2-ag-TNw">
+            <objects>
+                <viewController id="zet-Fr-R3c" customClass="LoginScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yvB-CI-riB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="honey-for-sale-sign.jpg" id="ign-K1-Wse">
+                                <rect key="frame" x="0.0" y="-58" width="320" height="562"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcN-xo-Wnc">
+                                <rect key="frame" x="177" y="461" width="143" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Login:" destination="zet-Fr-R3c" eventType="touchUpInside" id="OPX-EV-vfS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZQA-WE-GdI"/>
+                    <connections>
+                        <segue destination="ddS-w5-89k" kind="push" identifier="GoToStoreSeque" id="yQs-Ko-hxD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYU-sU-TmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-63" y="-937"/>
+        </scene>
         <!--Store View Controller - Honey On Sale-->
         <scene sceneID="LDY-6Z-wBD">
             <objects>
@@ -24,9 +63,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnN-gC-2nI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273" y="-525"/>
+            <point key="canvasLocation" x="383" y="-910"/>
         </scene>
-        <!--Check Out View Controller-->
+        <!--Check Out View Controller - CheckOut-->
         <scene sceneID="7XU-sV-LtK">
             <objects>
                 <tableViewController id="TVL-4e-BSs" customClass="CheckOutViewController" sceneMemberID="viewController">
@@ -50,11 +89,11 @@
                             <outlet property="delegate" destination="TVL-4e-BSs" id="4te-Ab-Cop"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HEd-ZO-0c1"/>
+                    <navigationItem key="navigationItem" title="CheckOut" id="HEd-ZO-0c1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsS-I2-zN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="154"/>
+            <point key="canvasLocation" x="738" y="-42"/>
         </scene>
         <!--Product Details View Controller - Order-->
         <scene sceneID="Qpo-Oq-aT5">
@@ -64,19 +103,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40u-Z7-hK8">
+                            <view contentMode="scaleToFill" id="40u-Z7-hK8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RCa-hI-sqU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RCa-hI-sqU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="J7j-aa-TOJ"/>
-                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REu-Pq-eG3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="REu-Pq-eG3">
                                 <rect key="frame" x="6" y="441" width="308" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -88,61 +124,34 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addToCart:" destination="lCe-ja-gFA" eventType="touchUpInside" id="50P-wT-37E"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-Mu-4Xe">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="UE9-Mu-4Xe">
                                 <rect key="frame" x="6" y="228" width="308" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="308" id="fp4-oH-3kD"/>
-                                    <constraint firstAttribute="height" constant="205" id="hs5-F3-aSl"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQl-cm-lmJ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NQl-cm-lmJ">
                                 <rect key="frame" x="6" y="201" width="113" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="rZM-iN-9n6"/>
-                                    <constraint firstAttribute="width" constant="113" id="zlc-In-ZNN"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Stock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EJ-3d-KL6">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Stock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3EJ-3d-KL6">
                                 <rect key="frame" x="236" y="204" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.60999999999999999" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="KMQ-Nd-Pl1"/>
-                                    <constraint firstAttribute="width" constant="78" id="hLA-sY-StS"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                        <constraints>
-                            <constraint firstItem="UE9-Mu-4Xe" firstAttribute="leading" secondItem="REu-Pq-eG3" secondAttribute="leading" type="default" id="0bW-kH-ps6"/>
-                            <constraint firstItem="3EJ-3d-KL6" firstAttribute="top" secondItem="7Sq-Yh-Qel" secondAttribute="top" constant="204" id="Ayi-ow-dqG"/>
-                            <constraint firstItem="RCa-hI-sqU" firstAttribute="top" secondItem="7Sq-Yh-Qel" secondAttribute="top" type="default" id="MGM-Pe-QBY"/>
-                            <constraint firstAttribute="bottom" secondItem="REu-Pq-eG3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Mw6-z7-cgG"/>
-                            <constraint firstAttribute="trailing" secondItem="40u-Z7-hK8" secondAttribute="trailing" type="default" id="Nt8-b8-WjP"/>
-                            <constraint firstItem="3EJ-3d-KL6" firstAttribute="trailing" secondItem="UE9-Mu-4Xe" secondAttribute="trailing" type="default" id="OYD-e8-I7q"/>
-                            <constraint firstItem="UE9-Mu-4Xe" firstAttribute="trailing" secondItem="REu-Pq-eG3" secondAttribute="trailing" type="default" id="RXR-fD-s5Q"/>
-                            <constraint firstItem="NQl-cm-lmJ" firstAttribute="top" secondItem="7Sq-Yh-Qel" secondAttribute="top" constant="201" id="RxP-lD-Egs"/>
-                            <constraint firstItem="RCa-hI-sqU" firstAttribute="leading" secondItem="7Sq-Yh-Qel" secondAttribute="leading" type="default" id="SP2-tk-xa1"/>
-                            <constraint firstItem="40u-Z7-hK8" firstAttribute="top" secondItem="RCa-hI-sqU" secondAttribute="top" type="default" id="SxJ-rL-lvO"/>
-                            <constraint firstItem="3EJ-3d-KL6" firstAttribute="top" secondItem="40u-Z7-hK8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aTj-Wi-0To"/>
-                            <constraint firstItem="40u-Z7-hK8" firstAttribute="centerX" secondItem="UE9-Mu-4Xe" secondAttribute="centerX" type="default" id="cq8-P8-Guu"/>
-                            <constraint firstItem="40u-Z7-hK8" firstAttribute="leading" secondItem="RCa-hI-sqU" secondAttribute="leading" type="default" id="dhw-6y-ix6"/>
-                            <constraint firstItem="40u-Z7-hK8" firstAttribute="trailing" secondItem="RCa-hI-sqU" secondAttribute="trailing" type="default" id="h1w-Dx-Dze"/>
-                            <constraint firstItem="NQl-cm-lmJ" firstAttribute="leading" secondItem="UE9-Mu-4Xe" secondAttribute="leading" type="default" id="koM-cx-5H3"/>
-                            <constraint firstItem="REu-Pq-eG3" firstAttribute="top" secondItem="UE9-Mu-4Xe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ylj-YM-FAJ"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Order" id="Sgn-oS-Bcm"/>
                     <connections>
@@ -156,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEF-WW-8bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721" y="-514"/>
+            <point key="canvasLocation" x="981" y="-942"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iAo-xE-9Vc">
@@ -166,20 +175,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ddS-w5-89k" kind="relationship" relationship="rootViewController" id="Qas-o8-4zC"/>
+                        <segue destination="zet-Fr-R3c" kind="relationship" relationship="rootViewController" id="8ON-Kx-VFl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z82-rD-VAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-261" y="-525"/>
+            <point key="canvasLocation" x="-623" y="-910"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="honey-for-sale-sign.jpg" width="600" height="400"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6HJ-9V-1Bl"/>
+        <segue reference="jLZ-kZ-spL"/>
     </inferredMetricsTieBreakers>
 </document>

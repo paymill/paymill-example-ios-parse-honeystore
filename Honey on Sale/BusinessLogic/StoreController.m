@@ -9,22 +9,29 @@
 #import "StoreController.h"
 #import <Parse/Parse.h>
 #import "Product.h"
+#import <PayMillSDK/PMSDK.h>
 
 @interface StoreController()
 
-@property (strong,nonatomic)NSMutableArray *products;
+@property (strong, nonatomic) NSMutableArray *products;
+
 @end
 
 @implementation StoreController
 
+
 - (StoreController*)init{
 	if(self = [super init]){
+        // Init Parse Library
 		[Parse setApplicationId:@"uii9EaqHnJ5fiez0hZOgc5KdIz5Fw9uIXIn24SMY"
 					  clientKey:@"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r"];
+        
+        _itemsInCard = [[NSMutableArray alloc] init];
         return self;
 	}
 	return nil;
 }
+
 StoreController *instance;
 
 + (StoreController*)getInstance{
@@ -53,5 +60,9 @@ StoreController *instance;
         }
         complete(error);
 	}];
+}
+
+- (void)addToCartProduct:(Product*)product{
+    [self.itemsInCard addObject:product];
 }
 @end

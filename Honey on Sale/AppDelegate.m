@@ -18,9 +18,8 @@
 	    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
 	    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
 	    splitViewController.delegate = (id)navigationController.topViewController;
-        
-        
-	}     return YES;
+ 	}
+    return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
