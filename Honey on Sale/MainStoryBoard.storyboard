@@ -53,47 +53,115 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="ddS-w5-89k" id="3Jc-th-WCG"/>
+                            <outlet property="delegate" destination="ddS-w5-89k" id="BQm-1z-epG"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Honey On Sale" id="rbk-15-nno"/>
                     <connections>
                         <outlet property="productsTable" destination="FqT-a9-CDa" id="VPS-pM-0Up"/>
                         <segue destination="lCe-ja-gFA" kind="push" identifier="OrderProductSeque" id="NWd-hl-TvG"/>
-                        <segue destination="TVL-4e-BSs" kind="push" identifier="CheckOutSeque" id="6HJ-9V-1Bl"/>
+                        <segue destination="h1f-Bm-9jl" kind="push" identifier="CheckOutSeque" id="sOr-iX-p0w"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnN-gC-2nI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="383" y="-910"/>
         </scene>
-        <!--Check Out View Controller - CheckOut-->
-        <scene sceneID="7XU-sV-LtK">
+        <!--Cart View Controller-->
+        <scene sceneID="Q7v-HR-AVp">
             <objects>
-                <tableViewController id="TVL-4e-BSs" customClass="CheckOutViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Q18-0Q-vGk">
+                <viewController id="h1f-Bm-9jl" customClass="CartViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mKm-T3-XHa">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DZM-Ou-t6I">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TVL-4e-BSs" id="nCa-Gb-V8Y"/>
-                            <outlet property="delegate" destination="TVL-4e-BSs" id="4te-Ab-Cop"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="CheckOut" id="HEd-ZO-0c1"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XsS-I2-zN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Acc Holder" minimumFontSize="17" id="pfy-c2-0A8">
+                                <rect key="frame" x="20" y="104" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" minimumFontSize="17" id="Nkf-Dz-y3r">
+                                <rect key="frame" x="20" y="201" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verification" minimumFontSize="17" id="3Ao-Lg-9bx">
+                                <rect key="frame" x="20" y="239" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" id="Vii-Oy-ypl">
+                                <rect key="frame" x="0.0" y="288" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Existing Client" minimumFontSize="17" id="d2i-LJ-YeE">
+                                <rect key="frame" x="20" y="46" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="chooseExistingClient:" destination="h1f-Bm-9jl" eventType="touchDown" id="XjG-kj-EWp"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Existing Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XeF-A9-Q3M">
+                                <rect key="frame" x="20" y="20" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="84E-7N-XH5">
+                                <rect key="frame" x="20" y="84" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Card Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vmf-fN-CnI">
+                                <rect key="frame" x="20" y="180" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HPE-Cz-O7i">
+                                <rect key="frame" x="20" y="277" width="97" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Scan Card">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="3TS-ZH-dCg">
+                                <rect key="frame" x="20" y="142" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SCX-di-4X2"/>
+                    <connections>
+                        <outlet property="accHolder" destination="pfy-c2-0A8" id="AE8-IK-OXh"/>
+                        <outlet property="cardNumber" destination="Nkf-Dz-y3r" id="03X-LM-52x"/>
+                        <outlet property="cardVerification" destination="3Ao-Lg-9bx" id="n4m-iu-RWs"/>
+                        <outlet property="email" destination="3TS-ZH-dCg" id="eE4-h1-llL"/>
+                        <outlet property="existingClient" destination="d2i-LJ-YeE" id="PIB-Ls-gej"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8c-bN-2lk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-42"/>
+            <point key="canvasLocation" x="924" y="-86"/>
         </scene>
         <!--Product Details View Controller - Order-->
         <scene sceneID="Qpo-Oq-aT5">
@@ -160,7 +228,7 @@
                         <outlet property="descriptionView" destination="UE9-Mu-4Xe" id="gWg-Zj-vJn"/>
                         <outlet property="imageView" destination="RCa-hI-sqU" id="3va-CE-QeP"/>
                         <outlet property="view" destination="7Sq-Yh-Qel" id="g0V-at-S5r"/>
-                        <segue destination="TVL-4e-BSs" kind="push" identifier="CheckOutSeque" id="jLZ-kZ-spL"/>
+                        <segue destination="h1f-Bm-9jl" kind="push" identifier="CheckOutSeque" id="Qlv-TK-nSl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEF-WW-8bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,12 +254,56 @@
     <resources>
         <image name="honey-for-sale-sign.jpg" width="600" height="400"/>
     </resources>
+    <classes>
+        <class className="CartViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CartViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="chooseExistingClient:"/>
+                <relationship kind="outlet" name="accHolder" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cardNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cardVerification" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="existingClient" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CheckoutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckoutViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="numberBadge" candidateClass="MLPAccessoryBadge"/>
+            </relationships>
+        </class>
+        <class className="LoginScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginScreenViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+            </relationships>
+        </class>
+        <class className="MLPAccessoryBadge" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MLPAccessoryBadge.h"/>
+        </class>
+        <class className="ProductDetailsViewController" superclassName="CheckoutViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addToCart:"/>
+                <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="amountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="StoreViewController" superclassName="CheckoutViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jLZ-kZ-spL"/>
+        <segue reference="Qlv-TK-nSl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CheckoutViewController.h"
 
 @class Product;
-@interface ProductDetailsViewController : UIViewController <UISplitViewControllerDelegate>
+@interface ProductDetailsViewController : CheckoutViewController <UISplitViewControllerDelegate>
 
 - (void)setSelectedProduct:(Product*)product;
 

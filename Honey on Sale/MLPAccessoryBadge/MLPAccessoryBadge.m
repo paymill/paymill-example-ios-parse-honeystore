@@ -248,15 +248,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     size.width += self.textSizePadding.width;
     size.height += self.textSizePadding.height;
     
-    CGRect resizeFrame = CGRectMake(0,
+    CGRect parentFrame = self.superview.frame;
+    int xPost = parentFrame.size.width - MAX(size.width, self.badgeMinimumSize.width);
+    CGRect resizeFrame = CGRectMake(xPost,
                                     0,
                                     MAX(size.width, self.badgeMinimumSize.width),
                                     MAX(size.height, self.badgeMinimumSize.height));
     
     resizeFrame.origin.x += self.textLabelOffset.width;
     resizeFrame.origin.y += self.textLabelOffset.height;
-    
-    [self.textLabel setFrame:resizeFrame];
+    CGRect textFrame = resizeFrame;
+    textFrame.origin.x = 0;
+    [self.textLabel setFrame:textFrame];
         
     resizeFrame.size.width += self.badgeInnerPadding.width;
     resizeFrame.size.height += self.badgeInnerPadding.height;

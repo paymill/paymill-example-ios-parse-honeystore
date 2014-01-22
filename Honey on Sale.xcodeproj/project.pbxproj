@@ -30,8 +30,6 @@
 		225604E51884A2EA00F0B637 /* product.png in Resources */ = {isa = PBXBuildFile; fileRef = 225604E21884A2EA00F0B637 /* product.png */; };
 		225604E61884A2EA00F0B637 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225604E31884A2EA00F0B637 /* product@2x.png */; };
 		225604E71884A2EA00F0B637 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225604E31884A2EA00F0B637 /* product@2x.png */; };
-		225604F1188DC6FD00F0B637 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EA188DC6FD00F0B637 /* CheckOutViewController.m */; };
-		225604F2188DC6FD00F0B637 /* CheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EA188DC6FD00F0B637 /* CheckOutViewController.m */; };
 		225604F3188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */; };
 		225604F4188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */; };
 		225604F5188DC6FD00F0B637 /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604EE188DC6FD00F0B637 /* ProductTableViewCell.m */; };
@@ -46,6 +44,8 @@
 		22560504188DD66000F0B637 /* PayMillSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22560503188DD66000F0B637 /* PayMillSDK.bundle */; };
 		22560508188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */; };
 		22560509188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */; };
+		229C189B18903D0200B8DBD0 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C189A18903D0200B8DBD0 /* CartViewController.m */; };
+		229C189E18903D1400B8DBD0 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C189D18903D1400B8DBD0 /* CheckoutViewController.m */; };
 		B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A421860A4FB0057F064 /* Foundation.framework */; };
 		B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A441860A4FB0057F064 /* CoreGraphics.framework */; };
 		B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A461860A4FB0057F064 /* UIKit.framework */; };
@@ -95,8 +95,6 @@
 		225604DF188493A800F0B637 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		225604E21884A2EA00F0B637 /* product.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product.png; sourceTree = "<group>"; };
 		225604E31884A2EA00F0B637 /* product@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "product@2x.png"; sourceTree = "<group>"; };
-		225604E9188DC6FD00F0B637 /* CheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckOutViewController.h; path = ../CheckOutViewController.h; sourceTree = "<group>"; };
-		225604EA188DC6FD00F0B637 /* CheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckOutViewController.m; path = ../CheckOutViewController.m; sourceTree = "<group>"; };
 		225604EB188DC6FD00F0B637 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
 		225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
 		225604ED188DC6FD00F0B637 /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
@@ -110,6 +108,10 @@
 		22560503188DD66000F0B637 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = PayMillSDK.bundle; path = ../../PayMillSDK/PayMillSDK.bundle; sourceTree = "<group>"; };
 		22560506188DDB4F00F0B637 /* MLPAccessoryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAccessoryBadge.h; sourceTree = "<group>"; };
 		22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPAccessoryBadge.m; sourceTree = "<group>"; };
+		229C189918903D0200B8DBD0 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		229C189A18903D0200B8DBD0 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		229C189C18903D1400B8DBD0 /* CheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutViewController.h; sourceTree = "<group>"; };
+		229C189D18903D1400B8DBD0 /* CheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
 		B2784A3F1860A4FB0057F064 /* Honey on Sale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey on Sale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2784A421860A4FB0057F064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2784A441860A4FB0057F064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,28 +210,17 @@
 		225604E8188DC6FD00F0B637 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				225604F9188DC71E00F0B637 /* Payment */,
+				229C18A018903D3800B8DBD0 /* Store */,
+				229C189F18903D2300B8DBD0 /* Login */,
+				229C189818903D0200B8DBD0 /* Cart */,
 				225604EB188DC6FD00F0B637 /* ProductDetailsViewController.h */,
 				225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */,
-				225604ED188DC6FD00F0B637 /* ProductTableViewCell.h */,
-				225604EE188DC6FD00F0B637 /* ProductTableViewCell.m */,
-				225604EF188DC6FD00F0B637 /* StoreViewController.h */,
-				225604F0188DC6FD00F0B637 /* StoreViewController.m */,
-				225604FA188DCBC900F0B637 /* LoginScreenViewController.h */,
-				225604FB188DCBC900F0B637 /* LoginScreenViewController.m */,
+				229C189C18903D1400B8DBD0 /* CheckoutViewController.h */,
+				229C189D18903D1400B8DBD0 /* CheckoutViewController.m */,
 			);
 			name = Screens;
 			path = "Honey on Sale/Screens";
 			sourceTree = SOURCE_ROOT;
-		};
-		225604F9188DC71E00F0B637 /* Payment */ = {
-			isa = PBXGroup;
-			children = (
-				225604E9188DC6FD00F0B637 /* CheckOutViewController.h */,
-				225604EA188DC6FD00F0B637 /* CheckOutViewController.m */,
-			);
-			path = Payment;
-			sourceTree = "<group>";
 		};
 		22560505188DDB4E00F0B637 /* MLPAccessoryBadge */ = {
 			isa = PBXGroup;
@@ -238,6 +229,35 @@
 				22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */,
 			);
 			path = MLPAccessoryBadge;
+			sourceTree = "<group>";
+		};
+		229C189818903D0200B8DBD0 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				229C189918903D0200B8DBD0 /* CartViewController.h */,
+				229C189A18903D0200B8DBD0 /* CartViewController.m */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		229C189F18903D2300B8DBD0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				225604FA188DCBC900F0B637 /* LoginScreenViewController.h */,
+				225604FB188DCBC900F0B637 /* LoginScreenViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		229C18A018903D3800B8DBD0 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				225604ED188DC6FD00F0B637 /* ProductTableViewCell.h */,
+				225604EE188DC6FD00F0B637 /* ProductTableViewCell.m */,
+				225604EF188DC6FD00F0B637 /* StoreViewController.h */,
+				225604F0188DC6FD00F0B637 /* StoreViewController.m */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 		B2784A361860A4FB0057F064 = {
@@ -452,12 +472,13 @@
 				225604D018848E8F00F0B637 /* MBProgressHUD.m in Sources */,
 				225604D918848E9B00F0B637 /* Product.m in Sources */,
 				225604DD18848E9B00F0B637 /* StoreController.m in Sources */,
-				225604F1188DC6FD00F0B637 /* CheckOutViewController.m in Sources */,
 				225604F3188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */,
 				225604F5188DC6FD00F0B637 /* ProductTableViewCell.m in Sources */,
 				225604F7188DC6FD00F0B637 /* StoreViewController.m in Sources */,
 				225604FC188DCBC900F0B637 /* LoginScreenViewController.m in Sources */,
 				22560508188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */,
+				229C189B18903D0200B8DBD0 /* CartViewController.m in Sources */,
+				229C189E18903D1400B8DBD0 /* CheckoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +490,6 @@
 				225604D118848E8F00F0B637 /* MBProgressHUD.m in Sources */,
 				225604DA18848E9B00F0B637 /* Product.m in Sources */,
 				225604DE18848E9B00F0B637 /* StoreController.m in Sources */,
-				225604F2188DC6FD00F0B637 /* CheckOutViewController.m in Sources */,
 				225604F4188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */,
 				225604F6188DC6FD00F0B637 /* ProductTableViewCell.m in Sources */,
 				225604F8188DC6FD00F0B637 /* StoreViewController.m in Sources */,

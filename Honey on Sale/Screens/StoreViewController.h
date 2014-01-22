@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CheckoutViewController.h"
+
 
 @class DetailViewController;
 
-@interface StoreViewController : UITableViewController
+@interface StoreViewController : CheckoutViewController< UITableViewDataSource, UITableViewDelegate>
 
-@property(strong,nonatomic) DetailViewController *detailViewController;
 @property(weak,nonatomic) IBOutlet UITableView *productsTable;
 
 @end

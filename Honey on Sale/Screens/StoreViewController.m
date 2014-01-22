@@ -22,24 +22,21 @@
 - (void)awakeFromNib
 {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-	    self.clearsSelectionOnViewWillAppear = NO;
+	   // self.clearsSelectionOnViewWillAppear = NO;
 	}
     [super awakeFromNib];
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     self.navigationController.navigationBarHidden = NO;
-    
-	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshObjects:)];
+    [super viewDidLoad];
+ 	UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                      target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
 
-	UIBarButtonItem *checkoutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(checkoutObjects:)];
-	self.navigationItem.rightBarButtonItem = checkoutButton;
-
-	self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    self.productsTable.backgroundColor = [UIColor whiteColor];
+   self.productsTable.backgroundColor = [UIColor whiteColor];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -54,10 +51,7 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - Actions
-- (void)checkoutObjects:(UIButton*)sender{
-  [self performSegueWithIdentifier:@"CheckOutSeque" sender:sender];
-   
-}
+
 - (void)refreshObjects:(id)sender{
     [MBProgressHUD showHUDAddedTo:self.view animated:NO];
     [[StoreController getInstance] pullItemsWithComplte:^(NSError *error) {
