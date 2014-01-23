@@ -51,6 +51,7 @@
     self.numberBadge.cornerRadius = 5.0f;
     self.numberBadge.strokeColor = [UIColor whiteColor];
     [self.navigationController.navigationBar addSubview:self.numberBadge];
+    [self.navigationController.navigationBar bringSubviewToFront:self.numberBadge];
    
     [self.numberBadge setTextWithIntegerValue:9];
     self.numberBadge.hidden = YES;

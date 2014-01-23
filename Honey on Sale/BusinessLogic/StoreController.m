@@ -9,11 +9,13 @@
 #import "StoreController.h"
 #import <Parse/Parse.h>
 #import "Product.h"
+#import <PayMillSDK/PMClient.h>
 #import <PayMillSDK/PMSDK.h>
 
 @interface StoreController()
 
 @property (strong, nonatomic) NSMutableArray *products;
+@property (strong, nonatomic) NSMutableArray *clients;
 
 @end
 
@@ -40,11 +42,38 @@ StoreController *instance;
 	}
 	return instance;
 }
-
+- (NSArray*)getClients{
+    return self.clients;
+}
 - (NSArray*)getProducts{
     return self.products;
 }
-
+- (PMClient*)parseClient:(PFObject*)parseObject{
+	
+	PMClient *result = [[PMClient alloc] init];
+	result.description = [parseObject objectForKey:@"description"];
+    result.email = [parseObject objectForKey:@"Email"];
+    result.id = [parseObject objectForKey:@"clientId"];
+   	
+	return result;
+	
+}
+- (void)pullClientsWithComplte:(ControllerCompleteBlock)complete{
+	
+	PFQuery *query = [PFQuery queryWithClassName:@"Client"];
+    if(self.clients == Nil){
+        self.clients = [[NSMutableArray alloc] init];
+    }
+    [self.clients removeAllObjects];
+    
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		for (PFObject *obj in objects) {
+            PMClient* product = [self parseClient:obj];
+            [self.clients addObject:product];
+        }
+        complete(error);
+	}];
+}
 - (void)pullItemsWithComplte:(ControllerCompleteBlock)complete{
 
 	PFQuery *query = [PFQuery queryWithClassName:@"ItemForSale"];

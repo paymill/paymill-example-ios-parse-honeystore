@@ -46,6 +46,14 @@
 		22560509188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */; };
 		229C189B18903D0200B8DBD0 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C189A18903D0200B8DBD0 /* CartViewController.m */; };
 		229C189E18903D1400B8DBD0 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C189D18903D1400B8DBD0 /* CheckoutViewController.m */; };
+		B2084041189178F500A79D2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2084040189178F500A79D2C /* Default-568h@2x.png */; };
+		B2084042189178F500A79D2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2084040189178F500A79D2C /* Default-568h@2x.png */; };
+		B208404B1891791900A79D2C /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404A1891791900A79D2C /* libCardIO.a */; };
+		B208404C1891791A00A79D2C /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404A1891791900A79D2C /* libCardIO.a */; };
+		B208404E18917B8E00A79D2C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404D18917B8E00A79D2C /* AVFoundation.framework */; };
+		B208405018917BC700A79D2C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404F18917BC700A79D2C /* OpenGLES.framework */; };
+		B208405218917E0A00A79D2C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208405118917E0A00A79D2C /* CoreVideo.framework */; };
+		B208405418917E3300A79D2C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208405318917E3300A79D2C /* CoreMedia.framework */; };
 		B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A421860A4FB0057F064 /* Foundation.framework */; };
 		B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A441860A4FB0057F064 /* CoreGraphics.framework */; };
 		B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A461860A4FB0057F064 /* UIKit.framework */; };
@@ -112,6 +120,19 @@
 		229C189A18903D0200B8DBD0 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		229C189C18903D1400B8DBD0 /* CheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutViewController.h; sourceTree = "<group>"; };
 		229C189D18903D1400B8DBD0 /* CheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
+		B2084040189178F500A79D2C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B20840441891791900A79D2C /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
+		B20840451891791900A79D2C /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		B20840461891791900A79D2C /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		B20840471891791900A79D2C /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		B20840481891791900A79D2C /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
+		B20840491891791900A79D2C /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
+		B208404A1891791900A79D2C /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
+		B208404D18917B8E00A79D2C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B208404F18917BC700A79D2C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B208405118917E0A00A79D2C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		B208405318917E3300A79D2C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B2084056189180EA00A79D2C /* bee_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee_icon.png; sourceTree = "<group>"; };
 		B2784A3F1860A4FB0057F064 /* Honey on Sale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey on Sale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2784A421860A4FB0057F064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2784A441860A4FB0057F064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,13 +161,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B208405418917E3300A79D2C /* CoreMedia.framework in Frameworks */,
+				B208405218917E0A00A79D2C /* CoreVideo.framework in Frameworks */,
+				225604B41876F86500F0B637 /* QuartzCore.framework in Frameworks */,
+				B208405018917BC700A79D2C /* OpenGLES.framework in Frameworks */,
+				B208404E18917B8E00A79D2C /* AVFoundation.framework in Frameworks */,
 				22560502188DD5D700F0B637 /* CoreData.framework in Frameworks */,
 				225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */,
 				225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */,
 				225604B61876F86C00F0B637 /* Security.framework in Frameworks */,
-				225604B41876F86500F0B637 /* QuartzCore.framework in Frameworks */,
 				225604B21876F85400F0B637 /* MobileCoreServices.framework in Frameworks */,
 				225604B01876F84D00F0B637 /* libz.1.1.3.dylib in Frameworks */,
+				B208404B1891791900A79D2C /* libCardIO.a in Frameworks */,
 				225604AE1876F84000F0B637 /* CoreLocation.framework in Frameworks */,
 				B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */,
 				225604AC1876F82B00F0B637 /* CFNetwork.framework in Frameworks */,
@@ -169,6 +195,7 @@
 				B2784A681860A4FC0057F064 /* XCTest.framework in Frameworks */,
 				B2784A6A1860A4FC0057F064 /* UIKit.framework in Frameworks */,
 				B2784A691860A4FC0057F064 /* Foundation.framework in Frameworks */,
+				B208404C1891791A00A79D2C /* libCardIO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,13 +287,30 @@
 			name = Store;
 			sourceTree = "<group>";
 		};
+		B20840431891791900A79D2C /* CardIO */ = {
+			isa = PBXGroup;
+			children = (
+				B20840441891791900A79D2C /* CardIO.h */,
+				B20840451891791900A79D2C /* CardIOCreditCardInfo.h */,
+				B20840461891791900A79D2C /* CardIOPaymentViewController.h */,
+				B20840471891791900A79D2C /* CardIOPaymentViewControllerDelegate.h */,
+				B20840481891791900A79D2C /* CardIOView.h */,
+				B20840491891791900A79D2C /* CardIOViewDelegate.h */,
+				B208404A1891791900A79D2C /* libCardIO.a */,
+			);
+			path = CardIO;
+			sourceTree = "<group>";
+		};
 		B2784A361860A4FB0057F064 = {
 			isa = PBXGroup;
 			children = (
+				B2084056189180EA00A79D2C /* bee_icon.png */,
 				225604DF188493A800F0B637 /* Default-568h@2x.png */,
 				B2784A481860A4FB0057F064 /* Honey on Sale */,
 				B2784A6D1860A4FC0057F064 /* Honey on SaleTests */,
 				B2784A491860A4FC0057F064 /* Supporting Files */,
+				B2084040189178F500A79D2C /* Default-568h@2x.png */,
+				B20840431891791900A79D2C /* CardIO */,
 				B2784A411860A4FB0057F064 /* Frameworks */,
 				B2784A401860A4FB0057F064 /* Products */,
 			);
@@ -284,6 +328,10 @@
 		B2784A411860A4FB0057F064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B208405318917E3300A79D2C /* CoreMedia.framework */,
+				B208405118917E0A00A79D2C /* CoreVideo.framework */,
+				B208404F18917BC700A79D2C /* OpenGLES.framework */,
+				B208404D18917B8E00A79D2C /* AVFoundation.framework */,
 				B2784A831883F8DF0057F064 /* PayMillSDK */,
 				22560501188DD5D700F0B637 /* CoreData.framework */,
 				225604B91876F87900F0B637 /* SystemConfiguration.framework */,
@@ -444,6 +492,7 @@
 				225604A41874866200F0B637 /* MainStoryBoard.storyboard in Resources */,
 				225604E0188493A800F0B637 /* Default-568h@2x.png in Resources */,
 				225604E41884A2EA00F0B637 /* product.png in Resources */,
+				B2084041189178F500A79D2C /* Default-568h@2x.png in Resources */,
 				225604E61884A2EA00F0B637 /* product@2x.png in Resources */,
 				225604FF188DCF6600F0B637 /* honey-for-sale-sign.jpg in Resources */,
 			);
@@ -456,6 +505,7 @@
 				B2784A721860A4FC0057F064 /* InfoPlist.strings in Resources */,
 				225604E51884A2EA00F0B637 /* product.png in Resources */,
 				225604E71884A2EA00F0B637 /* product@2x.png in Resources */,
+				B2084042189178F500A79D2C /* Default-568h@2x.png in Resources */,
 				22560500188DCF6600F0B637 /* honey-for-sale-sign.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,7 +613,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -596,7 +646,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -605,8 +655,6 @@
 		B2784A781860A4FC0057F064 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -617,6 +665,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Honey on Sale/Honey on Sale-Prefix.pch";
 				INFOPLIST_FILE = "Honey on Sale/Honey on Sale-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+				);
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -625,8 +678,6 @@
 		B2784A791860A4FC0057F064 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -637,6 +688,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Honey on Sale/Honey on Sale-Prefix.pch";
 				INFOPLIST_FILE = "Honey on Sale/Honey on Sale-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+				);
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -659,6 +715,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Honey on SaleTests/Honey on SaleTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -678,6 +738,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Honey on Sale/Honey on Sale-Prefix.pch";
 				INFOPLIST_FILE = "Honey on SaleTests/Honey on SaleTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -36,7 +36,7 @@
                                       target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
 
-   self.productsTable.backgroundColor = [UIColor whiteColor];
+    self.productsTable.backgroundColor = [UIColor whiteColor];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

@@ -16,6 +16,7 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 
 // tems from Parse, that are visible for sale
 @property (nonatomic, strong, readonly, getter = getProducts) NSArray* Products;
+@property (nonatomic, strong, readonly, getter = getClients) NSArray* Clients;
 
 // items in card
 @property (nonatomic, strong) NSMutableArray *itemsInCard;
@@ -23,9 +24,11 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 //PayMill public key
 @property (nonatomic, strong) NSString *payMillPublicKey;
 
-// pull items from backend
+// pull items for sale from backend
 - (void)pullItemsWithComplte:(ControllerCompleteBlock)complete;
 
+// pull existing clients from backend
+- (void)pullClientsWithComplte:(ControllerCompleteBlock)complete;
 
 - (void)addToCartProduct:(Product*)product;
 
