@@ -23,9 +23,11 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 //PayMill public key
 @property (nonatomic, strong) NSString *payMillPublicKey;
 
-// pull items from backend
+// pull items for sale from backend
 - (void)pullItemsWithComplte:(ControllerCompleteBlock)complete;
 
+// pull existing clients from backend
+- (void)pullClientsWithComplte:(ControllerCompleteBlock)complete;
 
 - (void)addToCartProduct:(Product*)product;
 

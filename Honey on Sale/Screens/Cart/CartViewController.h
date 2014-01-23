@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CartViewController : UIViewController
+#import "CardIOPaymentViewControllerDelegate.h"
+@interface CartViewController : UIViewController<CardIOPaymentViewControllerDelegate>
 
 @end
