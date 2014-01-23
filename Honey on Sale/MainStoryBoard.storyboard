@@ -274,9 +274,6 @@
         </class>
         <class className="LoginScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Login:"/>
-            </relationships>
         </class>
         <class className="MLPAccessoryBadge" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MLPAccessoryBadge.h"/>
