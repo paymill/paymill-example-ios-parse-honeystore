@@ -91,7 +91,45 @@ StoreController *instance;
 	}];
 }
 
-- (void)addToCartProduct:(Product*)product{
+- (void)addProductToCartd:(Product*)product{
     [self.itemsInCard addObject:product];
+}
+#pragma mark-Payments
+- (void)payWithClient:(NSString*)clientId
+           cardNumber:(NSString*)cardNumber
+           cardExpire: (NSString*)cardExpire
+              cardCcv:(NSString*)cardVerification
+              complte:(ControllerCompleteBlock)complete{
+    
+    NSDictionary *parameters = @{@"clientId": clientId,
+                                 @"cardNumber": cardNumber,
+                                 @"cardExpire": cardExpire,
+                                 @"cardCcv": cardVerification,
+                                 @"token":self.payMillPublicKey};
+    [PFCloud callFunctionInBackground:@"createPaymentByExistingClient" withParameters:parameters
+                                block:^(id object, NSError *error) {
+        complete(error);
+    } ];
+    
+}
+- (void)payWithAccHolder:(NSString*)accHolder
+                   email:(NSString*)email
+              cardNumber:(NSString*)cardNumber
+              cardExpire: (NSString*)cardExpire
+                 cardCcv:(NSString*)cardVerification
+                 complte:(ControllerCompleteBlock)complete{
+    
+    NSDictionary *parameters = @{@"accHolder": accHolder,
+                                 @"email": email,
+                                 @"cardNumber": cardNumber,
+                                 @"cardExpire": cardExpire,
+                                 @"cardCcv": cardVerification,
+                                 @"token":self.payMillPublicKey};
+    
+    [PFCloud callFunctionInBackground:@"createPaymentByNewClient" withParameters:parameters
+                                block:^(id object, NSError *error) {
+                                    complete(error);
+                                } ];
+    
 }
 @end

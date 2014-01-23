@@ -161,8 +161,8 @@
                     <navigationItem key="navigationItem" id="SCX-di-4X2"/>
                     <connections>
                         <outlet property="accHolder" destination="pfy-c2-0A8" id="AE8-IK-OXh"/>
+                        <outlet property="cardExpire" destination="AjB-EM-xhg" id="ixB-6U-TYy"/>
                         <outlet property="cardNumber" destination="3EK-76-jlc" id="wRj-QD-Qgc"/>
-                        <outlet property="cardValid" destination="AjB-EM-xhg" id="MMJ-Or-I5x"/>
                         <outlet property="cardVerification" destination="3Dc-za-Hgd" id="ukl-XV-isD"/>
                         <outlet property="clientSwitch" destination="hL9-av-v80" id="cK1-Hp-jyz"/>
                         <outlet property="email" destination="3TS-ZH-dCg" id="eE4-h1-llL"/>
@@ -281,6 +281,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PaymentViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="accHolder" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cardExpire" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardNumber" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardValid" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardVerification" candidateClass="UILabel"/>

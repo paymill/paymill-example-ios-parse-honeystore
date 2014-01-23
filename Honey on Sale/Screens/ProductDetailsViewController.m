@@ -55,7 +55,7 @@
 }
 // Add Selected Item To Cart
 - (IBAction)addToCart:(id)sender {
-    [[StoreController getInstance] addToCartProduct:self.product];
+    [[StoreController getInstance] addProductToCartd:self.product];
     NSString *msg = [NSString stringWithFormat:@"%@ has been added to your Cart.", self.product.name];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                             message:msg delegate:nil

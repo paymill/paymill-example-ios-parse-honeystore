@@ -21,7 +21,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *email;
 @property (nonatomic, weak) IBOutlet UILabel *cardNumber;
 @property (nonatomic, weak) IBOutlet UILabel *cardVerification;
-@property (nonatomic, weak) IBOutlet UILabel *cardValid;
+@property (nonatomic, weak) IBOutlet UILabel *cardExpire;
 @property (nonatomic, strong) NSString *selectedClientId;
 @property (nonatomic, weak) IBOutlet UISwitch *clientSwitch;
 @end
@@ -153,13 +153,35 @@
     
     self.cardNumber.text = [NSString stringWithFormat:@"N: %@",cardInfo.cardNumber];
     self.cardVerification.text = [NSString stringWithFormat:@"CCV: %@", cardInfo.cvv];
-    self.cardValid.text = [NSString stringWithFormat:@"Exp: %d/%d", cardInfo.expiryMonth, cardInfo.expiryYear];
+    self.cardExpire.text = [NSString stringWithFormat:@"Exp: %d/%d", cardInfo.expiryMonth, cardInfo.expiryYear];
     [paymentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark-
 - (void)payNow:(UIButton*)sender{
     [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    if(self.clientSwitch.isOn == NO){
+        [[StoreController getInstance] payWithClient: self.selectedClientId
+                                                    cardNumber: self.cardNumber.text
+                                                    cardExpire: self.cardExpire.text
+                                                       cardCcv: self.cardVerification.text
+                                        complte:^(NSError *error) {
+         NSLog(@"%@", error);
+         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        }];
+    }
+    else{
+        [[StoreController getInstance] payWithAccHolder: self.accHolder.text
+                                                  email: self.email.text
+                                          cardNumber: self.cardNumber.text
+                                          cardExpire: self.cardExpire.text
+                                             cardCcv: self.cardVerification.text
+                                             complte:^(NSError *error) {
+           NSLog(@"%@", error);
+           [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        }];
+    
+    }
 }
 - (IBAction)scanCard:(id)sender {
 	CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];

@@ -30,7 +30,20 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 // pull existing clients from backend
 - (void)pullClientsWithComplte:(ControllerCompleteBlock)complete;
 
-- (void)addToCartProduct:(Product*)product;
+- (void)addProductToCartd:(Product*)product;
+
+- (void)payWithClient:(NSString*)clientId
+           cardNumber:(NSString*)cardNumber
+           cardExpire: (NSString*)cardExpire
+              cardCcv:(NSString*)cardVerification
+              complte:(ControllerCompleteBlock)complete;
+
+- (void)payWithAccHolder:(NSString*)accHolder
+                   email:(NSString*)email
+           cardNumber:(NSString*)cardNumber
+           cardExpire: (NSString*)cardExpire
+              cardCcv:(NSString*)cardVerification
+              complte:(ControllerCompleteBlock)complete;
 
 + (StoreController*)getInstance;
 
