@@ -44,12 +44,14 @@
 		22560504188DD66000F0B637 /* PayMillSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22560503188DD66000F0B637 /* PayMillSDK.bundle */; };
 		22560508188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */; };
 		22560509188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */; };
-		229C189B18903D0200B8DBD0 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C189A18903D0200B8DBD0 /* CartViewController.m */; };
+		22966AF418919D2900481EE1 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22966AF318919D2900481EE1 /* libCardIO.a */; };
+		22966AF518919D2900481EE1 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22966AF318919D2900481EE1 /* libCardIO.a */; };
+		22966AF91891C0F800481EE1 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22966AF81891C0F800481EE1 /* PaymentViewController.m */; };
+		22966AFA1891C0F800481EE1 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22966AF81891C0F800481EE1 /* PaymentViewController.m */; };
+		22966AFB1891C2BB00481EE1 /* bee_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B2084056189180EA00A79D2C /* bee_icon.png */; };
 		229C189E18903D1400B8DBD0 /* CheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C189D18903D1400B8DBD0 /* CheckoutViewController.m */; };
 		B2084041189178F500A79D2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2084040189178F500A79D2C /* Default-568h@2x.png */; };
 		B2084042189178F500A79D2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2084040189178F500A79D2C /* Default-568h@2x.png */; };
-		B208404B1891791900A79D2C /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404A1891791900A79D2C /* libCardIO.a */; };
-		B208404C1891791A00A79D2C /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404A1891791900A79D2C /* libCardIO.a */; };
 		B208404E18917B8E00A79D2C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404D18917B8E00A79D2C /* AVFoundation.framework */; };
 		B208405018917BC700A79D2C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404F18917BC700A79D2C /* OpenGLES.framework */; };
 		B208405218917E0A00A79D2C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208405118917E0A00A79D2C /* CoreVideo.framework */; };
@@ -100,7 +102,7 @@
 		225604D418848E9B00F0B637 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		225604D718848E9B00F0B637 /* StoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreController.h; sourceTree = "<group>"; };
 		225604D818848E9B00F0B637 /* StoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreController.m; sourceTree = "<group>"; };
-		225604DF188493A800F0B637 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		225604DF188493A800F0B637 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		225604E21884A2EA00F0B637 /* product.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product.png; sourceTree = "<group>"; };
 		225604E31884A2EA00F0B637 /* product@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "product@2x.png"; sourceTree = "<group>"; };
 		225604EB188DC6FD00F0B637 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
@@ -116,23 +118,23 @@
 		22560503188DD66000F0B637 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = PayMillSDK.bundle; path = ../../PayMillSDK/PayMillSDK.bundle; sourceTree = "<group>"; };
 		22560506188DDB4F00F0B637 /* MLPAccessoryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAccessoryBadge.h; sourceTree = "<group>"; };
 		22560507188DDB4F00F0B637 /* MLPAccessoryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPAccessoryBadge.m; sourceTree = "<group>"; };
-		229C189918903D0200B8DBD0 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
-		229C189A18903D0200B8DBD0 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		22966AED18919D2900481EE1 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
+		22966AEE18919D2900481EE1 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		22966AEF18919D2900481EE1 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		22966AF018919D2900481EE1 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		22966AF118919D2900481EE1 /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
+		22966AF218919D2900481EE1 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
+		22966AF318919D2900481EE1 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
+		22966AF71891C0F800481EE1 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		22966AF81891C0F800481EE1 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		229C189C18903D1400B8DBD0 /* CheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutViewController.h; sourceTree = "<group>"; };
 		229C189D18903D1400B8DBD0 /* CheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutViewController.m; sourceTree = "<group>"; };
 		B2084040189178F500A79D2C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B20840441891791900A79D2C /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
-		B20840451891791900A79D2C /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
-		B20840461891791900A79D2C /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewController.h; sourceTree = "<group>"; };
-		B20840471891791900A79D2C /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
-		B20840481891791900A79D2C /* CardIOView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOView.h; sourceTree = "<group>"; };
-		B20840491891791900A79D2C /* CardIOViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
-		B208404A1891791900A79D2C /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
 		B208404D18917B8E00A79D2C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B208404F18917BC700A79D2C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B208405118917E0A00A79D2C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		B208405318917E3300A79D2C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		B2084056189180EA00A79D2C /* bee_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee_icon.png; sourceTree = "<group>"; };
+		B2084056189180EA00A79D2C /* bee_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bee_icon.png; path = ../../bee_icon.png; sourceTree = "<group>"; };
 		B2784A3F1860A4FB0057F064 /* Honey on Sale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey on Sale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2784A421860A4FB0057F064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2784A441860A4FB0057F064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -172,7 +174,6 @@
 				225604B61876F86C00F0B637 /* Security.framework in Frameworks */,
 				225604B21876F85400F0B637 /* MobileCoreServices.framework in Frameworks */,
 				225604B01876F84D00F0B637 /* libz.1.1.3.dylib in Frameworks */,
-				B208404B1891791900A79D2C /* libCardIO.a in Frameworks */,
 				225604AE1876F84000F0B637 /* CoreLocation.framework in Frameworks */,
 				B2784A451860A4FB0057F064 /* CoreGraphics.framework in Frameworks */,
 				225604AC1876F82B00F0B637 /* CFNetwork.framework in Frameworks */,
@@ -185,6 +186,7 @@
 				B2784A821883F8D70057F064 /* Parse.framework in Frameworks */,
 				B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */,
 				B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */,
+				22966AF418919D2900481EE1 /* libCardIO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +197,7 @@
 				B2784A681860A4FC0057F064 /* XCTest.framework in Frameworks */,
 				B2784A6A1860A4FC0057F064 /* UIKit.framework in Frameworks */,
 				B2784A691860A4FC0057F064 /* Foundation.framework in Frameworks */,
-				B208404C1891791A00A79D2C /* libCardIO.a in Frameworks */,
+				22966AF518919D2900481EE1 /* libCardIO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +227,8 @@
 		225604E11884A2EA00F0B637 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2084056189180EA00A79D2C /* bee_icon.png */,
+				225604DF188493A800F0B637 /* Default-568h@2x.png */,
 				22560503188DD66000F0B637 /* PayMillSDK.bundle */,
 				225604FE188DCF6600F0B637 /* honey-for-sale-sign.jpg */,
 				225604E21884A2EA00F0B637 /* product.png */,
@@ -239,7 +243,7 @@
 			children = (
 				229C18A018903D3800B8DBD0 /* Store */,
 				229C189F18903D2300B8DBD0 /* Login */,
-				229C189818903D0200B8DBD0 /* Cart */,
+				22966AF61891C0F800481EE1 /* Payment */,
 				225604EB188DC6FD00F0B637 /* ProductDetailsViewController.h */,
 				225604EC188DC6FD00F0B637 /* ProductDetailsViewController.m */,
 				229C189C18903D1400B8DBD0 /* CheckoutViewController.h */,
@@ -258,13 +262,27 @@
 			path = MLPAccessoryBadge;
 			sourceTree = "<group>";
 		};
-		229C189818903D0200B8DBD0 /* Cart */ = {
+		22966AEC18919D2900481EE1 /* CardIO */ = {
 			isa = PBXGroup;
 			children = (
-				229C189918903D0200B8DBD0 /* CartViewController.h */,
-				229C189A18903D0200B8DBD0 /* CartViewController.m */,
+				22966AED18919D2900481EE1 /* CardIO.h */,
+				22966AEE18919D2900481EE1 /* CardIOCreditCardInfo.h */,
+				22966AEF18919D2900481EE1 /* CardIOPaymentViewController.h */,
+				22966AF018919D2900481EE1 /* CardIOPaymentViewControllerDelegate.h */,
+				22966AF118919D2900481EE1 /* CardIOView.h */,
+				22966AF218919D2900481EE1 /* CardIOViewDelegate.h */,
+				22966AF318919D2900481EE1 /* libCardIO.a */,
 			);
-			path = Cart;
+			path = CardIO;
+			sourceTree = "<group>";
+		};
+		22966AF61891C0F800481EE1 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				22966AF71891C0F800481EE1 /* PaymentViewController.h */,
+				22966AF81891C0F800481EE1 /* PaymentViewController.m */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		229C189F18903D2300B8DBD0 /* Login */ = {
@@ -287,30 +305,14 @@
 			name = Store;
 			sourceTree = "<group>";
 		};
-		B20840431891791900A79D2C /* CardIO */ = {
-			isa = PBXGroup;
-			children = (
-				B20840441891791900A79D2C /* CardIO.h */,
-				B20840451891791900A79D2C /* CardIOCreditCardInfo.h */,
-				B20840461891791900A79D2C /* CardIOPaymentViewController.h */,
-				B20840471891791900A79D2C /* CardIOPaymentViewControllerDelegate.h */,
-				B20840481891791900A79D2C /* CardIOView.h */,
-				B20840491891791900A79D2C /* CardIOViewDelegate.h */,
-				B208404A1891791900A79D2C /* libCardIO.a */,
-			);
-			path = CardIO;
-			sourceTree = "<group>";
-		};
 		B2784A361860A4FB0057F064 = {
 			isa = PBXGroup;
 			children = (
-				B2084056189180EA00A79D2C /* bee_icon.png */,
-				225604DF188493A800F0B637 /* Default-568h@2x.png */,
 				B2784A481860A4FB0057F064 /* Honey on Sale */,
 				B2784A6D1860A4FC0057F064 /* Honey on SaleTests */,
 				B2784A491860A4FC0057F064 /* Supporting Files */,
 				B2084040189178F500A79D2C /* Default-568h@2x.png */,
-				B20840431891791900A79D2C /* CardIO */,
+				22966AEC18919D2900481EE1 /* CardIO */,
 				B2784A411860A4FB0057F064 /* Frameworks */,
 				B2784A401860A4FB0057F064 /* Products */,
 			);
@@ -495,6 +497,7 @@
 				B2084041189178F500A79D2C /* Default-568h@2x.png in Resources */,
 				225604E61884A2EA00F0B637 /* product@2x.png in Resources */,
 				225604FF188DCF6600F0B637 /* honey-for-sale-sign.jpg in Resources */,
+				22966AFB1891C2BB00481EE1 /* bee_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,8 +530,8 @@
 				225604F7188DC6FD00F0B637 /* StoreViewController.m in Sources */,
 				225604FC188DCBC900F0B637 /* LoginScreenViewController.m in Sources */,
 				22560508188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */,
-				229C189B18903D0200B8DBD0 /* CartViewController.m in Sources */,
 				229C189E18903D1400B8DBD0 /* CheckoutViewController.m in Sources */,
+				22966AF91891C0F800481EE1 /* PaymentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +548,7 @@
 				225604F8188DC6FD00F0B637 /* StoreViewController.m in Sources */,
 				225604FD188DCBC900F0B637 /* LoginScreenViewController.m in Sources */,
 				22560509188DDB4F00F0B637 /* MLPAccessoryBadge.m in Sources */,
+				22966AFA1891C0F800481EE1 /* PaymentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +672,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+					"\"$(SRCROOT)/CardIO\"",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -691,6 +696,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+					"\"$(SRCROOT)/CardIO\"",
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -718,6 +724,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+					"\"$(SRCROOT)/CardIO\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -741,6 +748,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/CardIO",
+					"\"$(SRCROOT)/CardIO\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

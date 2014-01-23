@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Acc Holder" minimumFontSize="17" id="pfy-c2-0A8">
-                                <rect key="frame" x="20" y="104" width="280" height="30"/>
+                                <rect key="frame" x="20" y="116" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -104,7 +104,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HPE-Cz-O7i">
-                                <rect key="frame" x="20" y="180" width="280" height="44"/>
+                                <rect key="frame" x="20" y="192" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Scan Card">
@@ -119,13 +119,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="3TS-ZH-dCg">
-                                <rect key="frame" x="20" y="142" width="280" height="30"/>
+                                <rect key="frame" x="20" y="154" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Card Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3EK-76-jlc">
-                                <rect key="frame" x="26" y="241" width="274" height="30"/>
+                                <rect key="frame" x="26" y="253" width="274" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -133,7 +133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MM/YY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AjB-EM-xhg">
-                                <rect key="frame" x="26" y="273" width="134" height="30"/>
+                                <rect key="frame" x="26" y="285" width="134" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -141,13 +141,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CVV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Dc-za-Hgd">
-                                <rect key="frame" x="163" y="273" width="137" height="30"/>
+                                <rect key="frame" x="163" y="285" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="hL9-av-v80">
+                                <rect key="frame" x="110" y="81" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onNewClientSwitch:" destination="h1f-Bm-9jl" eventType="valueChanged" id="nSW-oD-5jr"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -157,6 +164,7 @@
                         <outlet property="cardNumber" destination="3EK-76-jlc" id="wRj-QD-Qgc"/>
                         <outlet property="cardValid" destination="AjB-EM-xhg" id="MMJ-Or-I5x"/>
                         <outlet property="cardVerification" destination="3Dc-za-Hgd" id="ukl-XV-isD"/>
+                        <outlet property="clientSwitch" destination="hL9-av-v80" id="cK1-Hp-jyz"/>
                         <outlet property="email" destination="3TS-ZH-dCg" id="eE4-h1-llL"/>
                         <outlet property="existingClient" destination="d2i-LJ-YeE" id="PIB-Ls-gej"/>
                     </connections>
@@ -276,6 +284,7 @@
                 <relationship kind="outlet" name="cardNumber" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardValid" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardVerification" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="clientSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="clientsPicker" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="existingClient" candidateClass="UITextField"/>
