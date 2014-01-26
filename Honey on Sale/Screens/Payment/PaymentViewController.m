@@ -17,7 +17,7 @@
 @interface PaymentViewController ()
 
 @property (nonatomic, weak) IBOutlet UITextField *existingClient;
-@property (nonatomic, strong) UIPickerView *clientsPicker;
+@property (nonatomic, strong) UIPickerView *paymentsPicker;
 @property (nonatomic, weak) IBOutlet UITextField *accHolder;
 @property (nonatomic, weak) IBOutlet UITextField *email;
 @property (nonatomic, weak) IBOutlet UILabel *cardNumber;
@@ -44,18 +44,18 @@
                                         initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
                                         target:self action:@selector(payNow:)];
     self.navigationItem.rightBarButtonItem = checkoutButton;
-    self.clientsPicker = [[UIPickerView alloc] init];
-    self.clientsPicker.dataSource = self;
-    self.clientsPicker.delegate = self;
-    self.clientsPicker.showsSelectionIndicator = YES;
+    self.paymentsPicker = [[UIPickerView alloc] init];
+    self.paymentsPicker.dataSource = self;
+    self.paymentsPicker.delegate = self;
+    self.paymentsPicker.showsSelectionIndicator = YES;
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                    target:self action:@selector(selectDidFinish:)];
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     [toolbar setItems: [NSArray arrayWithObject:doneButton]];
     
-    [self.clientsPicker selectedRowInComponent:0];
-    [self.existingClient setInputView:self.clientsPicker];
+    [self.paymentsPicker selectedRowInComponent:0];
+    [self.existingClient setInputView:self.paymentsPicker];
     self.existingClient.inputAccessoryView = toolbar;
     self.existingClient.delegate = self;
     self.accHolder.text = [PFUser currentUser].username;
@@ -66,11 +66,12 @@
 {
     [super viewDidAppear:animated];
 	[MBProgressHUD showHUDAddedTo:self.view animated:NO];
-	[[StoreController getInstance] pullClientPaymentsWithComplte:^(NSError *error) {
+	[[StoreController getInstance] getPaymentsWithComplte:^(NSError *error) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        [self.clientsPicker reloadAllComponents];
-        
+        [self.paymentsPicker reloadAllComponents];
     }];
+    self.total.text = [NSString stringWithFormat:@"Total: %d.%d", [[StoreController getInstance] getTotal]/ 100,
+                       [[StoreController getInstance] getTotal] %100 ];
 	
 }
 

@@ -47,7 +47,7 @@
 	if (self.product) {
 		self.navigationItem.title = self.product.name;
 	    self.descriptionView.text = self.product.description;
-		self.amountLabel.text = [NSString stringWithFormat:@"%.2f %@", self.product.amount, self.product.currency];
+		self.amountLabel.text = [NSString stringWithFormat:@"%d.%d %@", self.product.amount/100, self.product.amount%100, self.product.currency];
 		UIImage *image = [UIImage imageWithData:self.product.imageData];
 		self.imageView.image = image;
 	}

@@ -26,10 +26,13 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 @property (nonatomic, strong) NSString *payMillClientId;
 
 // pull items for sale from backend
-- (void)pullItemsWithComplte:(ControllerCompleteBlock)complete;
+- (void)getItemsWithComplte:(ControllerCompleteBlock)complete;
 
 // pull existing payments for current user from backend
-- (void)pullClientPaymentsWithComplte:(ControllerCompleteBlock)complete;
+- (void)getPaymentsWithComplte:(ControllerCompleteBlock)complete;
+
+/*get total in cents*/
+- (int)getTotal;
 
 - (void)addProductToCartd:(Product*)product;
 

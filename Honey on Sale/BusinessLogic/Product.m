@@ -18,7 +18,7 @@
     result.currency = [dict objectForKey:@"currency"];
     result.description = [dict objectForKey:@"descrition"];
     result.Id = [dict objectForKey:@"objectId"];
-    result.amount = [[dict objectForKey:@"amount"] floatValue];
+    result.amount = [[dict objectForKey:@"amount"] doubleValue] * 100;
     PFFile *image = [dict objectForKey:@"image"];
     
 	if(image){

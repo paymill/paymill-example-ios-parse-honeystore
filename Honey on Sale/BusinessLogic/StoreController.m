@@ -58,13 +58,22 @@ StoreController *instance;
 	return result;
 	
 }
-- (void)pullPaymentsWithComplte:(ControllerCompleteBlock)complete{
+/*get total in cents*/
+- (int)getTotal{
+    int result = 0;
+    for (Product *product in self.itemsInCard) {
+        result += product.amount;
+    }
+    return result;
+}
+#pragma mark- Get Items from Parse
+- (void)getPaymentsWithComplte:(ControllerCompleteBlock)complete{
 	
     if(self.payments == Nil){
         self.payments = [[NSMutableArray alloc] init];
     }
     [self.payments removeAllObjects];
-    NSDictionary *parameters = @{@"clientId": self.payMillClientId};
+    NSDictionary *parameters = @{@"paymillClientId": self.payMillClientId};
                                  
     [PFCloud callFunctionInBackground:@"getPayments" withParameters:parameters
                                 block:^(id object, NSError *error) {
@@ -80,7 +89,7 @@ StoreController *instance;
                                   complete(error);
      } ];
  }
-- (void)pullItemsWithComplte:(ControllerCompleteBlock)complete{
+- (void)getItemsWithComplte:(ControllerCompleteBlock)complete{
 
 	PFQuery *query = [PFQuery queryWithClassName:@"ItemForSale"];
     if(self.products == Nil){

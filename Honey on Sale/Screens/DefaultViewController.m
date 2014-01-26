@@ -80,14 +80,18 @@ static NSString *ParseClientKey = @"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r";
                             [notAuthorized show];
                         }
                     }];
+    [StoreController getInstance].payMillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
+
 }
 #pragma mark- PFSignUpViewControllerDelegate
+- (void)dismisssSingUpController{
+}
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user{
-    [signUpController dismissViewControllerAnimated:YES completion:^{
+     [signUpController dismissViewControllerAnimated:YES completion:^{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign up successful"
                                                         message:@"Sign up successful, please use your credentials to login." delegate:nil
                                               cancelButtonTitle:@"OK" otherButtonTitles:nil];
-         [alert show];
+        [alert show];
     }];
 }
 #pragma mark- PFLogInViewControllerDelegate

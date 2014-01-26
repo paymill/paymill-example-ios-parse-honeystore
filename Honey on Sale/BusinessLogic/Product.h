@@ -16,7 +16,7 @@
 @property(nonatomic,strong) NSString* Id;
 @property(nonatomic,strong) NSString* name;
 @property(nonatomic,strong) NSString* currency;
-@property(nonatomic,assign) CGFloat amount;
+@property(nonatomic,assign) int amount;
 @property(nonatomic,strong) NSData* imageData;
 @property(nonatomic,strong) NSString* description;
 

@@ -54,7 +54,7 @@
 
 - (void)refreshObjects:(id)sender{
     [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-    [[StoreController getInstance] pullItemsWithComplte:^(NSError *error) {
+    [[StoreController getInstance] getItemsWithComplte:^(NSError *error) {
         
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.productsTable reloadData];

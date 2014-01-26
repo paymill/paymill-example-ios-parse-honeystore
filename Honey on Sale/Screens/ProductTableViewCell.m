@@ -94,8 +94,7 @@
 
     self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.previewImageView.image = [UIImage imageWithData:product.imageData];
-    
-    self.priceLabel.text = [NSString stringWithFormat:@"%.2f %@", product.amount, product.currency];
+    self.priceLabel.text = [NSString stringWithFormat:@"%d.%d %@", product.amount/100,  product.amount%100, product.currency];
 
     self.textLabel.text = product.name;
     self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0f];
