@@ -15,7 +15,7 @@
 @interface StoreController()
 
 @property (strong, nonatomic) NSMutableArray *products;
-@property (strong, nonatomic) NSMutableArray *clients;
+@property (strong, nonatomic) NSMutableArray *payments;
 
 @end
 
@@ -25,9 +25,7 @@
 - (StoreController*)init{
 	if(self = [super init]){
         // Init Parse Library
-		[Parse setApplicationId:@"uii9EaqHnJ5fiez0hZOgc5KdIz5Fw9uIXIn24SMY"
-					  clientKey:@"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r"];
-        
+       
         _itemsInCard = [[NSMutableArray alloc] init];
         return self;
 	}
@@ -42,38 +40,46 @@ StoreController *instance;
 	}
 	return instance;
 }
-- (NSArray*)getClients{
-    return self.clients;
+- (NSArray*)getPayments{
+    return self.payments;
 }
 - (NSArray*)getProducts{
     return self.products;
 }
-- (PMClient*)parseClient:(PFObject*)parseObject{
+- (PMPayment*)parsePayment:(PFObject*)parseObject{
 	
-	PMClient *result = [[PMClient alloc] init];
-	result.description = [parseObject objectForKey:@"description"];
-    result.email = [parseObject objectForKey:@"Email"];
-    result.id = [parseObject objectForKey:@"clientId"];
-   	
+	PMPayment *result = [[PMPayment alloc] init];
+	result.type = [parseObject objectForKey:@"type"];
+    result.card_type = [parseObject objectForKey:@"card_type"];
+    result.id = [parseObject objectForKey:@"id"];
+    result.expire_month = [parseObject objectForKey:@"expire_month"];
+    result.expire_year = [parseObject objectForKey:@"expire_year"];
+    result.last4 = [parseObject objectForKey:@"last4"];
 	return result;
 	
 }
-- (void)pullClientsWithComplte:(ControllerCompleteBlock)complete{
+- (void)pullPaymentsWithComplte:(ControllerCompleteBlock)complete{
 	
-	PFQuery *query = [PFQuery queryWithClassName:@"Client"];
-    if(self.clients == Nil){
-        self.clients = [[NSMutableArray alloc] init];
+    if(self.payments == Nil){
+        self.payments = [[NSMutableArray alloc] init];
     }
-    [self.clients removeAllObjects];
-    
-	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-		for (PFObject *obj in objects) {
-            PMClient* product = [self parseClient:obj];
-            [self.clients addObject:product];
-        }
-        complete(error);
-	}];
-}
+    [self.payments removeAllObjects];
+    NSDictionary *parameters = @{@"clientId": self.payMillClientId};
+                                 
+    [PFCloud callFunctionInBackground:@"getPayments" withParameters:parameters
+                                block:^(id object, NSError *error) {
+                                    
+                                    if(error == nil){
+                                        NSArray *payments = (NSArray*)object;
+                                        for (PFObject *obj in payments) {
+                                            PMPayment* pmPayment = [self parsePayment:obj];
+                                            [self.payments addObject:pmPayment];
+                                        }
+
+                                    }
+                                  complete(error);
+     } ];
+ }
 - (void)pullItemsWithComplte:(ControllerCompleteBlock)complete{
 
 	PFQuery *query = [PFQuery queryWithClassName:@"ItemForSale"];

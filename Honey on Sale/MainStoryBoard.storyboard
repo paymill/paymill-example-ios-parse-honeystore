@@ -6,34 +6,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Login Screen View Controller-->
+        <!--Default View Controller-->
         <scene sceneID="qH2-ag-TNw">
             <objects>
-                <viewController id="zet-Fr-R3c" customClass="LoginScreenViewController" sceneMemberID="viewController">
+                <viewController id="zet-Fr-R3c" customClass="DefaultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvB-CI-riB">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="honey-for-sale-sign.jpg" id="ign-K1-Wse">
-                                <rect key="frame" x="0.0" y="-58" width="320" height="562"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcN-xo-Wnc">
-                                <rect key="frame" x="81" y="290" width="143" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Login:" destination="zet-Fr-R3c" eventType="touchUpInside" id="OPX-EV-vfS"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZQA-WE-GdI"/>
@@ -77,37 +56,44 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Acc Holder" minimumFontSize="17" id="pfy-c2-0A8">
-                                <rect key="frame" x="20" y="116" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Acc Holder" minimumFontSize="17" id="pfy-c2-0A8">
+                                <rect key="frame" x="20" y="64" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Existing Client" minimumFontSize="17" id="d2i-LJ-YeE">
-                                <rect key="frame" x="20" y="46" width="280" height="30"/>
+                                <rect key="frame" x="20" y="173" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Existing Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XeF-A9-Q3M">
-                                <rect key="frame" x="20" y="20" width="124" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose existing card" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XeF-A9-Q3M">
+                                <rect key="frame" x="20" y="149" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Client" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="84E-7N-XH5">
-                                <rect key="frame" x="20" y="84" width="103" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Card Holder Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m29-xG-0M5">
+                                <rect key="frame" x="20" y="35" width="140" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q8p-m0-RtR">
+                                <rect key="frame" x="184" y="11" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HPE-Cz-O7i">
-                                <rect key="frame" x="20" y="192" width="280" height="44"/>
+                                <rect key="frame" x="17" y="235" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Scan Card">
+                                <state key="normal" title="Scan new card">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -118,14 +104,14 @@
                                     <action selector="scanCard:" destination="h1f-Bm-9jl" eventType="touchUpInside" id="MeV-Pc-e5g"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="3TS-ZH-dCg">
-                                <rect key="frame" x="20" y="154" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="3TS-ZH-dCg">
+                                <rect key="frame" x="20" y="102" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Card Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3EK-76-jlc">
-                                <rect key="frame" x="26" y="253" width="274" height="30"/>
+                                <rect key="frame" x="20" y="297" width="274" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -133,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MM/YY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AjB-EM-xhg">
-                                <rect key="frame" x="26" y="285" width="134" height="30"/>
+                                <rect key="frame" x="20" y="329" width="134" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -141,20 +127,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CVV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Dc-za-Hgd">
-                                <rect key="frame" x="163" y="285" width="137" height="30"/>
+                                <rect key="frame" x="157" y="329" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="hL9-av-v80">
-                                <rect key="frame" x="110" y="81" width="79" height="27"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zKY-e7-RrL">
+                                <rect key="frame" x="20" y="211" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onNewClientSwitch:" destination="h1f-Bm-9jl" eventType="valueChanged" id="nSW-oD-5jr"/>
-                                </connections>
-                            </switch>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -164,14 +150,13 @@
                         <outlet property="cardExpire" destination="AjB-EM-xhg" id="ixB-6U-TYy"/>
                         <outlet property="cardNumber" destination="3EK-76-jlc" id="wRj-QD-Qgc"/>
                         <outlet property="cardVerification" destination="3Dc-za-Hgd" id="ukl-XV-isD"/>
-                        <outlet property="clientSwitch" destination="hL9-av-v80" id="cK1-Hp-jyz"/>
                         <outlet property="email" destination="3TS-ZH-dCg" id="eE4-h1-llL"/>
                         <outlet property="existingClient" destination="d2i-LJ-YeE" id="PIB-Ls-gej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8c-bN-2lk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="-86"/>
+            <point key="canvasLocation" x="-310" y="-76"/>
         </scene>
         <!--Product Details View Controller - Order-->
         <scene sceneID="Qpo-Oq-aT5">
@@ -261,9 +246,6 @@
             <point key="canvasLocation" x="-623" y="-910"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="honey-for-sale-sign.jpg" width="600" height="400"/>
-    </resources>
     <classes>
         <class className="CheckoutViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckoutViewController.h"/>
@@ -271,8 +253,8 @@
                 <relationship kind="outlet" name="numberBadge" candidateClass="MLPAccessoryBadge"/>
             </relationships>
         </class>
-        <class className="LoginScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginScreenViewController.h"/>
+        <class className="DefaultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DefaultViewController.h"/>
         </class>
         <class className="MLPAccessoryBadge" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MLPAccessoryBadge.h"/>
@@ -283,12 +265,10 @@
                 <relationship kind="outlet" name="accHolder" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="cardExpire" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cardValid" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="cardVerification" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="clientSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="clientsPicker" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="existingClient" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="total" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ProductDetailsViewController" superclassName="CheckoutViewController">

@@ -12,6 +12,7 @@
 #import "CardIOPaymentViewController.h"
 #import "CardIOCreditCardInfo.h"
 #import <PayMillSDK/PMClient.h>
+#import <Parse/PFUser.h>
 
 @interface PaymentViewController ()
 
@@ -22,8 +23,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *cardNumber;
 @property (nonatomic, weak) IBOutlet UILabel *cardVerification;
 @property (nonatomic, weak) IBOutlet UILabel *cardExpire;
+@property (nonatomic, weak) IBOutlet UILabel *total;
 @property (nonatomic, strong) NSString *selectedClientId;
-@property (nonatomic, weak) IBOutlet UISwitch *clientSwitch;
 @end
 
 #define CARDIO_TOKEN @"2bcc1401544a4e24b6036b4fda84000f"
@@ -57,26 +58,21 @@
     [self.existingClient setInputView:self.clientsPicker];
     self.existingClient.inputAccessoryView = toolbar;
     self.existingClient.delegate = self;
-    self.accHolder.delegate = self;
-    self.email.delegate = self;
-    
-    [self.clientSwitch setOn:NO];
-    self.accHolder.enabled = NO;
-    self.email.enabled = NO;
+    self.accHolder.text = [PFUser currentUser].username;
+    self.email.text = [PFUser currentUser].email;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 	[MBProgressHUD showHUDAddedTo:self.view animated:NO];
-	[[StoreController getInstance] pullClientsWithComplte:^(NSError *error) {
+	[[StoreController getInstance] pullClientPaymentsWithComplte:^(NSError *error) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.clientsPicker reloadAllComponents];
         
     }];
 	
 }
-
 
 - (void)selectDidFinish:(id)sender {
     [self.existingClient resignFirstResponder];
@@ -85,23 +81,7 @@
     [textField resignFirstResponder];
     return YES;
 }
-#pragma mark- UISwitch
-- (IBAction)onNewClientSwitch:(id)sender {
-    UISwitch *clientsSwitch = (UISwitch*)sender;
 
-    self.accHolder.enabled = clientsSwitch.isOn;
-    self.email.enabled = clientsSwitch.isOn;
-
-    if(clientsSwitch.isOn){
-        [self.clientsPicker selectRow:0 inComponent:0 animated:NO];
-        self.existingClient.text = @"";
-        [self.accHolder becomeFirstResponder];
-    }
-        
-    self.accHolder.text = @"";
-    self.email.text = @"";
-    
-}
 
 #pragma mark- UIPickerView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -111,24 +91,23 @@
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return [[StoreController getInstance].Clients count] + 1;
+    return [[StoreController getInstance].Payments count] + 1;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if(row == 0){
-        return @"Select Client";
+        return @"Select Card";
     }
-    PMClient *client = [[StoreController getInstance].Clients objectAtIndex:row-1];
+    PMClient *client = [[StoreController getInstance].Payments objectAtIndex:row-1];
     return client.description;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if(row > 0){
-        PMClient *client = [[StoreController getInstance].Clients objectAtIndex:row-1];
+        PMClient *client = [[StoreController getInstance].Payments objectAtIndex:row-1];
         self.selectedClientId = client.id;
         self.existingClient.text = client.description;
         self.accHolder.text = client.description;
         self.email.text = client.email;
-        [self.clientSwitch setOn:NO];
     }
     else {
         self.selectedClientId = nil;
@@ -160,7 +139,7 @@
 #pragma mark-
 - (void)payNow:(UIButton*)sender{
     [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-    if(self.clientSwitch.isOn == NO){
+   /* if(self.clientSwitch.isOn == NO){
         [[StoreController getInstance] payWithClient: self.selectedClientId
                                                     cardNumber: self.cardNumber.text
                                                     cardExpire: self.cardExpire.text
@@ -181,7 +160,7 @@
            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         }];
     
-    }
+    } */
 }
 - (IBAction)scanCard:(id)sender {
 	CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
