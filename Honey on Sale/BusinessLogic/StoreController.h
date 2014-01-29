@@ -34,6 +34,8 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 /*get total in cents*/
 - (int)getTotal;
 
+/* cart methods*/
+- (void)clearCart;
 - (void)addProductToCartd:(Product*)product;
 
 - (void)payWithClient:(NSString*)clientId

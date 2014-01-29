@@ -13,6 +13,9 @@
 #import "CardIOCreditCardInfo.h"
 #import <PayMillSDK/PMClient.h>
 #import <Parse/PFUser.h>
+#import <Parse/PFCloud.h>
+#import <PayMillSDK/PMFactory.h>
+#import <PayMillSDK/PMManager.h>
 
 @interface PaymentViewController ()
 
@@ -24,7 +27,10 @@
 @property (nonatomic, weak) IBOutlet UILabel *cardVerification;
 @property (nonatomic, weak) IBOutlet UILabel *cardExpire;
 @property (nonatomic, weak) IBOutlet UILabel *total;
-@property (nonatomic, strong) NSString *selectedClientId;
+@property (nonatomic, weak) IBOutlet NSString *cardExpireMonth;
+@property (nonatomic, weak) IBOutlet NSString *cardExpireYear;
+
+@property (nonatomic, strong) NSString *existingPaymentId;
 @end
 
 #define CARDIO_TOKEN @"2bcc1401544a4e24b6036b4fda84000f"
@@ -99,24 +105,19 @@
     if(row == 0){
         return @"Select Card";
     }
-    PMClient *client = [[StoreController getInstance].Payments objectAtIndex:row-1];
-    return client.description;
+    PMPayment *payment = [[StoreController getInstance].Payments objectAtIndex:row-1];
+    return payment.last4;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    if(row > 0){
-        PMClient *client = [[StoreController getInstance].Payments objectAtIndex:row-1];
-        self.selectedClientId = client.id;
-        self.existingClient.text = client.description;
-        self.accHolder.text = client.description;
-        self.email.text = client.email;
-    }
-    else {
-        self.selectedClientId = nil;
-        self.existingClient.text = @"";
-        self.accHolder.text = @"";
-        self.email.text = @"";
-    }
-    [self.existingClient resignFirstResponder];
+    
+    PMPayment *payment = [[StoreController getInstance].Payments objectAtIndex:row-1];
+    self.cardNumber.text = payment.last4;
+    self.cardVerification.text = payment.code;
+    self.cardExpire.text = [NSString stringWithFormat:@"Exp: %@/%@", payment.expire_month, payment.expire_year];
+    self.cardExpireMonth = payment.expire_month;
+    self.cardExpireYear = payment.expire_year;
+    self.existingPaymentId = payment.id;
+   [self.existingClient resignFirstResponder];
     
 }
 #pragma mark- CardIO
@@ -134,34 +135,97 @@
     self.cardNumber.text = [NSString stringWithFormat:@"N: %@",cardInfo.cardNumber];
     self.cardVerification.text = [NSString stringWithFormat:@"CCV: %@", cardInfo.cvv];
     self.cardExpire.text = [NSString stringWithFormat:@"Exp: %d/%d", cardInfo.expiryMonth, cardInfo.expiryYear];
+    self.cardExpireMonth = [NSString stringWithFormat:@"%d", cardInfo.expiryMonth];
+    self.cardExpireYear = [NSString stringWithFormat:@"%d", cardInfo.expiryYear];
+    self.existingPaymentId = nil;
     [paymentViewController dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 #pragma mark-
-- (void)payNow:(UIButton*)sender{
-    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-   /* if(self.clientSwitch.isOn == NO){
-        [[StoreController getInstance] payWithClient: self.selectedClientId
-                                                    cardNumber: self.cardNumber.text
-                                                    cardExpire: self.cardExpire.text
-                                                       cardCcv: self.cardVerification.text
-                                        complte:^(NSError *error) {
-         NSLog(@"%@", error);
-         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        }];
-    }
-    else{
-        [[StoreController getInstance] payWithAccHolder: self.accHolder.text
-                                                  email: self.email.text
-                                          cardNumber: self.cardNumber.text
-                                          cardExpire: self.cardExpire.text
-                                             cardCcv: self.cardVerification.text
-                                             complte:^(NSError *error) {
-           NSLog(@"%@", error);
-           [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        }];
+- (void)createTransactionWithToken:(NSString*)token amount:(NSString*)amount currency:(NSString*)currency descrition:(NSString*)descrition{
     
-    } */
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:token forKey:@"token"];
+    [parameters setObject:amount forKey:@"amount"];
+    [parameters setObject:currency forKey:@"currency"];
+    [parameters setObject:descrition forKey:@"descrition"];
+    
+    [PFCloud callFunctionInBackground:@"createTransactionWithToken" withParameters:parameters
+                                block:^(id object, NSError *error) {
+                                    
+                                    if(error == nil){
+                                        [[StoreController getInstance] clearCart];
+                                        NSString *msg = @"Payment has been successfull.";
+                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                                                        message:msg delegate:nil
+                                                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                        [alert show];
+                                    }
+                                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                } ];
+
+}
+- (void)createTransactionWithPayment:(NSString*)paymentId amount:(NSString*)amount currency:(NSString*)currency descrition:(NSString*)descrition{
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:paymentId forKey:@"paymillPaymentId"];
+    [parameters setObject:amount forKey:@"amount"];
+    [parameters setObject:currency forKey:@"currency"];
+    [parameters setObject:descrition forKey:@"descrition"];
+    
+    [PFCloud callFunctionInBackground:@"createTransactionWithPayment" withParameters:parameters
+                                block:^(id object, NSError *error) {
+                                    
+                                    if(error == nil){
+                                        [[StoreController getInstance] clearCart];
+                                        NSString *msg = @"Payment has been successfull.";
+                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                                                        message:msg delegate:nil
+                                                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                        [alert show];
+                                        
+                                    }
+                                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                } ];
+    
+}
+- (void)payNow:(UIButton*)sender{
+    NSString *amount = [NSString stringWithFormat:@"%d", [[StoreController getInstance] getTotal]];
+    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    if(self.existingPaymentId != nil){
+        [self createTransactionWithPayment:self.existingPaymentId amount:amount currency:@"EUR" descrition:@"Descrition"];
+    }
+    else
+    {
+        PMError *error;
+        PMPaymentParams *params;
+        // 1. generate paymill payment method
+        id paymentMethod = [PMFactory genCardPaymentWithAccHolder:self.accHolder.text
+                                                       cardNumber:self.cardNumber.text
+                                                      expiryMonth:self.cardExpireMonth
+                                                       expiryYear:self.cardExpireYear
+                                                     verification:self.cardVerification.text
+                                                            error:&error];
+        if(!error) {
+            // 2. generate params
+            params = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:[[StoreController getInstance] getTotal]
+                                                 description:@"Description" error:&error];
+        }
+        
+        if(!error) {
+            // 3. generate token
+            [PMManager generateTokenWithMethod:paymentMethod parameters:params success:^(NSString *token) {
+                //token successfully created
+                [self createTransactionWithToken:token amount:amount currency:@"EUR" descrition:@"Descrition"];
+            }
+                                       failure:^(PMError *error) {
+                                           //token generation failed
+                                           [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                       }];  
+        }
+    }
+
 }
 - (IBAction)scanCard:(id)sender {
 	CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];

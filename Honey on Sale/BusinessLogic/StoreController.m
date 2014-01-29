@@ -105,7 +105,10 @@ StoreController *instance;
         complete(error);
 	}];
 }
-
+#pragma mark-
+- (void)clearCart{
+    [self.itemsInCard removeAllObjects];
+}
 - (void)addProductToCartd:(Product*)product{
     [self.itemsInCard addObject:product];
 }
