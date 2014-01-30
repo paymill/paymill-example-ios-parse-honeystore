@@ -27,9 +27,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *cardVerification;
 @property (nonatomic, weak) IBOutlet UILabel *cardExpire;
 @property (nonatomic, weak) IBOutlet UILabel *total;
-@property (nonatomic, weak) IBOutlet NSString *cardExpireMonth;
-@property (nonatomic, weak) IBOutlet NSString *cardExpireYear;
-
+@property (nonatomic, strong) NSString *cardExpireMonth;
+@property (nonatomic, strong) NSString *cardExpireYear;
 @property (nonatomic, strong) NSString *existingPaymentId;
 @end
 
@@ -201,6 +200,7 @@
         PMError *error;
         PMPaymentParams *params;
         // 1. generate paymill payment method
+        NSLog(@"%@ %@ %@ %@ %@ ", self.accHolder.text, self.cardNumber.text, self.cardExpireMonth, self.cardExpireYear, self.cardVerification.text);
         id paymentMethod = [PMFactory genCardPaymentWithAccHolder:self.accHolder.text
                                                        cardNumber:self.cardNumber.text
                                                       expiryMonth:self.cardExpireMonth
@@ -221,9 +221,15 @@
             }
                                        failure:^(PMError *error) {
                                            //token generation failed
+                                           NSLog(@"Generate Token Error %@", error.message);
                                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                        }];  
         }
+        else{
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            NSLog(@"GenCardPayment Error %@", error.message);
+        }
+        
     }
 
 }

@@ -69,7 +69,7 @@ static NSString *ParseClientKey = @"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r";
  */
 
 - (void)initPayMill{
-    [PMManager initWithTestMode:NO merchantPublicKey:PayMillPublicKey
+    [PMManager initWithTestMode:YES merchantPublicKey:PayMillPublicKey
                     newDeviceId:nil init:^(BOOL success, PMError *error) {
                         if(success){
                             [self performSegueWithIdentifier:@"GoToStoreSeque" sender:self];

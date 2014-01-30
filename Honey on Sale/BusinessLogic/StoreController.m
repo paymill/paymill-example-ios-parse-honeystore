@@ -86,6 +86,9 @@ StoreController *instance;
                                         }
 
                                     }
+                                    else {
+                                        NSLog(@"Error %@", error.localizedDescription);
+                                    }
                                   complete(error);
      } ];
  }
