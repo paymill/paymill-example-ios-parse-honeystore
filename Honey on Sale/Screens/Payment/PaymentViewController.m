@@ -202,15 +202,15 @@
         // 1. generate paymill payment method
         NSLog(@"%@ %@ %@ %@ %@ ", self.accHolder.text, self.cardNumber.text, self.cardExpireMonth, self.cardExpireYear, self.cardVerification.text);
         id paymentMethod = [PMFactory genCardPaymentWithAccHolder:self.accHolder.text
-                                                       cardNumber:self.cardNumber.text
+                                                       cardNumber:@"5500000000000004"//self.cardNumber.text
                                                       expiryMonth:self.cardExpireMonth
                                                        expiryYear:self.cardExpireYear
                                                      verification:self.cardVerification.text
                                                             error:&error];
         if(!error) {
             // 2. generate params
-            params = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:[[StoreController getInstance] getTotal]
-                                                 description:@"Description" error:&error];
+            params = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:150 //[[StoreController getInstance] getTotal]
+                                                 description:@"3DS Test" error:&error];
         }
         
         if(!error) {
