@@ -19,16 +19,18 @@
 
 @interface PaymentViewController ()
 
-@property (nonatomic, weak) IBOutlet UITextField *existingClient;
-@property (nonatomic, strong) UIPickerView *paymentsPicker;
-@property (nonatomic, weak) IBOutlet UITextField *accHolder;
-@property (nonatomic, weak) IBOutlet UITextField *email;
-@property (nonatomic, weak) IBOutlet UILabel *cardNumber;
-@property (nonatomic, weak) IBOutlet UILabel *cardVerification;
-@property (nonatomic, weak) IBOutlet UILabel *cardExpire;
-@property (nonatomic, weak) IBOutlet UILabel *total;
+@property (nonatomic, weak) IBOutlet UITextField *existingClientTextField;
+@property (nonatomic, strong) UIPickerView *paymentsPickerView;
+@property (nonatomic, weak) IBOutlet UITextField *accHolderTextField;
+@property (nonatomic, weak) IBOutlet UITextField *emailTextField;
+@property (nonatomic, weak) IBOutlet UILabel *cardNumberLabel;
+@property (nonatomic, weak) IBOutlet UILabel *cardVerificationLabel;
+@property (nonatomic, weak) IBOutlet UILabel *cardExpireLabel;
+@property (nonatomic, weak) IBOutlet UILabel *totalLabel;
 @property (nonatomic, strong) NSString *cardExpireMonth;
 @property (nonatomic, strong) NSString *cardExpireYear;
+@property (nonatomic, strong) NSString *cardCvv;
+@property (nonatomic, strong) NSString *cardNumber;
 @property (nonatomic, strong) NSString *existingPaymentId;
 @end
 
@@ -49,22 +51,22 @@
                                         initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
                                         target:self action:@selector(payNow:)];
     self.navigationItem.rightBarButtonItem = checkoutButton;
-    self.paymentsPicker = [[UIPickerView alloc] init];
-    self.paymentsPicker.dataSource = self;
-    self.paymentsPicker.delegate = self;
-    self.paymentsPicker.showsSelectionIndicator = YES;
+    self.paymentsPickerView = [[UIPickerView alloc] init];
+    self.paymentsPickerView.dataSource = self;
+    self.paymentsPickerView.delegate = self;
+    self.paymentsPickerView.showsSelectionIndicator = YES;
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                    target:self action:@selector(selectDidFinish:)];
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     [toolbar setItems: [NSArray arrayWithObject:doneButton]];
     
-    [self.paymentsPicker selectedRowInComponent:0];
-    [self.existingClient setInputView:self.paymentsPicker];
-    self.existingClient.inputAccessoryView = toolbar;
-    self.existingClient.delegate = self;
-    self.accHolder.text = [PFUser currentUser].username;
-    self.email.text = [PFUser currentUser].email;
+    [self.paymentsPickerView selectedRowInComponent:0];
+    [self.existingClientTextField setInputView:self.paymentsPickerView];
+    self.existingClientTextField.inputAccessoryView = toolbar;
+    self.existingClientTextField.delegate = self;
+    self.accHolderTextField.text = [PFUser currentUser].username;
+    self.emailTextField.text = [PFUser currentUser].email;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -73,15 +75,15 @@
 	[MBProgressHUD showHUDAddedTo:self.view animated:NO];
 	[[StoreController getInstance] getPaymentsWithComplte:^(NSError *error) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        [self.paymentsPicker reloadAllComponents];
+        [self.paymentsPickerView reloadAllComponents];
     }];
-    self.total.text = [NSString stringWithFormat:@"Total: %d.%d", [[StoreController getInstance] getTotal]/ 100,
+    self.totalLabel.text = [NSString stringWithFormat:@"Total: %d.%d", [[StoreController getInstance] getTotal]/ 100,
                        [[StoreController getInstance] getTotal] %100 ];
 	
 }
 
 - (void)selectDidFinish:(id)sender {
-    [self.existingClient resignFirstResponder];
+    [self.existingClientTextField resignFirstResponder];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
@@ -110,32 +112,37 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     PMPayment *payment = [[StoreController getInstance].Payments objectAtIndex:row-1];
-    self.cardNumber.text = payment.last4;
-    self.cardVerification.text = payment.code;
-    self.cardExpire.text = [NSString stringWithFormat:@"Exp: %@/%@", payment.expire_month, payment.expire_year];
+    self.cardNumberLabel.text = payment.last4;
+    self.cardVerificationLabel.text = payment.code;
+    self.cardExpireLabel.text = [NSString stringWithFormat:@"Exp: %@/%@", payment.expire_month, payment.expire_year];
+    // save card info
     self.cardExpireMonth = payment.expire_month;
     self.cardExpireYear = payment.expire_year;
-    self.existingPaymentId = payment.id;
-   [self.existingClient resignFirstResponder];
+     self.existingPaymentId = payment.id;
+   [self.existingClientTextField resignFirstResponder];
     
 }
 #pragma mark- CardIO
-/// This method will be called if the user cancels the scan. You MUST dismiss paymentViewController.
-/// @param paymentViewController The active CardIOPaymentViewController.
+
 - (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)paymentViewController{
     [paymentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-/// This method will be called when there is a successful scan (or manual entry). You MUST dismiss paymentViewController.
-/// @param cardInfo The results of the scan.
-/// @param paymentViewController The active CardIOPaymentViewController.
+
 - (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)cardInfo inPaymentViewController:(CardIOPaymentViewController *)paymentViewController{
     
-    self.cardNumber.text = [NSString stringWithFormat:@"N: %@",cardInfo.cardNumber];
-    self.cardVerification.text = [NSString stringWithFormat:@"CCV: %@", cardInfo.cvv];
-    self.cardExpire.text = [NSString stringWithFormat:@"Exp: %d/%d", cardInfo.expiryMonth, cardInfo.expiryYear];
+    self.cardNumberLabel.text = [NSString stringWithFormat:@"N: %@", cardInfo.cardNumber];
+    self.cardVerificationLabel.text = [NSString stringWithFormat:@"CCV: %@", cardInfo.cvv];
+    self.cardExpireLabel.text = [NSString stringWithFormat:@"Exp: %d/%d", cardInfo.expiryMonth, cardInfo.expiryYear];
+    
     self.cardExpireMonth = [NSString stringWithFormat:@"%d", cardInfo.expiryMonth];
+    if(cardInfo.expiryMonth < 10){
+         self.cardExpireMonth = [NSString stringWithFormat:@"0%d", cardInfo.expiryMonth];
+    }
     self.cardExpireYear = [NSString stringWithFormat:@"%d", cardInfo.expiryYear];
+    self.cardNumber = cardInfo.cardNumber;
+    self.cardCvv = cardInfo.cvv;
+
     self.existingPaymentId = nil;
     [paymentViewController dismissViewControllerAnimated:YES completion:nil];
     
@@ -200,12 +207,11 @@
         PMError *error;
         PMPaymentParams *params;
         // 1. generate paymill payment method
-        NSLog(@"%@ %@ %@ %@ %@ ", self.accHolder.text, self.cardNumber.text, self.cardExpireMonth, self.cardExpireYear, self.cardVerification.text);
-        id paymentMethod = [PMFactory genCardPaymentWithAccHolder:self.accHolder.text
-                                                       cardNumber:@"5500000000000004"//self.cardNumber.text
+        id paymentMethod = [PMFactory genCardPaymentWithAccHolder:self.accHolderTextField.text
+                                                       cardNumber:self.cardNumber
                                                       expiryMonth:self.cardExpireMonth
                                                        expiryYear:self.cardExpireYear
-                                                     verification:self.cardVerification.text
+                                                     verification:self.cardCvv
                                                             error:&error];
         if(!error) {
             // 2. generate params

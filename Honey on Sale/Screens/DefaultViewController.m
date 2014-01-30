@@ -7,20 +7,18 @@
 //
 
 #import "DefaultViewController.h"
-#import <PayMillSDK/PMSDK.h>
+
 #import "StoreController.h"
 #import <Parse/PFUser.h>
 #import <Parse/Parse.h>
 
 @interface DefaultViewController ()
 
-- (void)initPayMill;
 
 @end
 
 @implementation DefaultViewController
 
-static NSString *PayMillPublicKey = @"4369741839217a7d10cbed5d417715f4";
 static NSString *ParseApplicationId = @"uii9EaqHnJ5fiez0hZOgc5KdIz5Fw9uIXIn24SMY";
 static NSString *ParseClientKey = @"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r";
 
@@ -61,27 +59,12 @@ static NSString *ParseClientKey = @"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r";
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
     else{
-        [self initPayMill];
+        [self goToStore];
     }
 }
-/**
- Initiate PayMill Library
- */
 
-- (void)initPayMill{
-    [PMManager initWithTestMode:YES merchantPublicKey:PayMillPublicKey
-                    newDeviceId:nil init:^(BOOL success, PMError *error) {
-                        if(success){
-                            [self performSegueWithIdentifier:@"GoToStoreSeque" sender:self];
-                            [StoreController getInstance].payMillPublicKey = PayMillPublicKey;
-                        }
-                        else {
-                            UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                            [notAuthorized show];
-                        }
-                    }];
-    [StoreController getInstance].payMillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
-
+- (void)goToStore{
+    [self performSegueWithIdentifier:@"GoToStoreSeque" sender:self];
 }
 #pragma mark- PFSignUpViewControllerDelegate
 - (void)dismisssSingUpController{
@@ -96,7 +79,10 @@ static NSString *ParseClientKey = @"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r";
 }
 #pragma mark- PFLogInViewControllerDelegate
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
-    [self initPayMill];
+    [logInController dismissViewControllerAnimated:YES completion:^{
+       // [self goToStore];
+    }];
+    
 }
 
 #pragma mark-

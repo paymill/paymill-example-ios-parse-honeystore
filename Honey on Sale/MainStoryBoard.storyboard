@@ -69,6 +69,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="h1f-Bm-9jl" id="di7-OD-Nvy"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose existing card" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XeF-A9-Q3M">
                                 <rect key="frame" x="20" y="120" width="280" height="21"/>
@@ -143,13 +146,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="SCX-di-4X2"/>
                     <connections>
-                        <outlet property="accHolder" destination="pfy-c2-0A8" id="AE8-IK-OXh"/>
-                        <outlet property="cardExpire" destination="AjB-EM-xhg" id="ixB-6U-TYy"/>
-                        <outlet property="cardNumber" destination="3EK-76-jlc" id="wRj-QD-Qgc"/>
-                        <outlet property="cardVerification" destination="3Dc-za-Hgd" id="ukl-XV-isD"/>
-                        <outlet property="email" destination="3TS-ZH-dCg" id="eE4-h1-llL"/>
-                        <outlet property="existingClient" destination="d2i-LJ-YeE" id="PIB-Ls-gej"/>
-                        <outlet property="total" destination="Q8p-m0-RtR" id="u8I-gB-Zfe"/>
+                        <outlet property="accHolderTextField" destination="pfy-c2-0A8" id="kB1-yR-KPc"/>
+                        <outlet property="cardExpireLabel" destination="AjB-EM-xhg" id="UVq-OV-QqV"/>
+                        <outlet property="cardNumberLabel" destination="3EK-76-jlc" id="cmW-Om-B4J"/>
+                        <outlet property="cardVerificationLabel" destination="3Dc-za-Hgd" id="u4E-Te-2jl"/>
+                        <outlet property="emailTextField" destination="3TS-ZH-dCg" id="9Xe-MU-43o"/>
+                        <outlet property="existingClientTextField" destination="d2i-LJ-YeE" id="q30-49-38P"/>
+                        <outlet property="totalLabel" destination="Q8p-m0-RtR" id="XQm-MM-cYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8c-bN-2lk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,47 +247,6 @@
             <point key="canvasLocation" x="-623" y="-910"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CheckoutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckoutViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="numberBadge" candidateClass="MLPAccessoryBadge"/>
-            </relationships>
-        </class>
-        <class className="DefaultViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DefaultViewController.h"/>
-        </class>
-        <class className="MLPAccessoryBadge" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MLPAccessoryBadge.h"/>
-        </class>
-        <class className="PaymentViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PaymentViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="accHolder" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="cardExpire" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cardNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cardVerification" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="existingClient" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="total" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ProductDetailsViewController" superclassName="CheckoutViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProductDetailsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addToCartButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="amountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="StoreViewController" superclassName="CheckoutViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="productsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

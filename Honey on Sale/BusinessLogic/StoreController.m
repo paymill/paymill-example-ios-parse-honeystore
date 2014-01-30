@@ -73,11 +73,9 @@ StoreController *instance;
         self.payments = [[NSMutableArray alloc] init];
     }
     [self.payments removeAllObjects];
-    NSDictionary *parameters = @{@"paymillClientId": self.payMillClientId};
-                                 
+    NSDictionary *parameters = @{@"paymillClientId": [StoreController getInstance].payMillClientId};
     [PFCloud callFunctionInBackground:@"getPayments" withParameters:parameters
                                 block:^(id object, NSError *error) {
-                                    
                                     if(error == nil){
                                         NSArray *payments = (NSArray*)object;
                                         for (PFObject *obj in payments) {
