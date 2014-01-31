@@ -22,8 +22,6 @@
 
 @implementation StoreViewController
 
-static NSString *PaymillPublicKey = @"4369741839217a7d10cbed5d417715f4";
-
 
 - (void)awakeFromNib
 {
@@ -43,16 +41,7 @@ static NSString *PaymillPublicKey = @"4369741839217a7d10cbed5d417715f4";
 	self.navigationItem.leftBarButtonItem = refreshButton;
 
     self.productsTable.backgroundColor = [UIColor whiteColor];
-    [PMManager initWithTestMode:YES merchantPublicKey:PaymillPublicKey
-                    newDeviceId:nil init:^(BOOL success, PMError *error) {
-                        if(success){
-                            [StoreController getInstance].payMillPublicKey = PaymillPublicKey;
-                        }
-                        else {
-                            UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                            [notAuthorized show];
-                        }
-                     }];
+
     [StoreController getInstance].payMillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
     NSLog(@"%@", [StoreController getInstance].payMillClientId );
 }

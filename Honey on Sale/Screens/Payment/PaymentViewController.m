@@ -156,7 +156,7 @@
     [parameters setObject:amount forKey:@"amount"];
     [parameters setObject:currency forKey:@"currency"];
     [parameters setObject:descrition forKey:@"descrition"];
-    
+    NSLog(@"token %@", token);
     [PFCloud callFunctionInBackground:@"createTransactionWithToken" withParameters:parameters
                                 block:^(id object, NSError *error) {
                                     
@@ -167,6 +167,9 @@
                                                                                         message:msg delegate:nil
                                                                               cancelButtonTitle:@"OK" otherButtonTitles:nil];
                                         [alert show];
+                                    }
+                                    else {
+                                        NSLog(@"error %@", error.description);
                                     }
                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                 } ];
