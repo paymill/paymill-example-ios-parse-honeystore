@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MLPAccessoryBadge.h"
+#import "PaymentViewController.h"
 
-@interface CheckoutViewController : UIViewController
+@interface CheckoutViewController : UIViewController<PaymentViewControllerDelegate>
 
 - (void)updateBadge;
 @end

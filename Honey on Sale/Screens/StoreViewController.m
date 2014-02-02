@@ -51,6 +51,7 @@
     if([StoreController getInstance].Products == Nil){
         [self refreshObjects:nil];
     }
+     
 }
 - (void)didReceiveMemoryWarning
 {

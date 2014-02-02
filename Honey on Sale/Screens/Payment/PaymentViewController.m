@@ -173,12 +173,20 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     [PFCloud callFunctionInBackground:@"getPayments" withParameters:@{}
                                 block:^(id object, NSError *error) {
                                     if(error == nil){
-                                        NSDictionary *paymentsDict = (NSDictionary*)object;
-                                        NSArray *payments = [paymentsDict objectForKey:@"items"];
-                                        for (PFObject *obj in payments) {
-                                            PMPayment* pmPayment = [self parsePayment:obj];
-                                            if([pmPayment.last4 isKindOfClass:[NSNull class]] == NO){
-                                                [self.oldPayments addObject:pmPayment];
+                                        NSArray *payments = nil;
+                                        if([object isKindOfClass:[NSDictionary class]])
+                                        {
+                                            payments = [ (NSDictionary*)object  objectForKey:@"items"];
+                                        }
+                                        else if([object isKindOfClass:[NSArray class]]){
+                                            payments = (NSArray*)object;
+                                        }
+                                         if(payments != nil && [payments count] > 0){
+                                            for (PFObject *obj in payments) {
+                                                PMPayment* pmPayment = [self parsePayment:obj];
+                                                if([pmPayment.last4 isKindOfClass:[NSNull class]] == NO){
+                                                    [self.oldPayments addObject:pmPayment];
+                                                }
                                             }
                                         }
                                         
@@ -221,23 +229,38 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
 
 #pragma mark- Create Transaction
 - (void)transactionSucceed{
-    NSString *msg = @"Payment has been successfull.";
+    NSString *msg = @"Transaction has been successfull";
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                     message:msg delegate:nil
                                           cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+    if([self.delegate respondsToSelector:@selector(transactionSucceed) ]){
+        [self.delegate transactionSucceed];
+    }
 }
 - (void)transactionFailWithError:(NSError*)error{
+    NSString *msg = @"Transaction has failed.";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message:msg delegate:nil
+                                          cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+
     NSLog(@"error %@", error.description);
+    if([self.delegate respondsToSelector:@selector(transactionFailWithError:) ]){
+        [self.delegate transactionFailWithError:error];
+    }
     
 }
 - (void)createTransactionWithToken:(NSString*)token {
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:token forKey:@"token"];
+    [parameters setObject:self.amount forKey:@"amount"];
+    [parameters setObject:self.currency forKey:@"currency"];
+    [parameters setObject:self.description forKey:@"descrition"];
+
     [PFCloud callFunctionInBackground:@"createTransactionWithToken" withParameters:parameters
                                 block:^(id object, NSError *error) {
-                                    
                                     if(error == nil){
                                         [self transactionSucceed];
                                     }

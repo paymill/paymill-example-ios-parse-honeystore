@@ -8,7 +8,6 @@
 
 #import "CheckoutViewController.h"
 #import "StoreController.h"
-#import "PaymentViewController.h"
 #import <Parse/PFUser.h>
 
 @interface CheckoutViewController ()
@@ -98,12 +97,18 @@
         vc.amount = [NSNumber numberWithInt:[[StoreController getInstance] getTotal]];
         vc.description = @"Description";
         vc.currency = @"EUR";
+        vc.delegate = self;
 
     }
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+#pragma mark- Create Transaction Delegate
+- (void)transactionSucceed{
+    [[StoreController getInstance] clearCart];
+    [self.navigationController popToViewController:self animated:YES];
+ }
+- (void)transactionFailWithError:(NSError*)error{
+    NSLog(@"error %@", error.description);
 }
+
 
 @end
