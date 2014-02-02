@@ -178,7 +178,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
                                         for (PFObject *obj in payments) {
                                             PMPayment* pmPayment = [self parsePayment:obj];
                                             if([pmPayment.last4 isKindOfClass:[NSNull class]] == NO){
-                                               // [self.oldPayments addObject:pmPayment];
+                                                [self.oldPayments addObject:pmPayment];
                                             }
                                         }
                                         
