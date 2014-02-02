@@ -42,8 +42,8 @@
 
     self.productsTable.backgroundColor = [UIColor whiteColor];
 
-    [StoreController getInstance].payMillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
-    NSLog(@"%@", [StoreController getInstance].payMillClientId );
+    NSString *paymillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
+    NSLog(@"%@", paymillClientId );
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

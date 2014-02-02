@@ -249,7 +249,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     size.height += self.textSizePadding.height;
     
     CGRect parentFrame = self.superview.frame;
-    int xPost = parentFrame.size.width - MAX(size.width, self.badgeMinimumSize.width);
+    int xPost = parentFrame.size.width - (MAX(size.width, self.badgeMinimumSize.width) + 70);
     CGRect resizeFrame = CGRectMake(xPost,
                                     0,
                                     MAX(size.width, self.badgeMinimumSize.width),

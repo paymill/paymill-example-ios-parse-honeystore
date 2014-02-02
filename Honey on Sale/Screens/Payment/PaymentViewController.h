@@ -13,4 +13,11 @@
                                         UIPickerViewDelegate,
                                         UITextFieldDelegate>
 
+@property(nonatomic,strong) NSNumber *amount;
+@property(nonatomic,strong) NSString *description;
+@property(nonatomic,strong) NSString *currency;
+@property(nonatomic,strong) NSArray *existingPayments;
+
+
+
 @end

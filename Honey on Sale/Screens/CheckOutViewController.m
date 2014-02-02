@@ -8,6 +8,8 @@
 
 #import "CheckoutViewController.h"
 #import "StoreController.h"
+#import "PaymentViewController.h"
+#import <Parse/PFUser.h>
 
 @interface CheckoutViewController ()
 
@@ -43,7 +45,10 @@
     }
     
     UIBarButtonItem *checkoutButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(checkoutObjects:)];
-	self.navigationItem.rightBarButtonItem = checkoutButton;
+    UIBarButtonItem *logoutbutton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout:)];
+
+	self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:logoutbutton, checkoutButton, nil];
+    
     self.numberBadge.center = CGPointMake(30.0, 6);
     self.numberBadge.badgeMinimumSize = CGSizeMake(1.0, 1.0);
     self.numberBadge.backgroundColor = [UIColor redColor];
@@ -55,6 +60,12 @@
    
     [self.numberBadge setTextWithIntegerValue:9];
     self.numberBadge.hidden = YES;
+    
+    if([self respondsToSelector:@selector(edgesForExtendedLayout)]){
+        self.edgesForExtendedLayout=UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars=NO;
+        self.automaticallyAdjustsScrollViewInsets=NO;
+    }
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -64,9 +75,31 @@
     [super viewDidDisappear:animated];
     self.numberBadge.hidden = YES;
 }
-
+- (void)logout:(UIButton*)sender{
+    [PFUser logOut];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 - (void)checkoutObjects:(UIButton*)sender{
-    [self performSegueWithIdentifier:@"CheckOutSeque" sender:sender];   
+    if([[StoreController getInstance] getTotal] > 0){
+        [self performSegueWithIdentifier:@"CheckOutSeque" sender:sender];
+    }
+    else{
+        NSString *msg = @"Please add items to cart.";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:msg delegate:nil
+                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender   {
+    if ([[segue identifier] isEqualToString:@"CheckOutSeque"])
+    {
+        PaymentViewController *vc = [segue destinationViewController];
+        vc.amount = [NSNumber numberWithInt:[[StoreController getInstance] getTotal]];
+        vc.description = @"Description";
+        vc.currency = @"EUR";
+
+    }
 }
 - (void)didReceiveMemoryWarning
 {

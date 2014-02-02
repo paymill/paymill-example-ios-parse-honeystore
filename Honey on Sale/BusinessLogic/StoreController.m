@@ -15,7 +15,6 @@
 @interface StoreController()
 
 @property (strong, nonatomic) NSMutableArray *products;
-@property (strong, nonatomic) NSMutableArray *payments;
 
 @end
 
@@ -40,24 +39,11 @@ StoreController *instance;
 	}
 	return instance;
 }
-- (NSArray*)getPayments{
-    return self.payments;
-}
+
 - (NSArray*)getProducts{
     return self.products;
 }
-- (PMPayment*)parsePayment:(PFObject*)parseObject{
-	
-	PMPayment *result = [[PMPayment alloc] init];
-	result.type = [parseObject objectForKey:@"type"];
-    result.card_type = [parseObject objectForKey:@"card_type"];
-    result.id = [parseObject objectForKey:@"id"];
-    result.expire_month = [parseObject objectForKey:@"expire_month"];
-    result.expire_year = [parseObject objectForKey:@"expire_year"];
-    result.last4 = [parseObject objectForKey:@"last4"];
-	return result;
-	
-}
+
 /*get total in cents*/
 - (int)getTotal{
     int result = 0;
@@ -67,29 +53,7 @@ StoreController *instance;
     return result;
 }
 #pragma mark- Get Items from Parse
-- (void)getPaymentsWithComplte:(ControllerCompleteBlock)complete{
-	
-    if(self.payments == Nil){
-        self.payments = [[NSMutableArray alloc] init];
-    }
-    [self.payments removeAllObjects];
-    NSDictionary *parameters = @{@"paymillClientId": [StoreController getInstance].payMillClientId};
-    [PFCloud callFunctionInBackground:@"getPayments" withParameters:parameters
-                                block:^(id object, NSError *error) {
-                                    if(error == nil){
-                                        NSArray *payments = (NSArray*)object;
-                                        for (PFObject *obj in payments) {
-                                            PMPayment* pmPayment = [self parsePayment:obj];
-                                            [self.payments addObject:pmPayment];
-                                        }
 
-                                    }
-                                    else {
-                                        NSLog(@"Error %@", error.localizedDescription);
-                                    }
-                                  complete(error);
-     } ];
- }
 - (void)getItemsWithComplte:(ControllerCompleteBlock)complete{
 
 	PFQuery *query = [PFQuery queryWithClassName:@"ItemForSale"];
@@ -113,42 +77,5 @@ StoreController *instance;
 - (void)addProductToCartd:(Product*)product{
     [self.itemsInCard addObject:product];
 }
-#pragma mark-Payments
-- (void)payWithClient:(NSString*)clientId
-           cardNumber:(NSString*)cardNumber
-           cardExpire: (NSString*)cardExpire
-              cardCcv:(NSString*)cardVerification
-              complte:(ControllerCompleteBlock)complete{
-    
-    NSDictionary *parameters = @{@"clientId": clientId,
-                                 @"cardNumber": cardNumber,
-                                 @"cardExpire": cardExpire,
-                                 @"cardCcv": cardVerification,
-                                 @"token":self.payMillPublicKey};
-    [PFCloud callFunctionInBackground:@"createPaymentByExistingClient" withParameters:parameters
-                                block:^(id object, NSError *error) {
-        complete(error);
-    } ];
-    
-}
-- (void)payWithAccHolder:(NSString*)accHolder
-                   email:(NSString*)email
-              cardNumber:(NSString*)cardNumber
-              cardExpire: (NSString*)cardExpire
-                 cardCcv:(NSString*)cardVerification
-                 complte:(ControllerCompleteBlock)complete{
-    
-    NSDictionary *parameters = @{@"accHolder": accHolder,
-                                 @"email": email,
-                                 @"cardNumber": cardNumber,
-                                 @"cardExpire": cardExpire,
-                                 @"cardCcv": cardVerification,
-                                 @"token":self.payMillPublicKey};
-    
-    [PFCloud callFunctionInBackground:@"createPaymentByNewClient" withParameters:parameters
-                                block:^(id object, NSError *error) {
-                                    complete(error);
-                                } ];
-    
-}
+
 @end
