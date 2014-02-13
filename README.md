@@ -43,13 +43,38 @@ After successful installation locate  *Honey Store* pod file and run in your ter
 pod install 
 ``` 
 
-As you can see **CocoaPods** prepare your project file and download all dependancy SDK.
+As you can see **CocoaPods** prepare your project file and download all dependancy SDK. After everything is complete you are ready to go. Open xcworkspace file and you will see the main project *Honey on Sale* .
+
+**Project Structure**
+
+The application is virtually separated in tree parts: User management, Business Logic, Screens and Resources.
+
+User management
+
+For easy and fast impltementation we use that functionality from PARSE iOS SDK. There are ready to use Login, SingnUp controllers and views, this save us hours of codding. 
+
+Business Logic
+
+In Business Logic we implement Product and StoreController. Products are items that we sell on our store, when appliation run we download them from PARSE and then show in our store.
+StoreController we use to store all data about our store like Cart and Products.
+
+Screens
+
+In this part we implement all needed Views for our Store.
 
 
-**Application routing**
+Resources
 
+Here we have images, icons, storyboard and plist file for our project. 
 
 **Database**
+
+Our database is located in PARSE cloud. 
+
+For store all info that we need we have 2 tables:
+* User: Contains columns username, email, password and PAYMILL Client identifier 
+* ItemForSale: Contains columns name, amount, currency, description, image, iterval and trial_period_days.
+
 
 **Models**
 
@@ -58,7 +83,6 @@ As you can see **CocoaPods** prepare your project file and download all dependan
 **Dealing with clients**
 
 **Adding PAYMILL’s JavaScript and The API Key**
-
 
 **Handling the credit cards**
 
