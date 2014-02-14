@@ -8,15 +8,14 @@ There are no monthly fees or other hidden costs.
 
 ### What does the application
 
-In this tutorial we’ll use PAYMILL to add payments to a iOS application, to store client ID instead of local database we use PARSE.
-The application, which we’ll use is a simple store that sells Honey ;) 
-The customer can add a jar with honey to his Cart and them make checkout for his order by PAYMILL. As we mention before we use PARSE as storage. We store products for sale there, registered users and PAYMILL client Id.
-In this application we combinate different SDKs of PAYMILL. For public part we use PAYMILL's iOS SDK and for private use JS SDK. For easy scan of credit card we use CardIo.    
+The application, which we’ll use is a simple store that sells jars with honey ;) The customer can brouse the available jars and add each of them to his shoping basket. When the user is done with his selection, he can checkout the order by providing a credit card manualy or by scanning it.
 
-Before you use the app you must register as merchant in PAYMILL website and get your public and private key. Private key you must set in PARSE part, but public key must be used in iOS part.
+In this application we combinate different SDKs of PAYMILL. For public part we use PAYMILL's iOS SDK and for private use JS SDK. For easy scan of credit card we use [CardIo](https://www.card.io).    
+
+Before you use the app you must register as merchant in PAYMILL website and get your public and private key. Private key you must set in PARSE part, the public key must be used in iOS part.
 ![landing page](./docs-assets/01.pages_index.png)
 
-There are four different products that user can buy and add it to the Cart. When the user select on one of the product, he will be redirected to the details page, there he can read about his choice and it to the Cart. 
+There are four different products that user can buy and add it to the Cart. When the user select on one of the product, he will be redirected to the details page, there he can read about his choice and to add it in the Shoping Cart.
 
 ![sign up page](./docs-assets/02.users_init.png)
 
@@ -39,7 +38,7 @@ For dependancies management *Honey Store* uses very popular dependency manager: 
 Before you start you must install **CocoaPods**, please read you to install it on http://cocoapods.org/.
 
 After successful installation locate  *Honey Store* pod file and run in your terminal:  
-```ios 
+```objective-c 
 pod install 
 ``` 
 
@@ -55,7 +54,7 @@ For easy and fast impltementation we use that functionality from PARSE iOS SDK. 
 
 Business Logic
 
-In Business Logic we implement Product and StoreController. Products are items that we sell on our store, when appliation run we download them from PARSE and then show in our store.
+In Business Logic we implement Product and StoreController. Products are items that we sell on our store, when appliation run we download them from PARSE and then show them in our store.
 StoreController we use to store all data about our store like Cart and Products.
 
 Screens
@@ -75,6 +74,7 @@ For store all info that we need we have 2 tables:
 * User: Contains columns username, email, password and PAYMILL Client identifier 
 * ItemForSale: Contains columns name, amount, currency, description, image, iterval and trial_period_days.
 
+To upload your sample data create parse account and import data from \Parse\_User.json and \Parse\ItemForSale.json 
 
 **Models**
 
@@ -82,7 +82,7 @@ For store all info that we need we have 2 tables:
 
 **Dealing with clients**
 
-**Adding PAYMILL’s JavaScript and The API Key**
+**Adding PAYMILL’s API Key**
 
 **Handling the credit cards**
 

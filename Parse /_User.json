@@ -1,15 +1,5 @@
 { "results": [
 	{
-        "bcryptPassword": "$2a$10$9As827GqkALmgKZ27Z.KAuSEG4cyyBXFhdzgl067U55uQrX./cLn2",
-        "createdAt": "2014-01-30T23:03:11.263Z",
-        "email": "pesho@mail.com",
-        "objectId": "aX0ozUT9w4",
-        "paymillClientId": "client_1d20be56a163acb335ab",
-        "sessionToken": "4zfrsn65zw17e3fspp2imhg8z",
-        "updatedAt": "2014-01-30T23:03:11.263Z",
-        "username": "pesho"
-    },
-	{
         "bcryptPassword": "$2a$10$B/4.Y3xsj04ljDaWt6gvi.FPIjtA3f523FgXSYMS36czRD9TsyJMW",
         "createdAt": "2014-01-30T23:09:34.690Z",
         "email": "test2@mail.com",
@@ -19,64 +9,4 @@
         "updatedAt": "2014-01-30T23:09:34.690Z",
         "username": "test2"
     },
-	{
-        "bcryptPassword": "$2a$10$GRHLk1sPfbokq2dMJmMQNelLXIqAATI.ZVk.psS7xgmSfhmGwItzi",
-        "createdAt": "2014-01-30T23:11:48.699Z",
-        "email": "test3@mail.com",
-        "objectId": "HkaO2Hrs4b",
-        "paymillClientId": "client_c091c11af536f1b775f6",
-        "sessionToken": "dn4wbdzj93ujltmyb71srgggn",
-        "updatedAt": "2014-01-30T23:11:48.699Z",
-        "username": "test3"
-    },
-	{
-        "bcryptPassword": "$2a$10$Qt.gK7QL7lh6fpTPY1ZXhu8XkEtsin9L68Bs6TT5/xreTNdD7rwNe",
-        "createdAt": "2014-01-30T23:13:03.041Z",
-        "email": "test5@mail.com",
-        "objectId": "XWlQSNYiPS",
-        "paymillClientId": "client_332564c8273ed9a66dbd",
-        "sessionToken": "zcbvslvxmzechm0yypozpqk8l",
-        "updatedAt": "2014-01-30T23:13:03.041Z",
-        "username": "test5"
-    },
-	{
-        "bcryptPassword": "$2a$10$JwoWnwm6f7grLjv3MkstLeJvoFQT7IkC5Etrv9TGQI/8tOmmipvPS",
-        "createdAt": "2014-01-30T23:14:28.816Z",
-        "email": "test5@mail1.com",
-        "objectId": "k7I5I0fpGv",
-        "paymillClientId": "client_9386e85881fe3043fba8",
-        "sessionToken": "awxwmmg6r175buf2wpynsdq4h",
-        "updatedAt": "2014-01-30T23:14:28.816Z",
-        "username": "test56"
-    },
-	{
-        "bcryptPassword": "$2a$10$3dYGikXf/PPu7w93GrmkYuRnelWpFiwGk7a0Kih8BRV1mnQW4lZSC",
-        "createdAt": "2014-01-30T23:20:57.903Z",
-        "email": "test66@mail.com",
-        "objectId": "aleanVW9yA",
-        "paymillClientId": "client_101a7f5ee92182e922a0",
-        "sessionToken": "kyvrxem41nw5des56imy50ahp",
-        "updatedAt": "2014-01-30T23:20:57.903Z",
-        "username": "test66"
-    },
-	{
-        "bcryptPassword": "$2a$10$.OgcIY9NTD0Apg9qIwdpAuMLiwUuUwyc5ocbR932tlq6XixhzPEqi",
-        "createdAt": "2014-02-01T20:03:43.017Z",
-        "email": "test123@mail.com",
-        "objectId": "bcxdqpJIgB",
-        "paymillClientId": "client_dea4cf4da10c3aacddd1",
-        "sessionToken": "ko4mxqstor0eosgyjgv8f3xe6",
-        "updatedAt": "2014-02-01T20:03:43.017Z",
-        "username": "test123"
-    },
-	{
-        "bcryptPassword": "$2a$10$TMNCgLQvGwM1djoztrStE.1OzR4b.pPJAJua0fyJSFiFNDMfC.FiC",
-        "createdAt": "2014-02-13T09:07:37.952Z",
-        "email": "galabitsa.chelebieva@qaiware.com",
-        "objectId": "D1Zo8Gu50t",
-        "paymillClientId": "client_9ef5f0eef2aada3fb0b8",
-        "sessionToken": "dqmmdjny1ly6v68kdmaattwbi",
-        "updatedAt": "2014-02-13T09:07:37.952Z",
-        "username": "Gabi"
-    }
-] }
+	] }
