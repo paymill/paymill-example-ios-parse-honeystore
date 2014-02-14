@@ -10,7 +10,6 @@
 		221AFC2F189560AB00BD41A3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221AFC2E189560AB00BD41A3 /* Parse.framework */; };
 		221AFC38189560C700BD41A3 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 221AFC37189560BA00BD41A3 /* libCardIO.a */; };
 		221AFC3A189560FA00BD41A3 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221AFC39189560FA00BD41A3 /* PayMillSDK.framework */; };
-		221AFC3C1895613700BD41A3 /* PayMillSDK.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 221AFC3B1895613700BD41A3 /* PayMillSDK.bundle */; };
 		225604A41874866200F0B637 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225604A31874866200F0B637 /* MainStoryBoard.storyboard */; };
 		225604AA1876F82300F0B637 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604A91876F82300F0B637 /* AudioToolbox.framework */; };
 		225604AC1876F82B00F0B637 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604AB1876F82B00F0B637 /* CFNetwork.framework */; };
@@ -21,7 +20,6 @@
 		225604B61876F86C00F0B637 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B51876F86C00F0B637 /* Security.framework */; };
 		225604B81876F87300F0B637 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B71876F87300F0B637 /* StoreKit.framework */; };
 		225604BA1876F87900F0B637 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225604B91876F87900F0B637 /* SystemConfiguration.framework */; };
-		225604D018848E8F00F0B637 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604CF18848E8F00F0B637 /* MBProgressHUD.m */; };
 		225604D918848E9B00F0B637 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604D418848E9B00F0B637 /* Product.m */; };
 		225604DD18848E9B00F0B637 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225604D818848E9B00F0B637 /* StoreController.m */; };
 		225604E0188493A800F0B637 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 225604DF188493A800F0B637 /* Default-568h@2x.png */; };
@@ -64,7 +62,6 @@
 		221AFC36189560BA00BD41A3 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardIOViewDelegate.h; sourceTree = "<group>"; };
 		221AFC37189560BA00BD41A3 /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
 		221AFC39189560FA00BD41A3 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PayMillSDK.framework; path = Pods/PayMillSDK/samples/vouchermill/PayMillSDK/PayMillSDK.framework; sourceTree = "<group>"; };
-		221AFC3B1895613700BD41A3 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = PayMillSDK.bundle; path = Pods/PayMillSDK/samples/vouchermill/PayMillSDK/PayMillSDK.bundle; sourceTree = "<group>"; };
 		225604A31874866200F0B637 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		225604A91876F82300F0B637 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		225604AB1876F82B00F0B637 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -75,8 +72,6 @@
 		225604B51876F86C00F0B637 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		225604B71876F87300F0B637 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		225604B91876F87900F0B637 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		225604CE18848E8F00F0B637 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		225604CF18848E8F00F0B637 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		225604D318848E9B00F0B637 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		225604D418848E9B00F0B637 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		225604D718848E9B00F0B637 /* StoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreController.h; sourceTree = "<group>"; };
@@ -129,7 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221AFC3C1895613700BD41A3 /* PayMillSDK.bundle in Frameworks */,
 				221AFC3A189560FA00BD41A3 /* PayMillSDK.framework in Frameworks */,
 				221AFC38189560C700BD41A3 /* libCardIO.a in Frameworks */,
 				221AFC2F189560AB00BD41A3 /* Parse.framework in Frameworks */,
@@ -172,15 +166,6 @@
 			);
 			name = CardIO;
 			path = Pods/CardIO/CardIO;
-			sourceTree = "<group>";
-		};
-		225604CD18848E8F00F0B637 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				225604CE18848E8F00F0B637 /* MBProgressHUD.h */,
-				225604CF18848E8F00F0B637 /* MBProgressHUD.m */,
-			);
-			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		225604D218848E9B00F0B637 /* BusinessLogic */ = {
@@ -263,8 +248,6 @@
 		B2784A361860A4FB0057F064 = {
 			isa = PBXGroup;
 			children = (
-				221AFC3B1895613700BD41A3 /* PayMillSDK.bundle */,
-				221AFC2B1895603F00BD41A3 /* libPods-Facebook-iOS-SDK.a */,
 				B2784A481860A4FB0057F064 /* Honey on Sale */,
 				B2784A491860A4FC0057F064 /* Supporting Files */,
 				B2084040189178F500A79D2C /* Default-568h@2x.png */,
@@ -285,6 +268,7 @@
 		B2784A411860A4FB0057F064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				221AFC2B1895603F00BD41A3 /* libPods-Facebook-iOS-SDK.a */,
 				221AFC39189560FA00BD41A3 /* PayMillSDK.framework */,
 				221AFC30189560BA00BD41A3 /* CardIO */,
 				221AFC2E189560AB00BD41A3 /* Parse.framework */,
@@ -318,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				225604D218848E9B00F0B637 /* BusinessLogic */,
-				225604CD18848E8F00F0B637 /* MBProgressHUD */,
 				22560505188DDB4E00F0B637 /* MLPAccessoryBadge */,
 				225604E8188DC6FD00F0B637 /* Screens */,
 				225604E11884A2EA00F0B637 /* Resources */,
@@ -448,7 +431,6 @@
 			files = (
 				B2784A531860A4FC0057F064 /* AppDelegate.m in Sources */,
 				B2784A4F1860A4FC0057F064 /* main.m in Sources */,
-				225604D018848E8F00F0B637 /* MBProgressHUD.m in Sources */,
 				225604D918848E9B00F0B637 /* Product.m in Sources */,
 				225604DD18848E9B00F0B637 /* StoreController.m in Sources */,
 				225604F3188DC6FD00F0B637 /* ProductDetailsViewController.m in Sources */,
