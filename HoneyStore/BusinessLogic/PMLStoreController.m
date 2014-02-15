@@ -1,9 +1,9 @@
 //
 //  PMLStoreController.m
-//  Honey on Sale
+//  Honey Store
 //
 //  Created by Vladimir Marinov on 13.01.14.
-//  Copyright (c) 2014 г. PAYMLL All rights reserved.
+//  Copyright (c) 2014 г. PAYMLL. All rights reserved.
 //
 
 #import "PMLStoreController.h"

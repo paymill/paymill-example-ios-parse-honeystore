@@ -1,9 +1,9 @@
 //
 //  CheckOutViewController.h
-//  Honey on Sale
+//  Honey Store
 //
-//  Created by Lubomir Velkov on 14.01.14.
-//  Copyright (c) 2014 г. Vladimir Marinov. All rights reserved.
+//  Created by Vladimir Marinov on 14.01.14.
+//  Copyright (c) 2014 г. PAYMILL. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

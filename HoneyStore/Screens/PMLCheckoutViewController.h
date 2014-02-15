@@ -1,9 +1,9 @@
 //
 //  PMLCheckoutViewController.h
-//  Honey on Sale
+//  Honey Store
 //
 //  Created by Vladimir Marinov on 1/22/14.
-//  Copyright (c) 2014 PAYMILL All rights reserved.
+//  Copyright (c) 2014 PAYMILL. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
