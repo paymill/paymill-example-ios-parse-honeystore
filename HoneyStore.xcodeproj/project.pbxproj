@@ -33,6 +33,11 @@
 		2287C82718AE578000F406AA /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2287C82418AE578000F406AA /* MainStoryBoard.storyboard */; };
 		2287C82A18AE57E700F406AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2287C82818AE57E700F406AA /* InfoPlist.strings */; };
 		2287C82E18AF98FA00F406AA /* PMLAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287C82D18AF98FA00F406AA /* PMLAccessoryBadge.m */; };
+		2287C85418AFD9F000F406AA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2287C85218AFD9D400F406AA /* Parse.framework */; };
+		2287C85818AFDA1700F406AA /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2287C85718AFDA1700F406AA /* PayMillSDK.framework */; };
+		2287C85A18AFDA3600F406AA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287C85918AFDA3600F406AA /* MBProgressHUD.m */; };
+		2287C85C18AFDA5B00F406AA /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2287C85B18AFDA5B00F406AA /* libCardIO.a */; };
+		2287C86218AFE1EC00F406AA /* libPods-Facebook-iOS-SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2287C86118AFE1EC00F406AA /* libPods-Facebook-iOS-SDK.a */; };
 		B2084041189178F500A79D2C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2084040189178F500A79D2C /* Default-568h@2x.png */; };
 		B208404E18917B8E00A79D2C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404D18917B8E00A79D2C /* AVFoundation.framework */; };
 		B208405018917BC700A79D2C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208404F18917BC700A79D2C /* OpenGLES.framework */; };
@@ -46,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083063FBD07C4CD1AE4A7EA8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		225604A91876F82300F0B637 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		225604AB1876F82B00F0B637 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		225604AD1876F84000F0B637 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -84,6 +90,13 @@
 		2287C82918AE57E700F406AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = HoneyStore/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2287C82C18AF98FA00F406AA /* PMLAccessoryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLAccessoryBadge.h; sourceTree = "<group>"; };
 		2287C82D18AF98FA00F406AA /* PMLAccessoryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLAccessoryBadge.m; sourceTree = "<group>"; };
+		2287C85218AFD9D400F406AA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		2287C85318AFD9D400F406AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		2287C85518AFDA0300F406AA /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Pods/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		2287C85718AFDA1700F406AA /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PayMillSDK.framework; path = Pods/PayMillSDK/samples/vouchermill/PayMillSDK/PayMillSDK.framework; sourceTree = "<group>"; };
+		2287C85918AFDA3600F406AA /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Pods/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		2287C85B18AFDA5B00F406AA /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCardIO.a; path = Pods/CardIO/CardIO/libCardIO.a; sourceTree = "<group>"; };
+		2287C86118AFE1EC00F406AA /* libPods-Facebook-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Facebook-iOS-SDK.a"; path = "DerivedData/HoneyStore/Build/Products/Debug-iphonesimulator/libPods-Facebook-iOS-SDK.a"; sourceTree = "<group>"; };
 		B2084040189178F500A79D2C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		B208404D18917B8E00A79D2C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B208404F18917BC700A79D2C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -103,6 +116,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2287C86218AFE1EC00F406AA /* libPods-Facebook-iOS-SDK.a in Frameworks */,
+				2287C85C18AFDA5B00F406AA /* libCardIO.a in Frameworks */,
+				2287C85818AFDA1700F406AA /* PayMillSDK.framework in Frameworks */,
+				2287C85418AFD9F000F406AA /* Parse.framework in Frameworks */,
 				B208405418917E3300A79D2C /* CoreMedia.framework in Frameworks */,
 				B208405218917E0A00A79D2C /* CoreVideo.framework in Frameworks */,
 				225604B41876F86500F0B637 /* QuartzCore.framework in Frameworks */,
@@ -198,13 +215,25 @@
 			path = PMLAccessoryBadge;
 			sourceTree = "<group>";
 		};
+		2287C85118AFD9D400F406AA /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				2287C85218AFD9D400F406AA /* Parse.framework */,
+				2287C85318AFD9D400F406AA /* README.md */,
+			);
+			name = Parse;
+			path = Pods/Parse;
+			sourceTree = "<group>";
+		};
 		B2784A361860A4FB0057F064 = {
 			isa = PBXGroup;
 			children = (
+				2287C85918AFDA3600F406AA /* MBProgressHUD.m */,
 				2287C7E518AE56BE00F406AA /* HoneyStore */,
 				B2784A491860A4FC0057F064 /* Supporting Files */,
 				B2784A411860A4FB0057F064 /* Frameworks */,
 				B2784A401860A4FB0057F064 /* Products */,
+				083063FBD07C4CD1AE4A7EA8 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +248,11 @@
 		B2784A411860A4FB0057F064 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2287C86118AFE1EC00F406AA /* libPods-Facebook-iOS-SDK.a */,
+				2287C85B18AFDA5B00F406AA /* libCardIO.a */,
+				2287C85718AFDA1700F406AA /* PayMillSDK.framework */,
+				2287C85518AFDA0300F406AA /* MBProgressHUD.m */,
+				2287C85118AFD9D400F406AA /* Parse */,
 				B208405318917E3300A79D2C /* CoreMedia.framework */,
 				B208405118917E0A00A79D2C /* CoreVideo.framework */,
 				B208404F18917BC700A79D2C /* OpenGLES.framework */,
@@ -264,10 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2784A771860A4FC0057F064 /* Build configuration list for PBXNativeTarget "HoneyStore" */;
 			buildPhases = (
+				FFE5A82F1875495299AF5C3D /* Check Pods Manifest.lock */,
 				B2784A3B1860A4FB0057F064 /* Sources */,
 				B2784A3C1860A4FB0057F064 /* Frameworks */,
 				B2784A3D1860A4FB0057F064 /* Resources */,
-				916B366D2B764B89B762685B /* Copy Pods Resources */,
+				48D1DFD75736447A94F5303A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,7 +357,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		916B366D2B764B89B762685B /* Copy Pods Resources */ = {
+		48D1DFD75736447A94F5303A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,6 +372,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FFE5A82F1875495299AF5C3D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -344,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2287C85A18AFDA3600F406AA /* MBProgressHUD.m in Sources */,
 				2287C81818AE56BE00F406AA /* PMLCheckoutViewController.m in Sources */,
 				2287C80D18AE56BE00F406AA /* PMLProduct.m in Sources */,
 				2287C81A18AE56BE00F406AA /* PMLPaymentViewController.m in Sources */,
@@ -374,6 +425,7 @@
 /* Begin XCBuildConfiguration section */
 		B2784A751860A4FC0057F064 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083063FBD07C4CD1AE4A7EA8 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -408,12 +460,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Debug;
 		};
 		B2784A761860A4FC0057F064 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083063FBD07C4CD1AE4A7EA8 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -440,62 +494,84 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Release;
 		};
 		B2784A781860A4FC0057F064 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083063FBD07C4CD1AE4A7EA8 /* Pods.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/PayMillSDK\"",
-					"\"$(SRCROOT)/Pods/Parse\"",
-					"\"$(SRCROOT)/Pods/PayMillSDK/samples/vouchermill/PayMillSDK\"",
+					"$(SRCROOT)",
+					"\\\"$(SRCROOT)/PayMillSDK\\\"",
+					"\\\"$(SRCROOT)/Pods/Parse\\\"",
+					"\\\"$(SRCROOT)/Pods/PayMillSDK/samples/vouchermill/PayMillSDK\\\"",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/Pods/Parse",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/Pods/PayMillSDK/samples/vouchermill/PayMillSDK",
+					/Users/vladimirmarinov/Documents/work,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoneyStore/HoneyStore-Prefix.pch";
 				INFOPLIST_FILE = "HoneyStore/HoneyStore-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Pods/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Pods/CardIO/CardIO\"",
+					"\\\"$(SRCROOT)/Pods/build/Debug-iphonesimulator\\\"",
+					"\\\"$(SRCROOT)/Pods/CardIO/CardIO\\\"",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/DerivedData/HoneyStore/Build/Products/Debug-iphonesimulator",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/Pods/CardIO/CardIO",
 				);
 				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		B2784A791860A4FC0057F064 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083063FBD07C4CD1AE4A7EA8 /* Pods.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/PayMillSDK\"",
+					"$(SRCROOT)",
+					"\\\"$(SRCROOT)/PayMillSDK\\\"",
 					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale",
 					"/Users/Lupo/Documents/Projects/Honey\\ on\\ Sale/PayMillSDK",
-					"\"$(SRCROOT)/Pods/Parse\"",
-					"\"$(SRCROOT)/Pods/PayMillSDK/samples/vouchermill/PayMillSDK\"",
+					"\\\"$(SRCROOT)/Pods/Parse\\\"",
+					"\\\"$(SRCROOT)/Pods/PayMillSDK/samples/vouchermill/PayMillSDK\\\"",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/Pods/Parse",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/Pods/PayMillSDK/samples/vouchermill/PayMillSDK",
+					/Users/vladimirmarinov/Documents/work,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HoneyStore/HoneyStore-Prefix.pch";
 				INFOPLIST_FILE = "HoneyStore/HoneyStore-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Pods/build/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Pods/CardIO/CardIO\"",
+					"\\\"$(SRCROOT)/Pods/build/Debug-iphonesimulator\\\"",
+					"\\\"$(SRCROOT)/Pods/CardIO/CardIO\\\"",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/DerivedData/HoneyStore/Build/Products/Debug-iphonesimulator",
+					"/Users/vladimirmarinov/Documents/work/paymill-honey-on-sale/Pods/CardIO/CardIO",
 				);
 				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
