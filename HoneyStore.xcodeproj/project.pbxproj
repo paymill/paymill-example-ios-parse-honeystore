@@ -29,7 +29,6 @@
 		2287C81C18AE56BE00F406AA /* PMLProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287C80818AE56BE00F406AA /* PMLProductTableViewCell.m */; };
 		2287C81D18AE56BE00F406AA /* PMLStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287C80A18AE56BE00F406AA /* PMLStoreViewController.m */; };
 		2287C82018AE576300F406AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287C81F18AE576300F406AA /* AppDelegate.m */; };
-		2287C82518AE578000F406AA /* HoneyStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2287C82118AE578000F406AA /* HoneyStore-Info.plist */; };
 		2287C82618AE578000F406AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2287C82318AE578000F406AA /* main.m */; };
 		2287C82718AE578000F406AA /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2287C82418AE578000F406AA /* MainStoryBoard.storyboard */; };
 		2287C82A18AE57E700F406AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2287C82818AE57E700F406AA /* InfoPlist.strings */; };
@@ -44,7 +43,6 @@
 		B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A461860A4FB0057F064 /* UIKit.framework */; };
 		B2784A9818842C590057F064 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9718842C590057F064 /* CFNetwork.framework */; };
 		B2784A9A18842C890057F064 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2784A9918842C880057F064 /* SystemConfiguration.framework */; };
-		F696B440315C461AA17AD0C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB5A3D0D5C2489D8EEFCB31 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +84,6 @@
 		2287C82918AE57E700F406AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = HoneyStore/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		2287C82C18AF98FA00F406AA /* PMLAccessoryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLAccessoryBadge.h; sourceTree = "<group>"; };
 		2287C82D18AF98FA00F406AA /* PMLAccessoryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLAccessoryBadge.m; sourceTree = "<group>"; };
-		4FB5A3D0D5C2489D8EEFCB31 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2084040189178F500A79D2C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		B208404D18917B8E00A79D2C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B208404F18917BC700A79D2C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -125,7 +122,6 @@
 				B2784A9818842C590057F064 /* CFNetwork.framework in Frameworks */,
 				B2784A471860A4FB0057F064 /* UIKit.framework in Frameworks */,
 				B2784A431860A4FB0057F064 /* Foundation.framework in Frameworks */,
-				F696B440315C461AA17AD0C8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +239,6 @@
 				B2784A421860A4FB0057F064 /* Foundation.framework */,
 				B2784A441860A4FB0057F064 /* CoreGraphics.framework */,
 				B2784A461860A4FB0057F064 /* UIKit.framework */,
-				4FB5A3D0D5C2489D8EEFCB31 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,7 +264,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2784A771860A4FC0057F064 /* Build configuration list for PBXNativeTarget "HoneyStore" */;
 			buildPhases = (
-				6470A34563354487BEB10D5F /* Check Pods Manifest.lock */,
 				B2784A3B1860A4FB0057F064 /* Sources */,
 				B2784A3C1860A4FB0057F064 /* Frameworks */,
 				B2784A3D1860A4FB0057F064 /* Resources */,
@@ -318,7 +312,6 @@
 			files = (
 				2287C82A18AE57E700F406AA /* InfoPlist.strings in Resources */,
 				2287C81618AE56BE00F406AA /* product.png in Resources */,
-				2287C82518AE578000F406AA /* HoneyStore-Info.plist in Resources */,
 				B2084041189178F500A79D2C /* Default-568h@2x.png in Resources */,
 				2287C81518AE56BE00F406AA /* honey-for-sale-sign.jpg in Resources */,
 				2287C81718AE56BE00F406AA /* product@2x.png in Resources */,
@@ -329,21 +322,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6470A34563354487BEB10D5F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		916B366D2B764B89B762685B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
