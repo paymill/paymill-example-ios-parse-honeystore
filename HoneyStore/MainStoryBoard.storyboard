@@ -26,7 +26,7 @@
         <!--Store View Controller - Honey On Sale-->
         <scene sceneID="LDY-6Z-wBD">
             <objects>
-                <tableViewController id="ddS-w5-89k" customClass="StoreViewController" sceneMemberID="viewController">
+                <viewController id="ddS-w5-89k" customClass="PMLStoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FqT-a9-CDa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                         <segue destination="lCe-ja-gFA" kind="push" identifier="OrderProductSeque" id="NWd-hl-TvG"/>
                         <segue destination="h1f-Bm-9jl" kind="push" identifier="CheckOutSeque" id="sOr-iX-p0w"/>
                     </connections>
-                </tableViewController>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnN-gC-2nI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="383" y="-910"/>
@@ -82,15 +82,6 @@
                                 <rect key="frame" x="17" y="120" width="283" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Existing Card" minimumFontSize="17" id="d2i-LJ-YeE">
-                                        <rect key="frame" x="1" y="29" width="280" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="h1f-Bm-9jl" id="di7-OD-Nvy"/>
-                                        </connections>
-                                    </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Choose existing card" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XeF-A9-Q3M">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -105,6 +96,17 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AsM-yw-hmV">
+                                        <rect key="frame" x="11" y="25" width="252" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Existing card">
+                                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="scanCard:" destination="h1f-Bm-9jl" eventType="touchUpInside" id="FHS-X7-ryA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -139,7 +141,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HPE-Cz-O7i">
                                         <rect key="frame" x="-3" y="0.0" width="280" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Scan card">
+                                        <state key="normal" title="Enter credit card">
                                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -161,7 +163,7 @@
                         <outlet property="cardVerificationLabel" destination="3Dc-za-Hgd" id="u4E-Te-2jl"/>
                         <outlet property="cardView" destination="FoK-ww-6Ag" id="KGW-gc-XJb"/>
                         <outlet property="emailTextField" destination="3TS-ZH-dCg" id="9Xe-MU-43o"/>
-                        <outlet property="existingClientTextField" destination="d2i-LJ-YeE" id="q30-49-38P"/>
+                        <outlet property="existingCard" destination="AsM-yw-hmV" id="C5Z-tp-xO6"/>
                         <outlet property="oldPaymentsView" destination="cm0-sg-Xcy" id="Ss2-Ss-bN8"/>
                         <outlet property="totalLabel" destination="Q8p-m0-RtR" id="XQm-MM-cYg"/>
                     </connections>
@@ -261,6 +263,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Qlv-TK-nSl"/>
+        <segue reference="sOr-iX-p0w"/>
     </inferredMetricsTieBreakers>
 </document>

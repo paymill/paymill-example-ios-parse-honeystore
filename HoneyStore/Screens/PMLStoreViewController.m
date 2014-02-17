@@ -26,8 +26,7 @@
 - (void)awakeFromNib
 {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-	   // self.clearsSelectionOnViewWillAppear = NO;
-	}
+		}
     [super awakeFromNib];
 }
 

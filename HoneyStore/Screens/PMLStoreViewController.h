@@ -10,8 +10,6 @@
 #import "PMLCheckoutViewController.h"
 
 
-@class DetailViewController;
-
 @interface PMLStoreViewController : PMLCheckoutViewController< UITableViewDataSource, UITableViewDelegate>
 
 @property(weak,nonatomic) IBOutlet UITableView *productsTable;

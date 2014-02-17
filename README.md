@@ -78,6 +78,14 @@ To upload your sample data create parse account and import data from \Parse\_Use
 
 **Models**
 
+curl -X POST \
+  -H "X-Parse-Application-Id: uii9EaqHnJ5fiez0hZOgc5KdIz5Fw9uIXIn24SMY" \
+  -H "X-Parse-REST-API-Key: L3CraNfoFgf0ClSJH2yMz0VOhwPShaoLy2wlIM0f" \
+  -H "Content-Type: application/json" \
+  --data-binary @Product.json \
+  https://api.parse.com/1/batch
+
+
 **Controllers**
 
 **Dealing with clients**

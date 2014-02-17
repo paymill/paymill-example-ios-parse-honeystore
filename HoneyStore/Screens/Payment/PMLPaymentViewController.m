@@ -18,7 +18,7 @@
 
 @interface PMLPaymentViewController ()
 
-@property (nonatomic, weak) IBOutlet UITextField *existingClientTextField;
+@property (nonatomic, weak) IBOutlet UIButton *existingCard;
 @property (nonatomic, weak) IBOutlet UIView *oldPaymentsView;
 @property (nonatomic, weak) IBOutlet UIView *cardView;
 
@@ -69,9 +69,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     [toolbar setItems: [NSArray arrayWithObject:doneButton]];
     
     [self.paymentsPickerView selectedRowInComponent:0];
-    [self.existingClientTextField setInputView:self.paymentsPickerView];
-    self.existingClientTextField.inputAccessoryView = toolbar;
-    self.existingClientTextField.delegate = self;
+    [self.paymentsPickerView addSubview:toolbar];
     self.accHolderTextField.text = [PFUser currentUser].username;
     self.emailTextField.text = [PFUser currentUser].email;
     if([self respondsToSelector:@selector(edgesForExtendedLayout)]){
@@ -91,9 +89,6 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
 	
 }
 
-- (void)selectDidFinish:(id)sender {
-    [self.existingClientTextField resignFirstResponder];
-}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
@@ -128,9 +123,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     // save card info
     self.cardExpireMonth = payment.expire_month;
     self.cardExpireYear = payment.expire_year;
-     self.selectedPaymentId = payment.id;
-   [self.existingClientTextField resignFirstResponder];
-    
+    self.selectedPaymentId = payment.id;
 }
 #pragma mark- Get Old Payments
 - (PMPayment*)parsePayment:(PFObject*)parseObject{
