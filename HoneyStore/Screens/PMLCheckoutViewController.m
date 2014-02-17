@@ -76,6 +76,7 @@
 }
 - (void)logout:(UIButton*)sender{
     [PFUser logOut];
+    [[PMLStoreController sharedInstance] clearCart];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (void)checkoutObjects:(UIButton*)sender{

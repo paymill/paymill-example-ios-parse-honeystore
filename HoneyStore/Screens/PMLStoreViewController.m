@@ -39,6 +39,8 @@
                                       target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
     self.productsTable.backgroundColor = [UIColor whiteColor];
+    NSString *clientId = [[PFUser currentUser] objectForKey:@"paymillClientId" ];
+    NSLog(@"%@", clientId);
   }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -96,6 +98,7 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    tableView.tag = indexPath.row;
  	[self performSegueWithIdentifier:@"OrderProductSeque" sender:tableView];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }

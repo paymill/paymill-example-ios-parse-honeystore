@@ -22,7 +22,9 @@
 @property (nonatomic, weak) IBOutlet UIView *oldPaymentsView;
 @property (nonatomic, weak) IBOutlet UIView *cardView;
 
-@property (nonatomic, strong) UIPickerView *paymentsPickerView;
+@property (nonatomic, weak) IBOutlet UIView *paymentsView;
+@property (nonatomic, weak) IBOutlet UIPickerView *paymentsPickerView;
+
 @property (nonatomic, weak) IBOutlet UITextField *accHolderTextField;
 @property (nonatomic, weak) IBOutlet UITextField *emailTextField;
 @property (nonatomic, weak) IBOutlet UILabel *cardNumberLabel;
@@ -54,31 +56,32 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     UIBarButtonItem *checkoutButton = [[UIBarButtonItem alloc]
-                                        initWithTitle:@"Pay Now" style:UIBarButtonItemStyleDone
-                                        target:self action:@selector(payNow:)];
+    UIBarButtonItem *checkoutButton = [[UIBarButtonItem alloc]
+                                       initWithTitle:@"Pay Now" style:UIBarButtonItemStyleDone
+                                       target:self action:@selector(payNow:)];
     self.navigationItem.rightBarButtonItem = checkoutButton;
-    self.paymentsPickerView = [[UIPickerView alloc] init];
     self.paymentsPickerView.dataSource = self;
     self.paymentsPickerView.delegate = self;
     self.paymentsPickerView.showsSelectionIndicator = YES;
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                   target:self action:@selector(selectDidFinish:)];
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    [toolbar setItems: [NSArray arrayWithObject:doneButton]];
-    
-    [self.paymentsPickerView selectedRowInComponent:0];
-    [self.paymentsPickerView addSubview:toolbar];
+    self.paymentsView.frame = CGRectMake(0, self.view.frame.size.height + self.paymentsView.frame.size.height,
+                                         self.paymentsView.frame.size.width, self.paymentsView.frame.size.height);
+
     self.accHolderTextField.text = [PFUser currentUser].username;
     self.emailTextField.text = [PFUser currentUser].email;
     if([self respondsToSelector:@selector(edgesForExtendedLayout)]){
         self.edgesForExtendedLayout=UIRectEdgeNone;
-        self.extendedLayoutIncludesOpaqueBars=NO;
-        self.automaticallyAdjustsScrollViewInsets=NO;
+        self.extendedLayoutIncludesOpaqueBars = NO;
+        self.automaticallyAdjustsScrollViewInsets = NO;
     }
  }
-
+- (IBAction)selectDidFinish:(id)sender{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:.50];
+    [UIView setAnimationDelegate:self];
+    self.paymentsView.frame = CGRectMake(0, self.view.frame.size.height + self.paymentsView.frame.size.height,
+                                               self.paymentsView.frame.size.width, self.paymentsView.frame.size.height);
+    [UIView commitAnimations];
+}
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -147,7 +150,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
                          CGRect frame = self.oldPaymentsView.frame;
                          [self.cardView setFrame:CGRectMake(frame.origin.x, frame.origin.y,
                                                             self.cardView.frame.size.width, self.cardView.frame.size.height)];
-                         
+                        
                      }
                      completion:^(BOOL finished){
                          // Wait one second and then fade in the view
@@ -322,18 +325,40 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     }
 }
 
-- (void)payNow:(UIButton*)sender{
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    if(self.selectedPaymentId != nil){
-        [self createTransactionWithPayment:self.selectedPaymentId ];
+- (IBAction)showExistingCards:(id)sender{
+    self.paymentsView.frame = CGRectMake(0, self.view.frame.size.height + self.paymentsView.frame.size.height,
+                                    self.paymentsView.frame.size.width, self.paymentsView.frame.size.height);
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:.50];
+    [UIView setAnimationDelegate:self];
+    self.paymentsView.frame = CGRectMake(0, self.view.frame.size.height - self.paymentsView.frame.size.height,
+                                 self.paymentsView.frame.size.width, self.paymentsView.frame.size.height);
+     [UIView commitAnimations];
+}
+- (BOOL)formIsValid{
+    if([self.cardNumberLabel.text isEqualToString:@""]){
+        NSString *msg = @"Please enter creadit card, or select.";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:msg delegate:nil
+                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
     }
-    else
-    {
-        [self createTransactionForAccHolder:self.accHolderTextField.text
-                                 cardNumber:self.cardNumber expiryMonth: self.cardExpireMonth
-                                 expiryYear:self.cardExpireYear cardCvv:self.cardCvv];
-        
+    return YES;
+}
+- (void)payNow:(UIButton*)sender{
+    if([self formIsValid] == YES){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        if(self.selectedPaymentId != nil){
+            [self createTransactionWithPayment:self.selectedPaymentId ];
+        }
+        else
+        {
+            [self createTransactionForAccHolder:self.accHolderTextField.text
+                                     cardNumber:self.cardNumber expiryMonth: self.cardExpireMonth
+                                     expiryYear:self.cardExpireYear cardCvv:self.cardCvv];
+            
+        }
     }
 
 }
