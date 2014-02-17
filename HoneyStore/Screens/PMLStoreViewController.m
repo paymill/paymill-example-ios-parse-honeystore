@@ -38,9 +38,7 @@
                                       initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                       target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
-
     self.productsTable.backgroundColor = [UIColor whiteColor];
-
     NSString *paymillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
     NSLog(@"%@", paymillClientId );
 }
@@ -100,7 +98,9 @@
     cell.orderButton.tag = indexPath.row;
     return cell;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+ 	[self performSegueWithIdentifier:@"OrderProductSeque" sender:tableView];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"OrderProductSeque"]) {
