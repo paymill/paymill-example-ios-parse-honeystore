@@ -39,8 +39,6 @@
                                       target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
     self.productsTable.backgroundColor = [UIColor whiteColor];
-    NSString *clientId = [[PFUser currentUser] objectForKey:@"paymillClientId" ];
-    NSLog(@"%@", clientId);
   }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];

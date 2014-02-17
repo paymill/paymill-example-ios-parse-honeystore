@@ -336,8 +336,12 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
      [UIView commitAnimations];
 }
 - (BOOL)formIsValid{
-    if([self.cardNumberLabel.text isEqualToString:@""]){
-        NSString *msg = @"Please enter creadit card, or select.";
+    if(self.cardNumber == nil || self.cardNumber.length == 0){
+        NSString *msg = @"Please enter credit card";
+        if([self.oldPayments count] > 0){
+            msg = [msg stringByAppendingString:@" or select existing"];
+        }
+        msg = [msg stringByAppendingString:@"."];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:msg delegate:nil
                                               cancelButtonTitle:@"OK" otherButtonTitles:nil];

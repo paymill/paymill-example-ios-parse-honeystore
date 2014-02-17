@@ -83,8 +83,8 @@
 		2287C80A18AE56BE00F406AA /* PMLStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLStoreViewController.m; sourceTree = "<group>"; };
 		2287C81E18AE576300F406AA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = HoneyStore/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		2287C81F18AE576300F406AA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = HoneyStore/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		2287C82118AE578000F406AA /* HoneyStore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "HoneyStore-Info.plist"; path = "HoneyStore/HoneyStore-Info.plist"; sourceTree = SOURCE_ROOT; };
-		2287C82218AE578000F406AA /* HoneyStore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HoneyStore-Prefix.pch"; path = "HoneyStore/HoneyStore-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		2287C82118AE578000F406AA /* PAYMILL HoneyStore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PAYMILL HoneyStore-Info.plist"; path = "HoneyStore/PAYMILL HoneyStore-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2287C82218AE578000F406AA /* PAYMILL HoneyStore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PAYMILL HoneyStore-Prefix.pch"; path = "HoneyStore/PAYMILL HoneyStore-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		2287C82318AE578000F406AA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = HoneyStore/main.m; sourceTree = SOURCE_ROOT; };
 		2287C82418AE578000F406AA /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryBoard.storyboard; path = HoneyStore/MainStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
 		2287C82918AE57E700F406AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = HoneyStore/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
@@ -102,7 +102,7 @@
 		B208404F18917BC700A79D2C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B208405118917E0A00A79D2C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		B208405318917E3300A79D2C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		B2784A3F1860A4FB0057F064 /* HoneyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2784A3F1860A4FB0057F064 /* PAYMILL HoneyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PAYMILL HoneyStore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2784A421860A4FB0057F064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2784A441860A4FB0057F064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B2784A461860A4FB0057F064 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -240,7 +240,7 @@
 		B2784A401860A4FB0057F064 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B2784A3F1860A4FB0057F064 /* HoneyStore.app */,
+				B2784A3F1860A4FB0057F064 /* PAYMILL HoneyStore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,8 +283,8 @@
 				2287C82818AE57E700F406AA /* InfoPlist.strings */,
 				2287C81E18AE576300F406AA /* AppDelegate.h */,
 				2287C81F18AE576300F406AA /* AppDelegate.m */,
-				2287C82118AE578000F406AA /* HoneyStore-Info.plist */,
-				2287C82218AE578000F406AA /* HoneyStore-Prefix.pch */,
+				2287C82118AE578000F406AA /* PAYMILL HoneyStore-Info.plist */,
+				2287C82218AE578000F406AA /* PAYMILL HoneyStore-Prefix.pch */,
 				2287C82318AE578000F406AA /* main.m */,
 			);
 			name = "Supporting Files";
@@ -294,9 +294,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B2784A3E1860A4FB0057F064 /* HoneyStore */ = {
+		B2784A3E1860A4FB0057F064 /* PAYMILL HoneyStore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2784A771860A4FC0057F064 /* Build configuration list for PBXNativeTarget "HoneyStore" */;
+			buildConfigurationList = B2784A771860A4FC0057F064 /* Build configuration list for PBXNativeTarget "PAYMILL HoneyStore" */;
 			buildPhases = (
 				FFE5A82F1875495299AF5C3D /* Check Pods Manifest.lock */,
 				B2784A3B1860A4FB0057F064 /* Sources */,
@@ -308,9 +308,9 @@
 			);
 			dependencies = (
 			);
-			name = HoneyStore;
+			name = "PAYMILL HoneyStore";
 			productName = "Honey on Sale";
-			productReference = B2784A3F1860A4FB0057F064 /* HoneyStore.app */;
+			productReference = B2784A3F1860A4FB0057F064 /* PAYMILL HoneyStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -322,7 +322,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Vladimir Marinov";
 			};
-			buildConfigurationList = B2784A3A1860A4FB0057F064 /* Build configuration list for PBXProject "HoneyStore" */;
+			buildConfigurationList = B2784A3A1860A4FB0057F064 /* Build configuration list for PBXProject "PAYMILL HoneyStore" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -335,7 +335,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B2784A3E1860A4FB0057F064 /* HoneyStore */,
+				B2784A3E1860A4FB0057F064 /* PAYMILL HoneyStore */,
 			);
 		};
 /* End PBXProject section */
@@ -517,8 +517,8 @@
 					/Users/vladimirmarinov/Documents/work,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HoneyStore/HoneyStore-Prefix.pch";
-				INFOPLIST_FILE = "HoneyStore/HoneyStore-Info.plist";
+				GCC_PREFIX_HEADER = "HoneyStore/PAYMILL HoneyStore-Prefix.pch";
+				INFOPLIST_FILE = "HoneyStore/PAYMILL HoneyStore-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Pods/build/Debug-iphonesimulator\\\"",
@@ -531,7 +531,7 @@
 					"-lstdc++",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "PAYMILL HoneyStore";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -555,8 +555,8 @@
 					/Users/vladimirmarinov/Documents/work,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HoneyStore/HoneyStore-Prefix.pch";
-				INFOPLIST_FILE = "HoneyStore/HoneyStore-Info.plist";
+				GCC_PREFIX_HEADER = "HoneyStore/PAYMILL HoneyStore-Prefix.pch";
+				INFOPLIST_FILE = "HoneyStore/PAYMILL HoneyStore-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/Pods/build/Debug-iphonesimulator\\\"",
@@ -569,7 +569,7 @@
 					"-lstdc++",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "PAYMILL HoneyStore";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -579,7 +579,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B2784A3A1860A4FB0057F064 /* Build configuration list for PBXProject "HoneyStore" */ = {
+		B2784A3A1860A4FB0057F064 /* Build configuration list for PBXProject "PAYMILL HoneyStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2784A751860A4FC0057F064 /* Debug */,
@@ -588,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2784A771860A4FC0057F064 /* Build configuration list for PBXNativeTarget "HoneyStore" */ = {
+		B2784A771860A4FC0057F064 /* Build configuration list for PBXNativeTarget "PAYMILL HoneyStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2784A781860A4FC0057F064 /* Debug */,
