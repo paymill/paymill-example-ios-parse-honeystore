@@ -39,9 +39,7 @@
                                       target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
     self.productsTable.backgroundColor = [UIColor whiteColor];
-    NSString *paymillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
-    NSLog(@"%@", paymillClientId );
-}
+  }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
@@ -87,19 +85,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"productTableCell";
+    // load from NIB
     PMLProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[PMLProductTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
+    
 	PMLProduct *product = [PMLStoreController sharedInstance].Products[indexPath.row];
     [cell configureProduct:product];
-    
     [cell.orderButton addTarget:self action:@selector(orderProduct:) forControlEvents:UIControlEventTouchUpInside];
     cell.orderButton.tag = indexPath.row;
+    [cell setUserInteractionEnabled:YES];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
  	[self performSegueWithIdentifier:@"OrderProductSeque" sender:tableView];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
