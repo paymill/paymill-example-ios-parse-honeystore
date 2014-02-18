@@ -80,14 +80,14 @@ and get application keys. Please find the [installation of PARSE Cloud](https://
 After the installation please find your application keys at *[Application Name]->Settings->Application Keys*. 
 Then copy Product.js, main.js, paymill.parse.js in your PARSE could directory run in console
 
- ```dos
+```json
     curl -X POST \
-  -H "X-Parse-Application-Id: APPLICATION_ID" \
-  -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
-  -H "Content-Type: application/json" \
-  --data-binary @Product.json \
-  https://api.parse.com/1/batch
- ```
+  		 -H "X-Parse-Application-Id: APPLICATION_ID" \
+ 		 -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
+ 		 -H "Content-Type: application/json" \
+ 		 --data-binary @Product.json \
+  		https://api.parse.com/1/batch
+```
 
  This will create your database.
  After that open main.js and fill your private PAYMILL key, then run:  
@@ -95,7 +95,7 @@ Then copy Product.js, main.js, paymill.parse.js in your PARSE could directory ru
 ```dos
 
  	parse deploy
- 	
+
  ```
 
 This will upload all code that you need for the backend. 
