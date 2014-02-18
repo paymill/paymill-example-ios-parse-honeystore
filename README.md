@@ -70,15 +70,18 @@ All screen that user see are implemented in iOS project.
 
 Resources
 
-For iOs we have images, icons, storyboard and plist file, for backend we need PAYMILL's library for PARSE i.e 'paymill.parse.js'. 
+For iOS we have images, icons, storyboard and plist file, for backend we need PAYMILL's library for PARSE i.e 'paymill.parse.js'. 
 
 **Database**
 
 Because our database is located in PARSE cloud, you must have valid user and password for it. After the registration you must create application for example 'HoneyStore'
 and get application keys. Please find the [installation of PARSE Cloud](https://parse.com/docs/cloud_code_guide)
+
 After the installation please find your application keys at [Application Name]->Settings->Application Keys. 
 Then copy Product.js, main.js, paymill.parse.js in your PARSE could directory run in console
- ```dos
+
+ ```
+
  curl -X POST \
   -H "X-Parse-Application-Id: APPLICATION_ID" \
   -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
@@ -86,10 +89,11 @@ Then copy Product.js, main.js, paymill.parse.js in your PARSE could directory ru
   --data-binary @Product.json \
   https://api.parse.com/1/batch
  ```
+
  This will create your database.
  After that open main.js and fill your private PAYMILL key, then run:  
 
-```dos
+```
  	parse deploy
  ```
 
