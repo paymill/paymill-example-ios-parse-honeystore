@@ -1,27 +1,28 @@
 # Recurrent Billing with PAYMILL
 
-PAYMILL is a full-stack payment solution with very reasonable pricing and is easy to setup. See how to add it to a iOS application here, for back end we use PARSE. If you want to use it only in iOS application you can look at VoucherMill(https://github.com/paymill/paymill-ios/tree/master/samples/vouchermill)
+PAYMILL is a full-stack payment solution with very reasonable pricing and is easy to setup. See how to add it to a iOS application here, for back end we use [Parse](https://parse.com). If you want to use it only in iOS application you can look at VoucherMill(https://github.com/paymill/paymill-ios/tree/master/samples/vouchermill)
 
-If you ever need to process credit card payments or recurring payments aka. subscriptions through your iOS applications, you should take a look at PAYMILL. 
-PAYMILL is a payment gateway that is easy to set up and which is very developer friendly. It only charges fees on a per-transaction basis and these are very reasonable. 
-There are no monthly fees or other hidden costs.
+If you ever need to process credit card payments or recurring payments aka. subscriptions through your iOS applications, you should take a look at PAYMILL. PAYMILL is a payment gateway that is easy to set up and which is very developer friendly. It only charges fees on a per-transaction basis. 
+
 
 ### What does the application
 
-The application, which we’ll use is a simple store that sells jars with honey ;) The customer can brouse the available jars and add each of them to his shoping basket. When the user is done with his selection, he can checkout the order by providing a credit card manualy or by scanning it.
+The application, which we are going use is a simple store that sells jars of honey ;) The customer can browse the available jars and add each of them to his shopping basket. When the user is done with his selection, he can checkout the order by providing a credit card manually or by scanning it.
 
-In this application we combinate different SDKs of PAYMILL. For public part we use PAYMILL's iOS SDK and for private use JS SDK. For easy scan of credit card we use [CardIo](https://www.card.io).    
+In this application we combine different SDKs of PAYMILL. For public part we use PAYMILL's [iOS SDK](https://github.com/paymill/paymill-ios) and for private use its [JavaScript SDK](https://github.com/paymill/paymill-js). For easy scan of credit card we use [card.io](https://www.card.io).
 
-Before you use the app you must register as merchant in PAYMILL website and get your public and private key. Private key you must set in PARSE part, the public key must be used in iOS part.
+Before you use the app you must register as merchant in PAYMILL's website and get your public and private key. Private key you must set on the backend or in our case in Parse, the public key must be used in iOS part.
+
+First thing you need to do is to login or register in HoneyStore Application.
 ![landing page](./docs-assets/01.pages_index.png)
 
-There are four different products that user can buy and add it to the Cart. When the user select on one of the product, he will be redirected to the details page, there he can read about his choice and to add it in the Shoping Cart.
-
+There are four different products that user can choose from.
 ![sign up page](./docs-assets/02.users_init.png)
 
-For users management we user PARSE SDK. When you lunch the application you will see PARSE's SignUp and Logins screen. 
-After the user register himself in the application, credentials are send to PARSE and then we use PAYMILL's JS SDK to create client Id. By this Id we make all transaction to PAYMILL. 
+When the user select on one of the products, he will be redirected to the details page, there he can read more about his choice and to add it to the shopping cart.
+![sign up page](./docs-assets/02.users_init.png)
 
+On the checkout page the user have to provide a credit card, if none exists. He can scan it, or he can enter the requested information manually. If the user has already given his credit card, he just need to select it.
 
 ### Application internals
 
@@ -49,6 +50,9 @@ As you can see **CocoaPods** prepare your project file and download all dependan
 The application is virtually separated in tree parts: User management, Business Logic, Screens and Resources.
 
 User management
+
+For users management we user PARSE SDK. When you lunch the application you will see PARSE's SignUp and Logins screen. 
+After the user register himself in the application, credentials are send to PARSE and then we use PAYMILL's JS SDK to create client Id. By this Id we make all transaction to PAYMILL. 
 
 For easy and fast impltementation we use that functionality from PARSE iOS SDK. There are ready to use Login, SingnUp controllers and views, this save us hours of codding. 
 

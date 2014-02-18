@@ -1,9 +1,9 @@
 //
 //  CheckOutViewController.m
-//  Honey Store
+//  Honey on Sale
 //
 //  Created by Vladimir Marinov on 14.01.14.
-//  Copyright (c) 2014 г. PAYMILL. All rights reserved.
+//  Copyright (c) 2014 г. Vladimir Marinov. All rights reserved.
 //
 
 #import "PMLPaymentViewController.h"
@@ -18,7 +18,7 @@
 
 @interface PMLPaymentViewController ()
 
-@property (nonatomic, weak) IBOutlet UIButton *existingCard;
+@property (nonatomic, weak) IBOutlet UITextField *existingClientTextField;
 @property (nonatomic, weak) IBOutlet UIView *oldPaymentsView;
 @property (nonatomic, weak) IBOutlet UIView *cardView;
 
@@ -63,9 +63,22 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     self.paymentsPickerView.dataSource = self;
     self.paymentsPickerView.delegate = self;
     self.paymentsPickerView.showsSelectionIndicator = YES;
+<<<<<<< HEAD
     self.paymentsView.frame = CGRectMake(0, self.view.frame.size.height + self.paymentsView.frame.size.height,
                                          self.paymentsView.frame.size.width, self.paymentsView.frame.size.height);
 
+=======
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                   target:self action:@selector(selectDidFinish:)];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [toolbar setItems: [NSArray arrayWithObject:doneButton]];
+    
+    [self.paymentsPickerView selectedRowInComponent:0];
+    [self.existingClientTextField setInputView:self.paymentsPickerView];
+    self.existingClientTextField.inputAccessoryView = toolbar;
+    self.existingClientTextField.delegate = self;
+>>>>>>> 25cb83cb3b86c5097993ae0227d2b40300d912f6
     self.accHolderTextField.text = [PFUser currentUser].username;
     self.emailTextField.text = [PFUser currentUser].email;
     if([self respondsToSelector:@selector(edgesForExtendedLayout)]){
@@ -92,6 +105,9 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
 	
 }
 
+- (void)selectDidFinish:(id)sender {
+    [self.existingClientTextField resignFirstResponder];
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
@@ -126,7 +142,9 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     // save card info
     self.cardExpireMonth = payment.expire_month;
     self.cardExpireYear = payment.expire_year;
-    self.selectedPaymentId = payment.id;
+     self.selectedPaymentId = payment.id;
+   [self.existingClientTextField resignFirstResponder];
+    
 }
 #pragma mark- Get Old Payments
 - (PMPayment*)parsePayment:(PFObject*)parseObject{

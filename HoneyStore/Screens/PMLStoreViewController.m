@@ -1,9 +1,9 @@
 //
 //  PMLStoreViewController.m
-//  Honey Store
+//  Honey on Sale
 //
 //  Created by Vladimir Marinov on 17.12.13.
-//  Copyright (c) 2013 г. PAYMILL. All rights reserved.
+//  Copyright (c) 2013 г. PAYMILL All rights reserved.
 //
 
 #import "PMLStoreViewController.h"
@@ -26,7 +26,8 @@
 - (void)awakeFromNib
 {
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-		}
+	   // self.clearsSelectionOnViewWillAppear = NO;
+	}
     [super awakeFromNib];
 }
 
@@ -38,8 +39,12 @@
                                       initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                       target:self action:@selector(refreshObjects:)];
 	self.navigationItem.leftBarButtonItem = refreshButton;
+
     self.productsTable.backgroundColor = [UIColor whiteColor];
-  }
+
+    NSString *paymillClientId = [[PFUser currentUser] valueForKey:@"paymillClientId"];
+    NSLog(@"%@", paymillClientId );
+}
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
@@ -85,21 +90,26 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *identifier = @"productTableCell";
-    // load from NIB
     PMLProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
+    if (!cell) {
+        cell = [[PMLProductTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
 	PMLProduct *product = [PMLStoreController sharedInstance].Products[indexPath.row];
     [cell configureProduct:product];
+    
     [cell.orderButton addTarget:self action:@selector(orderProduct:) forControlEvents:UIControlEventTouchUpInside];
     cell.orderButton.tag = indexPath.row;
-    [cell setUserInteractionEnabled:YES];
     return cell;
 }
+<<<<<<< HEAD
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     tableView.tag = indexPath.row;
  	[self performSegueWithIdentifier:@"OrderProductSeque" sender:tableView];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
+=======
+
+>>>>>>> 25cb83cb3b86c5097993ae0227d2b40300d912f6
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"OrderProductSeque"]) {

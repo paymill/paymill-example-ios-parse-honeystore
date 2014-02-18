@@ -1,9 +1,9 @@
 //
 //  PMLProduct.m
-//  Honey Store
+//  Honey on Sale
 //
 //  Created by Vladimir Marinov on 13.01.14.
-//  Copyright (c) 2014 г. PAYMILL. All rights reserved.
+//  Copyright (c) 2014 г. PAYMILL All rights reserved.
 //
 
 #import "PMLProduct.h"

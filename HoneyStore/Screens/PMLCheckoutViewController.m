@@ -1,6 +1,6 @@
 //
 //  PMLCheckoutViewController.m
-//  Honey Store
+//  Honey on Sale
 //
 //  Created by Vladimir Marinov on 1/22/14.
 //  Copyright (c) 2014 PAYMILL. All rights reserved.
