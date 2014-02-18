@@ -77,12 +77,11 @@ For iOS we have images, icons, storyboard and plist file, for backend we need PA
 Because our database is located in PARSE cloud, you must have valid user and password for it. After the registration you must create application for example 'HoneyStore'
 and get application keys. Please find the [installation of PARSE Cloud](https://parse.com/docs/cloud_code_guide)
 
-After the installation please find your application keys at [Application Name]->Settings->Application Keys. 
+After the installation please find your application keys at *[Application Name]->Settings->Application Keys*. 
 Then copy Product.js, main.js, paymill.parse.js in your PARSE could directory run in console
 
- ```
-
- curl -X POST \
+ ```dos
+    curl -X POST \
   -H "X-Parse-Application-Id: APPLICATION_ID" \
   -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
   -H "Content-Type: application/json" \
@@ -93,8 +92,10 @@ Then copy Product.js, main.js, paymill.parse.js in your PARSE could directory ru
  This will create your database.
  After that open main.js and fill your private PAYMILL key, then run:  
 
-```
+```dos
+
  	parse deploy
+ 	
  ```
 
 This will upload all code that you need for the backend. 
