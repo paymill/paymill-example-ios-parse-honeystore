@@ -54,7 +54,7 @@
 }
 #pragma mark- Get Items from Parse
 
-- (void)getItemsWithComplte:(ControllerCompleteBlock)complete{
+- (void)getProductsWithComplte:(ControllerCompleteBlock)complete{
 
 	PFQuery *query = [PFQuery queryWithClassName:@"Product"];
     if(self.products == Nil){

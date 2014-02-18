@@ -21,7 +21,7 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 @property (nonatomic, strong) NSMutableArray *itemsInCard;
 
 // pull items for sale from backend
-- (void)getItemsWithComplte:(ControllerCompleteBlock)complete;
+- (void)getProductsWithComplte:(ControllerCompleteBlock)complete;
 
 /*get total in cents*/
 - (int)getTotal;

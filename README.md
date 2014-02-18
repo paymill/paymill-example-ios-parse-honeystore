@@ -100,16 +100,56 @@ This will upload all code that you need for the backend.
 
 **Models**
 
-On frontend(iOS) part we have 
+In our app we have 3 different Models
 
-For store all info that we need we have 2 tables:
-* User: Contains columns username, email, password and PAYMILL Client identifier 
-* ItemForSale: Contains columns name, amount, currency, description, image, iterval and trial_period_days.
-
-To upload your sample data create parse account and import data from \Parse\_User.json and \Parse\ItemForSale.json 
+* User: for user management we have PARSE's PFUser, by this class we can take current user and all info about him. In our app users are extended with one more property 'paymillClientId'.
+* Product: contains information from PARSE server. All products are stored in our database.
+* StoreController: contains infromation about our store, here we contains orders, products and total amount.
 
 
-**Controllers**
+User management is very borring issue, we can escape from this by using PARSE functionality. It is very easy to use and will save us alot of time. Here is very simple way to use it.
+When application start we check if there is current user:
+
+```objectivec 
+	if (![PFUser currentUser]) 
+```
+If there is no active user we use PARSE *PFLogInViewController* for login screen (on this screen there is also fuctionality to SingnUp). When user create an acount it automatically calls backend and save the new user in our database.
+But before save, we call PAYMILL go get client Id. We need this *client Id* when we create transactions and payments, that's why we save it with the user.
+
+```javascript 
+Parse.Cloud.beforeSave("_User", function(request, response) {
+	paymill.clients.create(request.object.email, request.object.username).then(function(result) {
+		 request.object.set("paymillClientId", result.id);
+		 response.success();
+	}, function(e) {
+		response.error("save user failed" + e);
+	});
+});
+```
+
+In your database we have 4 hardcoded products, to show them in our store we make a request to PARSE. When the user login we make following call in *PMLStoreController*
+
+```objectivec 
+- (void)getProductsWithComplte:(ControllerCompleteBlock)complete{
+
+	PFQuery *query = [PFQuery queryWithClassName:@"Product"];
+    if(self.products == Nil){
+        self.products = [[NSMutableArray alloc] init];
+    }
+    [self.products removeAllObjects];
+    
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		for (PFObject *obj in objects) {
+            PMLProduct* product = [PMLProduct parse:obj];
+            [self.products addObject:product];
+        }
+        complete(error);
+	}];
+}
+```
+
+By this code we pull all Products from database and save them as PMLProduct in our store.
+
 
 **Dealing with clients**
 
