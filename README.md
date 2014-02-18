@@ -170,11 +170,142 @@ For better view we predefine every cell and implement them in PMLProductTableVie
 * PMLPaymentViewController: This controller is care for our payments and orders, on it we make actual checkout.
 
 
-**Dealing with existing creadit cards**
+**Handling the credit cards**
+
+ Once the user selects his orders, he goes to *PMLPaymentViewController*. And here we use another very useful library: CardIo.
+ Using CardIo you avoid the boring impltementation of all controls that are needed for entering credit card info. Before use it you must register in CardIo wesite and get CardIoToken.
+ After that put your TOKEN in 
+
+```objectivec 
+ #define CARDIO_TOKEN @"CARD_IO_TOKEN" 
+```
+To receive credit card info our controller must inplement *CardIOPaymentViewControllerDelegate* @protocol.
+After all the data is entered we procced to sent the data to PAYMILL and get payment token.
+
+```objectivec 
+- (void)createTransactionForAccHolder:(NSString *)ccHolder cardNumber:(NSString*)cardNumber
+                          expiryMonth:(NSString*)expiryMonth
+                           expiryYear:(NSString*)expiryYear cardCvv:(NSString*)cardCvv{
+    PMError *error;
+    PMPaymentParams *params;
+    // 1. generate paymill payment method
+    id paymentMethod = [PMFactory genCardPaymentWithAccHolder:ccHolder
+                                                   cardNumber:cardNumber
+                                                  expiryMonth:expiryMonth
+                                                   expiryYear:expiryYear
+                                                 verification:cardCvv
+                                                        error:&error];
+    if(!error) {
+        // 2. generate params
+        params = [PMFactory genPaymentParamsWithCurrency:self.currency amount:[self.amount intValue]
+                                             description:self.description error:&error];
+    }
+    
+    if(!error) {
+        // 3. generate token
+        [PMManager generateTokenWithPublicKey:PAYMILL_PUBLIC_KEY
+                                     testMode:YES method:paymentMethod
+                                   parameters:params success:^(NSString *token) {
+                                       //token successfully created
+                                       [self createTransactionWithToken:token];
+                                   }
+                                      failure:^(PMError *error) {
+                                          //token generation failed
+                                          NSLog(@"Generate Token Error %@", error.message);
+                                          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                      }];  
+    }
+    else{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"GenCardPayment Error %@", error.message);
+    }
+}
+```
+
+First we generate payment with client's info, after that we add amount and description to your payment. On next step we  get the encoded representation of the credit card as token. 
+This token is valid for 5 minutes and can be used only one time. Then we call *createTransactionWithToken* on our backend to create the transaction.
+
+```objectivec
+- (void)createTransactionWithToken:(NSString*)token {
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:token forKey:@"token"];
+    [parameters setObject:self.amount forKey:@"amount"];
+    [parameters setObject:self.currency forKey:@"currency"];
+    [parameters setObject:self.description forKey:@"descrition"];
+
+    [PFCloud callFunctionInBackground:@"createTransactionWithToken" withParameters:parameters
+                                block:^(id object, NSError *error) {
+                                    if(error == nil){
+                                        [self transactionSucceed];
+                                    }
+                                    else {
+                                        [self transactionFailWithError:error];
+                                    }
+                                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                } ];
+
+}
+```
+
+**Dealing with old credit cards**
+ 
+When user made one payment, PAYMILL saves this payment as unique ID. With this id we can make another payment, this means that if user enters his creadit card info we can he can use it again without entering card info.    
+On our backend we have method to get all previous payments:
+
+```javascript 
+Parse.Cloud.define("getPayments", function(request, response) {
+	Parse.Cloud.useMasterKey();
+	var clientId = Parse.User.current().get("paymillClientId");
+	paymill.clients.detail(clientId).then(function(client) {
+		var result = [];
+		for (var i = 0; i < client.payment.length; i++) {
+			result.push(client.payment[i]);
+		}
+		response.success(result);
+	}, function(error) {
+		response.error("couldnt list payments:" + error);
+	});
+});
+```
+To call this method we implement method(*getOldPayments*) to get all previous payments when *PMLPaymentViewController* appear. 
+When the user selects one of these payments, we only need to send the payment Id to PAYMILL and amount to create  the transaction.
+
+```objectivec
+- (void)createTransactionWithPayment:(NSString*)paymentId
+{
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:paymentId forKey:@"paymillPaymentId"];
+    [parameters setObject:self.amount forKey:@"amount"];
+    [parameters setObject:self.currency forKey:@"currency"];
+    [parameters setObject:self.description forKey:@"descrition"];
+    [PFCloud callFunctionInBackground:@"createTransactionWithPayment" withParameters:parameters
+                                block:^(id object, NSError *error) {
+                                    
+                                    if(error == nil){
+                                        [self transactionSucceed];
+                                     }
+                                    else {
+                                        [self transactionFailWithError:error];
+                                    }
+                                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                } ];
+    
+}
+```
 
 **Adding PAYMILL’s API Key**
 
-**Handling the credit cards**
+To use PAYMILL in our application we need to register as merchant in PAYMILL's website. Put your Public Key in the iOS application.
 
-**Dealing with payments and transactions**
+```objectivec
+NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
+```
+
+and your Private Key in backend  
+```javascript 
+paymill.initialize("PAYMILL_PRIVATE_KEY");
+```
+
+
 
