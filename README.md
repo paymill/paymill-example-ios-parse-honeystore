@@ -78,14 +78,14 @@ Because our database is located in PARSE cloud, you must have valid user and pas
 and get application keys. Please find the [installation of PARSE Cloud](https://parse.com/docs/cloud_code_guide)
 
 After the installation please find your application keys at *[Application Name]->Settings->Application Keys*. 
-Then copy Product.js, main.js, paymill.parse.js in your *cloud* directory run in console
+Then copy productDB.js, main.js, paymill.parse.js in your *cloud* directory and run in console
 
 ```dos
     curl -X POST \
   		 -H "X-Parse-Application-Id: APPLICATION_ID" \
  		 -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
  		 -H "Content-Type: application/json" \
- 		 --data-binary @Product.json \
+ 		 --data-binary @productDB.json \
   		https://api.parse.com/1/batch
 ```
 
@@ -98,17 +98,15 @@ Then copy Product.js, main.js, paymill.parse.js in your *cloud* directory run in
 
 This will upload all code that you need for the backend. 
 
+**Models**
 
+On frontend(iOS) part we have 
 
 For store all info that we need we have 2 tables:
 * User: Contains columns username, email, password and PAYMILL Client identifier 
 * ItemForSale: Contains columns name, amount, currency, description, image, iterval and trial_period_days.
 
 To upload your sample data create parse account and import data from \Parse\_User.json and \Parse\ItemForSale.json 
-
-**Models**
-
-
 
 
 **Controllers**
