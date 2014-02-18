@@ -63,22 +63,10 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     self.paymentsPickerView.dataSource = self;
     self.paymentsPickerView.delegate = self;
     self.paymentsPickerView.showsSelectionIndicator = YES;
-<<<<<<< HEAD
     self.paymentsView.frame = CGRectMake(0, self.view.frame.size.height + self.paymentsView.frame.size.height,
                                          self.paymentsView.frame.size.width, self.paymentsView.frame.size.height);
 
-=======
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                   initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                   target:self action:@selector(selectDidFinish:)];
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    [toolbar setItems: [NSArray arrayWithObject:doneButton]];
-    
-    [self.paymentsPickerView selectedRowInComponent:0];
-    [self.existingClientTextField setInputView:self.paymentsPickerView];
-    self.existingClientTextField.inputAccessoryView = toolbar;
-    self.existingClientTextField.delegate = self;
->>>>>>> 25cb83cb3b86c5097993ae0227d2b40300d912f6
+
     self.accHolderTextField.text = [PFUser currentUser].username;
     self.emailTextField.text = [PFUser currentUser].email;
     if([self respondsToSelector:@selector(edgesForExtendedLayout)]){
@@ -103,10 +91,6 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     self.totalLabel.text = [NSString stringWithFormat:@"Total: %d.%d", [self.amount intValue]/ 100,
                        [self.amount intValue] %100 ];
 	
-}
-
-- (void)selectDidFinish:(id)sender {
-    [self.existingClientTextField resignFirstResponder];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];

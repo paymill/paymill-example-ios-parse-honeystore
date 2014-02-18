@@ -47,7 +47,7 @@ As you can see **CocoaPods** prepare your project file and download all dependan
 
 **Project Structure**
 
-The application is virtually separated in tree parts: User management, Business Logic, Screens and Resources.
+The application is virtually separated in tree parts: User management, Business Logic, Screens, Resources and Database.
 
 User management
 
@@ -58,21 +58,44 @@ For easy and fast impltementation we use that functionality from PARSE iOS SDK. 
 
 Business Logic
 
-In Business Logic we implement Product and StoreController. Products are items that we sell on our store, when appliation run we download them from PARSE and then show them in our store.
-StoreController we use to store all data about our store like Cart and Products.
+In iOS part our Business Logic is represented by PMLProduct and PMLStoreController. Products are items that we sell on our store, when appliation run we download them from PARSE and then show them in our store.
+StoreController we use to store all data that we need in our store like purchases and available products.
+
+There is another part of Business Logic, which is implement in our backend(PARSE) code. You can find this code in '.\Parse\main.js', here we have methods for client info, 
+register our user in PAYMILL and create transactions. 
 
 Screens
 
-In this part we implement all needed Views for our Store.
-
+All screen that user see are implemented in iOS project.
 
 Resources
 
-Here we have images, icons, storyboard and plist file for our project. 
+For iOs we have images, icons, storyboard and plist file, for backend we need PAYMILL's library for PARSE i.e 'paymill.parse.js'. 
 
 **Database**
 
-Our database is located in PARSE cloud. 
+Because our database is located in PARSE cloud, you must have valid user and password for it. After the registration you must create application for example 'HoneyStore'
+and get application keys. Please find the [installation of PARSE Cloud](https://parse.com/docs/cloud_code_guide)
+After the installation please find your application keys at [Application Name]->Settings->Application Keys. 
+Then copy Product.js, main.js, paymill.parse.js in your PARSE could directory run in console
+ ```dos
+ curl -X POST \
+  -H "X-Parse-Application-Id: APPLICATION_ID" \
+  -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
+  -H "Content-Type: application/json" \
+  --data-binary @Product.json \
+  https://api.parse.com/1/batch
+ ```
+ This will create your database.
+ After that open main.js and fill your private PAYMILL key, then run:  
+
+```dos
+ 	parse deploy
+ ```
+
+This will upload all code that you need for the backend. 
+
+
 
 For store all info that we need we have 2 tables:
 * User: Contains columns username, email, password and PAYMILL Client identifier 
@@ -82,12 +105,7 @@ To upload your sample data create parse account and import data from \Parse\_Use
 
 **Models**
 
-curl -X POST \
-  -H "X-Parse-Application-Id: uii9EaqHnJ5fiez0hZOgc5KdIz5Fw9uIXIn24SMY" \
-  -H "X-Parse-REST-API-Key: L3CraNfoFgf0ClSJH2yMz0VOhwPShaoLy2wlIM0f" \
-  -H "Content-Type: application/json" \
-  --data-binary @Product.json \
-  https://api.parse.com/1/batch
+
 
 
 **Controllers**

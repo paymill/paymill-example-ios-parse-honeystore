@@ -101,15 +101,12 @@
     cell.orderButton.tag = indexPath.row;
     return cell;
 }
-<<<<<<< HEAD
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     tableView.tag = indexPath.row;
  	[self performSegueWithIdentifier:@"OrderProductSeque" sender:tableView];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
-=======
 
->>>>>>> 25cb83cb3b86c5097993ae0227d2b40300d912f6
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"OrderProductSeque"]) {
