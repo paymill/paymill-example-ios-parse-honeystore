@@ -100,11 +100,10 @@ This will upload all code that you need for the backend.
 
 **Models**
 
-In our app we have 3 different Models
+In our app we have 2 different Models
 
 * User: for user management we have PARSE's PFUser, by this class we can take current user and all info about him. In our app users are extended with one more property 'paymillClientId'.
 * Product: contains information from PARSE server. All products are stored in our database.
-* StoreController: contains infromation about our store, here we contains orders, products and total amount.
 
 
 User management is very borring issue, we can escape from this by using PARSE functionality. It is very easy to use and will save us alot of time. Here is very simple way to use it.
@@ -127,7 +126,8 @@ Parse.Cloud.beforeSave("_User", function(request, response) {
 });
 ```
 
-In your database we have 4 hardcoded products, to show them in our store we make a request to PARSE. When the user login we make following call in *PMLStoreController*
+In your database we have 4 hardcoded products, to show them in our store we make a request to PARSE. When the user login we make following call in *PMLStoreController*.
+By this code we pull all Products from database and save them as PMLProduct in memory
 
 ```objectivec 
 - (void)getProductsWithComplte:(ControllerCompleteBlock)complete{
@@ -148,14 +148,33 @@ In your database we have 4 hardcoded products, to show them in our store we make
 }
 ```
 
-By this code we pull all Products from database and save them as PMLProduct in our store.
+**Store Controller**
+
+* StoreController: contains infromation about our store, here we contains orders, products and total amount.
+To save all products and purchases we use PMLStoreController, this is logical prepresentation of our store. For example wen user add product to his card we save 
+it in our controller. When user go to payment screen we calculate the amoutn of all orders and put it in the payment. When we want to pull products from database we call: 
+
+```objectivec 
+- (void)getProductsWithComplte:(ControllerCompleteBlock)complete
+```
+
+**View Controllers**
+
+Our ios application has 5 view controllers
+
+* PMLDefaultViewController: This is main controller of our application, on this controller we decide if there is active user, or ask user to SingIn.
+* PMLCheckoutViewController: This is base class for view controllers where have cart button, for example PMLProductDetailsViewController and PMLStoreViewController .
+* PMLStoreViewController: in this view controller we are dealing with products that user can buy, this is the front screen of our store. It present simple table controller with predefined cells.
+For better view we predefine every cell and implement them in PMLProductTableViewCell.
+* PMLProductDetailsViewController: On this view we show detailed infromation for selected product, here we have 'add to card' button, so user can add this product in his cart.
+* PMLPaymentViewController: This controller is care for our payments and orders, on it we make actual checkout.
 
 
-**Dealing with clients**
+**Dealing with existing creadit cards**
 
 **Adding PAYMILL’s API Key**
 
 **Handling the credit cards**
 
-**Dealing with payments**
+**Dealing with payments and transactions**
 
