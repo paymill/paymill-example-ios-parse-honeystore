@@ -62,7 +62,7 @@
 
 - (void)refreshObjects:(id)sender{
     [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-    [[PMLStoreController sharedInstance] getItemsWithComplte:^(NSError *error) {
+    [[PMLStoreController sharedInstance] getProductsWithComplte:^(NSError *error) {
         
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.productsTable reloadData];
