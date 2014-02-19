@@ -10,9 +10,10 @@
 
 @interface PMLProductTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) UIButton *orderButton;
-@property (nonatomic, strong) UILabel *priceLabel;
-@property (nonatomic, retain) UIImageView *previewImageView;
+@property (nonatomic, strong) IBOutlet UIButton *orderButton;
+@property (nonatomic, strong) IBOutlet UILabel *priceLabel;
+@property (nonatomic, strong) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *previewImageView;
 
 - (void)configureProduct:(PMLProduct *)product;
 + (CGFloat)rowHeight;

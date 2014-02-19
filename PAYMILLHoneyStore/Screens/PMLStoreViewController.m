@@ -91,9 +91,7 @@
 {
     static NSString *identifier = @"productTableCell";
     PMLProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[PMLProductTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
+    
 	PMLProduct *product = [PMLStoreController sharedInstance].Products[indexPath.row];
     [cell configureProduct:product];
     
