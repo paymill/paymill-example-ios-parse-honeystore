@@ -14,13 +14,13 @@ In this application we combine different SDKs of PAYMILL. For public part we use
 Before you use the app you must register as merchant in PAYMILL's website and get your public and private key. Private key you must set on the backend or in our case in Parse, the public key must be used in iOS part.
 
 First thing you need to do is to login or register in HoneyStore Application.
-![landing page](./docs-assets/01.pages_index.png)
+![landing page](./docs-assets/signup_screen.png)
 
 There are four different products that user can choose from.
-![sign up page](./docs-assets/02.users_init.png)
+![sign up page](./docs-assets/store_screen.png)
 
 When the user select on one of the products, he will be redirected to the details page, there he can read more about his choice and to add it to the shopping cart.
-![sign up page](./docs-assets/02.users_init.png)
+![sign up page](./docs-assets/product_details.png)
 
 On the checkout page the user have to provide a credit card, if none exists. He can scan it, or he can enter the requested information manually. If the user has already given his credit card, he just need to select it.
 
