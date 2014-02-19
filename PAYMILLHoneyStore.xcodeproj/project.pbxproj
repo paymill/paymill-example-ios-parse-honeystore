@@ -154,11 +154,11 @@
 		229BBF1118B505400094E8D6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				229BBF1718B505400094E8D6 /* PMLDefaultViewController.h */,
+				229BBF1818B505400094E8D6 /* PMLDefaultViewController.m */,
 				229BBF1218B505400094E8D6 /* Payment */,
 				229BBF1518B505400094E8D6 /* PMLCheckoutViewController.h */,
 				229BBF1618B505400094E8D6 /* PMLCheckoutViewController.m */,
-				229BBF1718B505400094E8D6 /* PMLDefaultViewController.h */,
-				229BBF1818B505400094E8D6 /* PMLDefaultViewController.m */,
 				229BBF1918B505400094E8D6 /* PMLProductDetailsViewController.h */,
 				229BBF1A18B505400094E8D6 /* PMLProductDetailsViewController.m */,
 				229BBF1B18B505400094E8D6 /* PMLProductTableViewCell.h */,
