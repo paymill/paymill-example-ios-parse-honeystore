@@ -292,6 +292,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
 - (void)createTransactionForAccHolder:(NSString *)ccHolder cardNumber:(NSString*)cardNumber
                           expiryMonth:(NSString*)expiryMonth
                            expiryYear:(NSString*)expiryYear cardCvv:(NSString*)cardCvv{
+    /*
     PMError *error;
     PMPaymentParams *params;
     // 1. generate paymill payment method
@@ -324,7 +325,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
     else{
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"GenCardPayment Error %@", error.message);
-    }
+    }*/
 }
 
 - (IBAction)showExistingCards:(id)sender{
