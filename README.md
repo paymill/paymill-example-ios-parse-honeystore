@@ -17,10 +17,10 @@ First thing you need to do is to login or register in HoneyStore Application.
 ![landing page](./docs-assets/signup_screen.png)
 
 There are four different products that user can choose from.
-![sign up page](./docs-assets/store_screen.png)
+![main store page](./docs-assets/store_screen.png)
 
 When the user select on one of the products, he will be redirected to the details page, there he can read more about his choice and to add it to the shopping cart.
-![sign up page](./docs-assets/product_details.png)
+![product details page](./docs-assets/product_details.png)
 
 On the checkout page the user have to provide a credit card, if none exists. He can scan it, or he can enter the requested information manually. If the user has already given his credit card, he just need to select it.
 
