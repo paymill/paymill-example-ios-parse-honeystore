@@ -47,10 +47,10 @@ Before you start you must install **CocoaPods**, please read you to install it o
 
 After successful installation locate  *Honey Store* pod file and run in your terminal:
 ```objective-c
-pod install
+  pod install
 ```
 
-As you can see **CocoaPods** prepare your project file and download all dependancy SDK. After everything is complete you are ready to go. Open xcworkspace file and you will see the main project *Honey on Sale* .
+As you can see **CocoaPods** prepare your project file and download all dependency SDK. After everything is complete you are ready to go. Open xcworkspace file and you will see the main project *Honey on Sale* .
 
 **Project Structure**
 
@@ -58,18 +58,15 @@ The application is virtually separated in tree parts: User management, Business 
 
 User management
 
-For users management we user PARSE SDK. When you lunch the application you will see PARSE's SignUp and Logins screen.
-After the user register himself in the application, credentials are send to PARSE and then we use PAYMILL's JS SDK to create client Id. By this Id we make all transaction to PAYMILL.
+For users management we use PARSE SDK. When you lunch the application you will see PARSE's SignUp and Login screen. After the user register himself in the application, credentials are send to PARSE and then we use PAYMILL's JS SDK to create client Id. By this Id we make all transaction to PAYMILL.
 
-For easy and fast impltementation we use that functionality from PARSE iOS SDK. There are ready to use Login, SingnUp controllers and views, this save us hours of codding.
+For easy and fast implementation we use that functionality from PARSE iOS SDK. There are ready to use Login, SingUp controllers and views, this save us hours of coding.
 
 Business Logic
 
-In iOS part our Business Logic is represented by PMLProduct and PMLStoreController. Products are items that we sell on our store, when appliation run we download them from PARSE and then show them in our store.
-StoreController we use to store all data that we need in our store like purchases and available products.
+In iOS part our Business Logic is represented by PMLProduct and PMLStoreController. Products are items that we sell on our store, when application run we download them from PARSE and then show them in our store. We use StoreController to store all data that we need in our store like purchases and available products.
 
-There is another part of Business Logic, which is implement in our backend(PARSE) code. You can find this code in '.\Parse\main.js', here we have methods for client info,
-register our user in PAYMILL and create transactions.
+There is another part of Business Logic, which is implement in our backend(PARSE) code. You can find this code in '.\Parse\main.js', here we have methods for client info, register our user in PAYMILL and create transactions.
 
 Screens
 
@@ -81,28 +78,23 @@ For iOS we have images, icons, storyboard and plist file, for backend we need PA
 
 **Database**
 
-Because our database is located in PARSE cloud, you must have valid user and password for it. After the registration you must create application for example 'HoneyStore'
-and get application keys. Please find the [installation of PARSE Cloud](https://parse.com/docs/cloud_code_guide)
+Because our database is located in PARSE cloud, you must have valid user and password for it. After the registration you must create application for example 'HoneyStore' and get application keys. Please find the [installation of PARSE Cloud](https://parse.com/docs/cloud_code_guide)
 
-After the installation please find your application keys at *[Application Name]->Settings->Application Keys*.
-Then copy productDB.js, main.js, paymill.parse.js in your *cloud* directory and run in console
+After the installation please find your application keys at *[Application Name]->Settings->Application Keys*. Then copy productDB.js, main.js, paymill.parse.js in your *cloud* directory and run in console
 
 ```dos
     curl -X POST \
-       -H "X-Parse-Application-Id: APPLICATION_ID" \
+      -H "X-Parse-Application-Id: APPLICATION_ID" \
       -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
       -H "Content-Type: application/json" \
       --data-binary @productDB.json \
       https://api.parse.com/1/batch
 ```
-
- This will create your database.
- After that open main.js and fill your private PAYMILL key, then run:
+This will create your database. After that open main.js and fill your private PAYMILL key, then run:
 
 ```dos
    parse deploy
 ```
-
 This will upload all code that you need for the backend.
 
 **Models**
@@ -112,14 +104,13 @@ In our app we have 2 different Models
 * User: for user management we have PARSE's PFUser, by this class we can take current user and all info about him. In our app users are extended with one more property 'paymillClientId'.
 * Product: contains information from PARSE server. All products are stored in our database.
 
-
-User management is very borring issue, we can escape from this by using PARSE functionality. It is very easy to use and will save us alot of time. Here is very simple way to use it.
+User management is very boring issue, we can escape from this by using PARSE functionality. It is very easy to use and will save us a lot of time. Here is very simple way to use it.
 When application start we check if there is current user:
 
-```objectivec
+```objective-c
   if (![PFUser currentUser])
 ```
-If there is no active user we use PARSE *PFLogInViewController* for login screen (on this screen there is also fuctionality to SingnUp). When user create an acount it automatically calls backend and save the new user in our database.
+If there is no active user we use PARSE *PFLogInViewController* for login screen (on this screen there is also functionality to SignUp). When user create an account it automatically calls backend and save the new user in our database.
 But before save, we call PAYMILL go get client Id. We need this *client Id* when we create transactions and payments, that's why we save it with the user.
 
 ```javascript
@@ -133,10 +124,9 @@ Parse.Cloud.beforeSave("_User", function(request, response) {
 });
 ```
 
-In your database we have 4 hardcoded products, to show them in our store we make a request to PARSE. When the user login we make following call in *PMLStoreController*.
-By this code we pull all Products from database and save them as PMLProduct in memory
+In your database we have 4 hardcoded products, to show them in our store we make a request to PARSE. When the user login we make following call in *PMLStoreController*. By this code we pull all Products from database and save them as PMLProduct in memory
 
-```objectivec
+```objective-c
 - (void)getProductsWithComplte:(ControllerCompleteBlock)complete{
 
   PFQuery *query = [PFQuery queryWithClassName:@"Product"];
@@ -157,23 +147,22 @@ By this code we pull all Products from database and save them as PMLProduct in m
 
 **Store Controller**
 
-* StoreController: contains infromation about our store, here we contains orders, products and total amount.
-To save all products and purchases we use PMLStoreController, this is logical prepresentation of our store. For example wen user add product to his card we save
-it in our controller. When user go to payment screen we calculate the amoutn of all orders and put it in the payment. When we want to pull products from database we call:
+* StoreController: contains information about our store, here we contains orders, products and total amount.
+To save all products and purchases we use PMLStoreController, this is logical prepresentation of our store. For example wen user add product to his card we save it in our controller. When user go to payment screen we calculate the amount of all orders and put it in the payment. When we want to pull products from database we call:
 
-```objectivec
+```objective-c
 - (void)getProductsWithComplte:(ControllerCompleteBlock)complete
 ```
 
 **View Controllers**
 
-Our ios application has 5 view controllers
+Our iOS application has 5 view controllers
 
 * PMLDefaultViewController: This is main controller of our application, on this controller we decide if there is active user, or ask user to SingIn.
 * PMLCheckoutViewController: This is base class for view controllers where have cart button, for example PMLProductDetailsViewController and PMLStoreViewController .
 * PMLStoreViewController: in this view controller we are dealing with products that user can buy, this is the front screen of our store. It present simple table controller with predefined cells.
 For better view we predefine every cell and implement them in PMLProductTableViewCell.
-* PMLProductDetailsViewController: On this view we show detailed infromation for selected product, here we have 'add to card' button, so user can add this product in his cart.
+* PMLProductDetailsViewController: On this view we show detailed information for selected product, here we have 'add to card' button, so user can add this product in his cart.
 * PMLPaymentViewController: This controller is care for our payments and orders, on it we make actual checkout.
 
 
@@ -183,13 +172,13 @@ For better view we predefine every cell and implement them in PMLProductTableVie
  Using CardIo you avoid the boring impltementation of all controls that are needed for entering credit card info. Before use it you must register in CardIo wesite and get CardIoToken.
  After that put your TOKEN in
 
-```objectivec
+```objective-c
  #define CARDIO_TOKEN @"CARD_IO_TOKEN"
 ```
 To receive credit card info our controller must inplement *CardIOPaymentViewControllerDelegate* @protocol.
 After all the data is entered we procced to sent the data to PAYMILL and get payment token.
 
-```objectivec
+```objective-c
 - (void)createTransactionForAccHolder:(NSString *)ccHolder cardNumber:(NSString*)cardNumber
                           expiryMonth:(NSString*)expiryMonth
                            expiryYear:(NSString*)expiryYear cardCvv:(NSString*)cardCvv{
@@ -232,7 +221,7 @@ After all the data is entered we procced to sent the data to PAYMILL and get pay
 First we generate payment with client's info, after that we add amount and description to your payment. On next step we  get the encoded representation of the credit card as token.
 This token is valid for 5 minutes and can be used only one time. Then we call *createTransactionWithToken* on our backend to create the transaction.
 
-```objectivec
+```objective-c
 - (void)createTransactionWithToken:(NSString*)token {
 
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
@@ -257,7 +246,7 @@ This token is valid for 5 minutes and can be used only one time. Then we call *c
 
 **Dealing with old credit cards**
 
-When user made one payment, PAYMILL saves this payment as unique ID. With this id we can make another payment, this means that if user enters his creadit card info we can he can use it again without entering card info.
+When user made one payment, PAYMILL saves this payment as unique ID. With this id we can make another payment, this means that if user enters his credit card info we can he can use it again without entering card info.
 On our backend we have method to get all previous payments:
 
 ```javascript
@@ -278,7 +267,7 @@ Parse.Cloud.define("getPayments", function(request, response) {
 To call this method we implement method(*getOldPayments*) to get all previous payments when *PMLPaymentViewController* appear.
 When the user selects one of these payments, we only need to send the payment Id to PAYMILL and amount to create  the transaction.
 
-```objectivec
+```objective-c
 - (void)createTransactionWithPayment:(NSString*)paymentId
 {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
@@ -305,13 +294,13 @@ When the user selects one of these payments, we only need to send the payment Id
 
 To use PAYMILL in our application we need to register as merchant in PAYMILL's website. Put your Public Key in the iOS application.
 
-```objectivec
-NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
+```objective-c
+  NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
 ```
 
 and your Private Key in backend
 ```javascript
-paymill.initialize("PAYMILL_PRIVATE_KEY");
+  paymill.initialize("PAYMILL_PRIVATE_KEY");
 ```
 
 
