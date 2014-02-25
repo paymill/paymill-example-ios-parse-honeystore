@@ -292,7 +292,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
 - (void)createTransactionForAccHolder:(NSString *)ccHolder cardNumber:(NSString*)cardNumber
                           expiryMonth:(NSString*)expiryMonth
                            expiryYear:(NSString*)expiryYear cardCvv:(NSString*)cardCvv{
-    PMError *error;
+    NSError *error;
     PMPaymentParams *params;
     // 1. generate paymill payment method
     id paymentMethod = [PMFactory genCardPaymentWithAccHolder:ccHolder
@@ -315,15 +315,15 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
                                        //token successfully created
                                        [self createTransactionWithToken:token];
                                    }
-                                      failure:^(PMError *error) {
+                                      failure:^(NSError *error) {
                                           //token generation failed
-                                          NSLog(@"Generate Token Error %@", error.message);
+                                          NSLog(@"Generate Token Error %@", error.localizedDescription);
                                           [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                       }];  
     }
     else{
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        NSLog(@"GenCardPayment Error %@", error.message);
+        NSLog(@"GenCardPayment Error %@", error.localizedDescription);
     }
 }
 
