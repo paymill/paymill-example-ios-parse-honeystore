@@ -42,8 +42,8 @@
 
 @end
 
-#define CARDIO_TOKEN @"CARD_IO_TOKEN"
-NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
+#define CARDIO_TOKEN @"2bcc1401544a4e24b6036b4fda84000f"
+NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
 
 @implementation PMLPaymentViewController
 

@@ -36,8 +36,7 @@
     self.priceLabel.shadowOffset = CGSizeMake(0.0f, 0.5f);
     self.priceLabel.backgroundColor = [UIColor clearColor];
 
-    self.orderButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.orderButton setTitle:NSLocalizedString(@"Order", @"Order") forState:UIControlStateNormal];
+     [self.orderButton setTitle:NSLocalizedString(@"Order", @"Order") forState:UIControlStateNormal];
     self.orderButton.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.7f];
     self.orderButton.titleLabel.shadowOffset = CGSizeMake(0.0f, -0.5f);
     self.orderButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.0f];
