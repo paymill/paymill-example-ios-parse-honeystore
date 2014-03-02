@@ -4,7 +4,6 @@ PAYMILL is a full-stack payment solution with very reasonable pricing and is eas
 
 If you ever need to process credit card payments or recurring payments aka. subscriptions through your iOS applications, you should take a look at PAYMILL. PAYMILL is a payment gateway that is easy to set up and which is very developer friendly. It only charges fees on a per-transaction basis.
 
-
 ### What does the application
 
 The application, which we are going use is a simple store that sells jars of honey ;) The customer can browse the available jars and add each of them to his shopping basket. When the user is done with his selection, he can checkout the order by providing a credit card manually or by scanning it.
@@ -34,18 +33,17 @@ If the user has already given his credit card, he just needs to select it.
 ### Application internals
 
 **Dependencies management**
-Lets start at the beginning.
-As every application developer, you don't want to write everything on your own.
-Nowadays for each programming language there are a lot of tools and frameworks, which we can use to speed up the development process and make our lives easier.
+Lets start at the beginning. As every application developer, you don't want to write everything on your own. Nowadays for each programming language there are a lot of tools and frameworks, which we can use to speed up the development process and make our lives easier.
 
 For dependencies management *Honey Store* uses very popular dependency manager: **CocoaPods**:
 * [CardIo](https://github.com/card-io/card.io-iOS-SDK) - for easy scanning credit card.
 * [PARSE](https://parse.com/) - we use PARSE as backend
-* [paymill](https://github.com/paymill/paymill-ios) - iOS library, which simplifies development against PAYMILL API and hides communication infrastructure.
+* [PAYMILL iOS SDK](https://github.com/paymill/paymill-ios) - iOS library, which simplifies development against PAYMILL API and hides communication infrastructure.
+* [PAYMILL JavaScript SDK](https://github.com/paymill/paymill-js) - JS library, which enhance the communication with PARSE.
 
 Before you start, you must install **CocoaPods**, please read how to install it on http://cocoapods.org/.
 
-After successful installation locate  *Honey Store* pod file and run in your terminal:
+After successful installation locate *Honey Store* pod file and run in your terminal:
 ```objective-c
   pod install
 ```
@@ -64,7 +62,7 @@ For easy and fast implementation we use that functionality from PARSE iOS SDK. T
 
 Business Logic
 
-In iOS part our Business Logic is represented by PMLProduct and PMLStoreController. Products are items that we sell on our store. When application run, we download them from PARSE and then show them in our store. We use StoreController to store all data that we need in our store like purchases and available products.
+In iOS part our Business Logic is represented by PMLProduct and PMLStoreController. Products are items that we sell on our store. When application runs, we download them from PARSE and then show them in our store. We use StoreController to store all data that we need in our store like purchases and available products.
 
 There is another part of Business Logic, which is implemented in our back end(PARSE) code. You can find this code in '.\Parse\main.js', here we have methods for client info, register our user in PAYMILL and create transactions.
 
@@ -110,8 +108,7 @@ When application start we check if there is current user:
 ```objective-c
   if (![PFUser currentUser])
 ```
-If there is no active user we use PARSE *PFLogInViewController* for login screen (on this screen there is also functionality to SignUp). When user creates an account, it automatically calls backend and saves the new user in our database.
-But before save, we call PAYMILL to get client Id. We need this *client Id* when we create transactions and payments, that's why we save it with the user.
+If there is no active user we use PARSE *PFLogInViewController* for login screen (on this screen there is also functionality to SignUp). When user creates an account, it automatically calls backend and saves the new user in our database. But before save, we call PAYMILL to get client Id. We need this *client Id* when we create transactions and payments, that's why we save it with the user.
 
 ```javascript
 Parse.Cloud.beforeSave("_User", function(request, response) {
@@ -147,11 +144,10 @@ In your database we have 4 hardcoded products, to show them in our store we make
 
 **Store Controller**
 
-* StoreController: contains information about our store, here we contain orders, products and total amount.
-To save all products and purchases we use PMLStoreController, this is logical prepresentation of our store. For example when user adds product to his card, we save it in our controller. When user goes to payment screen, we calculate the amount of all orders and put it in the payment. When we want to pull products from database we call:
+* StoreController: contains information about our store, here we contain orders, products and total amount. To save all products and purchases we use PMLStoreController, this is logical prepresentation of our store. For example when user adds product to his card, we save it in our controller. When user goes to payment screen, we calculate the amount of all orders and put it in the payment. When we want to pull products from database we call:
 
 ```objective-c
-- (void)getProductsWithComplte:(ControllerCompleteBlock)complete
+  - (void)getProductsWithComplte:(ControllerCompleteBlock)complete
 ```
 
 **View Controllers**
@@ -277,7 +273,6 @@ When the user selects one of these payments, we only need to send the payment Id
     [parameters setObject:self.description forKey:@"descrition"];
     [PFCloud callFunctionInBackground:@"createTransactionWithPayment" withParameters:parameters
                                 block:^(id object, NSError *error) {
-
                                     if(error == nil){
                                         [self transactionSucceed];
                                      }
@@ -302,6 +297,3 @@ and your Private Key in backend
 ```javascript
   paymill.initialize("PAYMILL_PRIVATE_KEY");
 ```
-
-
-
