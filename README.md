@@ -13,22 +13,28 @@ When the user enter his credit card we use PAYMILL's [iOS SDK](https://github.co
 Before you use the app you must register as merchant in PAYMILL's website and get your public and private key. You must set private key on the backend or in our case in Parse, the public key must be used in iOS part.
 
 First step is to login or register in HoneyStore Application.
-![register screen](./docs-assets/01.signup_screen.png)
+
+<img src="./docs-assets/01.signup_screen.png" alt="register screen" width="250px" />
 
 There are four different products that user can choose from.
-![main store screen](./docs-assets/03.store_screen.png)
+
+<img src="./docs-assets/03.store_screen.png" alt="main store screen" width="250px" />
 
 When the user selects on one of the products, he will be redirected to the details page, where he can read more about his choice and to add it to the shopping cart.
-![product details screen](./docs-assets/04.product_details_screen.png)
+
+<img src="/docs-assets/04.product_details_screen.png" alt="product details screen" width="250px" />
 
 On the checkout page the user has to provide a credit card, if none exists.
-![payment screen](./docs-assets/05.payment_screen.png)
+
+<img src="./docs-assets/05.payment_screen.png" alt="payment screen" width="250px" />
 
 He can scan it, or he can enter the requested information manually.
-![enter card manually screen](./docs-assets/06.enter_credit_card_screen.png)
+
+<img src="./docs-assets/06.enter_credit_card_screen.png" alt="enter card manually screen" width="250px" />
 
 If the user has already given his credit card, he just needs to select it.
-![select existing card screen](./docs-assets/07.existing_cards.png)
+
+<img src="./docs-assets/07.existing_cards.png" alt="select existing card screen" width="250px" />
 
 ### Application internals
 
