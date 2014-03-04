@@ -43,9 +43,13 @@ Parse.Cloud.define("createTransactionWithPayment", function(request, response) {
     var paymillClientId = Parse.User.current().get("paymillClientId");
     paymill.payments.create(request.params.token, paymillClientId).then(function(payment) {
 		paymill.transactions.createWithPayment(payment.id, request.params.amount, request.params.currency, request.params.description, paymillClientId).then(function(transaction) {
-			response.success("success");
-		}, function(error) {
-			response.error(e);
+			// we need to verify if the transaction was sucessfull
+			// more information here: https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-statuscodes
+			if (transaction.response_code==20000) {
+				response.success("success");
+			} else {
+				response.error("Transaction (" + transaction.id +") failed with code:"+transaction.response_code);
+			}
 		});
 	}, function(error) {
 		response.error(e);
@@ -62,11 +66,7 @@ Parse.Cloud.define("getPayments", function(request, response) {
 	Parse.Cloud.useMasterKey();
 	var clientId = Parse.User.current().get("paymillClientId");
 	paymill.clients.detail(clientId).then(function(client) {
-		var result = [];
-		for (var i = 0; i < client.payment.length; i++) {
-			result.push(client.payment[i]);
-		}
-		response.success(result);
+		response.success(client.payment);
 	}, function(error) {
 		response.error("couldnt list payments:" + error);
 	});
