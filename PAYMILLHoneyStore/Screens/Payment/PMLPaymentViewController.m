@@ -46,7 +46,7 @@
 @implementation PMLPaymentViewController
 
 #define CARDIO_TOKEN @"CARDIO_TOKEN"
-NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
+NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
 
 - (void)viewDidLoad
 {
@@ -106,8 +106,8 @@ NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
     [super viewDidAppear:animated];
 	[MBProgressHUD showHUDAddedTo:self.view animated:YES];
 	[self getOldPayments];
-    self.totalLabel.text = [NSString stringWithFormat:@"Total: %d.%d", [self.amount intValue]/ 100,
-                       [self.amount intValue] %100 ];
+    self.totalLabel.text = [NSString stringWithFormat:@"Total: %d.%d %@", [self.amount intValue]/ 100,
+                       [self.amount intValue] %100, self.currency ];
 	
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
