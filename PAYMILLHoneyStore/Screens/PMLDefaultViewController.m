@@ -19,8 +19,8 @@
 
 @implementation PMLDefaultViewController
 
-static NSString *PARSE_APPLICATION_ID = @"PARSE_APPLICATION_ID";
-static NSString *PARSE_CLIENT_KEY = @"PARSE_CLIENT_KEY";
+static NSString *PARSE_APPLICATION_ID = @"uii9EaqHnJ5fiez0hZOgc5KdIz5Fw9uIXIn24SMY";
+static NSString *PARSE_CLIENT_KEY = @"mMwscLfDnKDTvVlTUDsiUKp5llTlpJ1hy300F87r";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

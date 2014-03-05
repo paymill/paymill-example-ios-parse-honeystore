@@ -46,7 +46,7 @@
 @implementation PMLPaymentViewController
 
 #define CARDIO_TOKEN @"CARDIO_TOKEN"
-NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
+NSString *PAYMILL_PUBLIC_KEY = @"71467590131d4c17ef4381366b7be796";
 
 - (void)viewDidLoad
 {
@@ -277,7 +277,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
     [parameters setObject:token forKey:@"token"];
     [parameters setObject:self.amount forKey:@"amount"];
     [parameters setObject:self.currency forKey:@"currency"];
-    [parameters setObject:[self paymentDescription] forKey:@"descrition"];
+    [parameters setObject:[self paymentDescription] forKey:@"description"];
 
     [PFCloud callFunctionInBackground:@"createTransactionWithToken" withParameters:parameters
                                 block:^(id object, NSError *error) {
@@ -297,7 +297,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
     [parameters setObject:paymentId forKey:@"paymillPaymentId"];
     [parameters setObject:self.amount forKey:@"amount"];
     [parameters setObject:self.currency forKey:@"currency"];
-    [parameters setObject:[self paymentDescription] forKey:@"descrition"];
+    [parameters setObject:[self paymentDescription] forKey:@"description"];
     [PFCloud callFunctionInBackground:@"createTransactionWithPayment" withParameters:parameters
                                 block:^(id object, NSError *error) {
                                     
