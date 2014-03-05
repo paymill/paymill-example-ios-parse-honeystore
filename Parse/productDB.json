@@ -1,0 +1,62 @@
+{ "requests": [
+          {
+            "method": "POST",
+            "path": "/1/classes/Product",
+            "body": {
+                "amount": 16.55,
+                "currency": "EUR",
+                "descrition": "Tupelo honey includes table and baking grades of honey made from the blossoms of the tupelo gum tree, Nyssa aquatica. The tupelo gum tree grows in flooded forest areas in states such as Florida, Louisiana, Georgia, and Virginia as well as along the Mississippi River, but the honey is mainly only produced commercially in areas along the Choctawhatchee, Apalachicola, and Ochlockonee rivers",
+                "image": {
+                    "__type": "File",
+                    "name": "19be114a-195d-4eb0-a6d9-4cf0c3aa7c08-wooden-honey-dipper-with-honey.jpg",
+                    "url": "http://files.parse.com/5cca7eb8-1e23-4b21-9f54-408a6278d6e0/19be114a-195d-4eb0-a6d9-4cf0c3aa7c08-wooden-honey-dipper-with-honey.jpg"
+                },
+                "name": "Tupelo Honey"
+            }
+        },
+    	{
+                "method": "POST",
+                "path": "/1/classes/Product",
+                "body": {
+                     "amount": 17,
+                     "currency": "EUR",
+                     "descrition": "This honey is very pale.  If it hasn’t been mixed with other floral sources, it will look like liquid glass, very exquisite indeed.   It has a mild, sweet, floral flavor, and is, therefore, one of the most popular honey varieties.   It is a good choice for mixing with beverages because it sweetens without changing the taste of the drink.   It is also an excellent choice for cooking because of its mild flavor and because it mixes easily in liquids and batters.  It has hints of vanilla flavor and no aftertaste",
+                     "image": {
+                       "__type": "File",
+                       "name": "db0de3a4-f11c-4e03-90ab-2aa5ebd3d221-acacia.jpg",
+                       "url": "http://files.parse.com/5cca7eb8-1e23-4b21-9f54-408a6278d6e0/db0de3a4-f11c-4e03-90ab-2aa5ebd3d221-acacia.jpg"
+                    },
+                    "name": "Acacia Honey"
+                }
+        },
+	    {
+            "method": "POST",
+            "path": "/1/classes/Product",
+            "body": {
+                "amount": 12,
+                "currency": "EUR",
+                "descrition": "Wildflower honey is exactly what it sounds like. Derived from a variety of wildflowers and plants which are blooming during the summer months. It's a thicker honey and the taste varies from year to year based on what's in bloom. This honey has a delightful taste and is darker in color. Darker honey has more vitamins, minerals, and antioxidant properties compared to lighter honey",
+                "image": {
+                    "__type": "File",
+                    "name": "3ff31113-0551-40dc-b6a9-45c84dfe3de8-wildflower.jpg",
+                    "url": "http://files.parse.com/5cca7eb8-1e23-4b21-9f54-408a6278d6e0/3ff31113-0551-40dc-b6a9-45c84dfe3de8-wildflower.jpg"
+                },
+                "name": "Wildflower Honey"
+            }
+        },
+	   {
+            "method": "POST",
+            "path": "/1/classes/GameScore",
+            "body": {
+                "amount": 11.55,
+                "currency": "EUR",
+                "descrition": "Winter white honey – remember that phrase and start buying it now because it is among the most delicious and amazing honey varieties in the entire world and you need to buy a jar for yourself.  The name winter white honey comes from the color of the honey, which is derived from the wildflowers in the Rocky Mountains of Idaho that the honey bees use to create this nectar.  It’s white and creamy, not yellow or amber.  The flavor is unreal.  None of us have ever had anything like it.  We opened a bottle and soon everyone was laughing and dipping spoons in eating it like candy. ",
+                "image": {
+                    "__type": "File",
+                    "name": "7b3f0c9f-8bdd-4c9c-8f5b-17b13781caf0-sb-winter-white.jpg",
+                    "url": "http://files.parse.com/5cca7eb8-1e23-4b21-9f54-408a6278d6e0/7b3f0c9f-8bdd-4c9c-8f5b-17b13781caf0-sb-winter-white.jpg"
+                },
+                "name": "Winter White Honey"
+            }
+        }
+] }

@@ -1,28 +1,24 @@
 # Recurrent Billing with PAYMILL
 
-PAYMILL is a full-stack payment solution with very reasonable pricing and is easy to setup. See how to add it to a iOS application here, for backend we use [Parse](https://parse.com). If you want to use it only in iOS application you can look at VoucherMill(https://github.com/paymill/paymill-ios/tree/master/samples/vouchermill)
+PAYMILL is a full-stack payment solution with very reasonable pricing and is easy to setup. This example shows you, how to add it to an iOS application. For backend we use [Parse](https://parse.com). For an example implementation without a backend take a look at [VoucherMill](https://github.com/paymill/paymill-ios/tree/master/samples/vouchermill)
 
-If you ever need to process credit card payments or recurring payments aka. subscriptions through your iOS applications, you should take a look at PAYMILL. PAYMILL is a payment gateway that is easy to set up and which is very developer friendly. It only charges fees on a per-transaction basis.
 
-### What does the application
+### Description
 
-The application, which we are going use is a simple store that sells jars of honey ;) The customer can browse the available jars and add each of them to his shopping basket. When the user is done with his selection, he can checkout the order by providing a credit card manually or by scanning it.
+The application, which we are going to implement, is a simple store that sells jars of honey ;) Let's take a look...
 
-When the user enter his credit card we use PAYMILL's [iOS SDK](https://github.com/paymill/paymill-ios) to get a token from PAYMILL. This token will be send to our backend and a transaction created from it with help of PAYMILL's [JavaScript SDK](https://github.com/paymill/paymill-js). For easy scan of credit card we use [card.io](https://www.card.io).
 
-Before you use the app you must register as merchant in PAYMILL's website and get your public and private key. You must set private key on the backend or in our case in Parse, the public key must be used in iOS part.
-
-First step is to login or register in HoneyStore Application.
+First step is for the user to login or register in the HoneyStore Application.
 
 <img src="./docs-assets/01.signup_screen.png" alt="register screen" width="250px" />
 
-There are four different products that user can choose from.
+There are four different products that the user can choose from.
 
 <img src="./docs-assets/03.store_screen.png" alt="main store screen" width="250px" />
 
-When the user selects on one of the products, he will be redirected to the details page, where he can read more about his choice and to add it to the shopping cart.
+When the user selects on one of the products, he will be redirected to the details page, where he can read more about his choice and purchase it.
 
-<img src="/docs-assets/04.product_details_screen.png" alt="product details screen" width="250px" />
+<img src="./docs-assets/04.product_details_screen.png" alt="product details screen" width="250px" />
 
 On the checkout page the user has to provide a credit card, if none exists.
 
@@ -32,59 +28,87 @@ He can scan it, or he can enter the requested information manually.
 
 <img src="./docs-assets/06.enter_credit_card_screen.png" alt="enter card manually screen" width="250px" />
 
-If the user has already given his credit card, he just needs to select it.
+If the user has previously entered a credit card, he can just select it.
 
 <img src="./docs-assets/07.existing_cards.png" alt="select existing card screen" width="250px" />
 
-### Application internals
+### Architecture
 
-**Dependencies management**
-Lets start at the beginning. As every application developer, you don't want to write everything on your own. Nowadays for each programming language there are a lot of tools and frameworks, which we can use to speed up the development process and make our lives easier.
+Unlike the VoucherMill application, we want to create transactions from our backend. This way we can also save the credit card information for our user, so he doesn't need to re-enter it when making subsequent purchases. Note, that this is the preferred way to use PAYMILL on mobile devices.
 
-For dependencies management *Honey Store* uses very popular dependency manager: **CocoaPods**:
-* [CardIo](https://github.com/card-io/card.io-iOS-SDK) - for easy scanning credit card.
-* [PARSE](https://parse.com/) - we use PARSE as backend
-* [PAYMILL iOS SDK](https://github.com/paymill/paymill-ios) - iOS library, which simplifies development against PAYMILL API and hides communication infrastructure.
-* [PAYMILL JavaScript SDK](https://github.com/paymill/paymill-js) - JS library, which enhance the communication with PARSE.
+The application flow is:
 
-Before you start, you must install **CocoaPods**, please read how to install it on http://cocoapods.org/.
+1. When a user registers for the application, we create a corresponding [client](https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-clients) object. 
+2. When a user the reaches checkout, we query the PAYMILL Rest API for existing [payment](https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-payments) objects and show them in a list.
+3. The user can then:
+ 1. select an existing payment. In this case we send the 'pay_XXX' Id to our backend and create the transaction with it.
+ 2. choose to enter a new credit card. In this case we use the [iOS SDK](https://github.com/paymill/paymill-ios) to create a [token](https://www.paymill.com/en-gb/documentation-3/reference/paymill-bridge/). Then we send the token to our backend and create the transaction with it and the 'client_XXX' id, associated with our user. By using the client Id we make sure, that the payment object will appear in the list of payments next time.
+ 
+### Quick start
 
-After successful installation locate *Honey Store* pod file and run in your terminal:
-```objective-c
-  pod install
+1. Register accounts for the following services:
+ * [PAYMILL](https://www.paymill.com) We have to locate our public and private keys as explained in the [brief instructions](https://www.paymill.com/en-gb/documentation-3/introduction/brief-instructions/).
+ * [Parse](https://parse.com/) We have to create an application and get the application keys.
+ * [card.io](https://www.card.io/) We login into our account and create an app token.
+2. Install the Parse command line tool, as described [here](https://parse.com/docs/cloud_code_guide)
+3. Setup the Parse application locally:
+
+ ```dos
+   parse deploy
+```
+4. Copy the contents of the [Parse folder](Parse/) in your application's *cloud* folder.
+5. Open *cloud/main.js* and replace *PAYMILL_PRIVATE_KEY* with your private key from PAYMILL.
+6. Deploy the Parse application to the cloud:
+
+ ```dos
+   parse deploy
+```
+7. Deploy the initial database (replace with your own application keys):
+
+ ```dos
+    curl -X POST \
+      -H "X-Parse-Application-Id: APPLICATION_ID" \
+      -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
+      -H "Content-Type: application/json" \
+      --data-binary @productDB.json \
+      https://api.parse.com/1/batch
 ```
 
-As you can see **CocoaPods** prepare your project file and download all dependency SDKs. After everything is complete, you are ready to go. Open xcworkspace file and you will see the main project *Honey on Sale* .
+8. Install [CocoaPods](http://cocoapods.org/)
+9. Prepare the project and dependencies:
 
-**Project Structure**
+ ```dos
+  pod install
+```
+10. Open the xcworkspace project.
+11. Locate the file *PMLPaymentViewController* and enter your card.io app token and PAYMILL public key.
+12. Locate the file *PMLDefaultViewController* and enter your Parse application keys.
 
-The application is virtually separated in three parts: User management, Business Logic, Screens, Resources and Database.
 
-User management
+### Setting up the backend
 
-For users management we use PARSE SDK. When you launch the application, you will see PARSE's SignUp and Login screen. After the user registers himself in the application, credentials are send to PARSE and then we use PAYMILL's JS SDK to create client Id. By this Id we make all transaction to PAYMILL.
+For a backend we use Parse. After the registration we have to create an application (e.g.'HoneyStore'). More information about the cloud code is available in the Parse [documentation](https://parse.com/docs/cloud_code_guide).
 
-For easy and fast implementation we use that functionality from PARSE iOS SDK. There are ready to use Login, SignUp controllers and views, this saves us hours of coding.
+In our cloud code directory *cloud*, we need 3 files: 
+* productDB.js : this is the seed file for our product database (honey jars), located in the [Parse folder](Parse/).
+* main.js : this file includes the business logic of the backend application, located in the [Parse folder](Parse/).
+* paymill.parse.js : this is the PAYMILL JS Wrapper, which simplifies the development with PAYMILL. Please download the latest release from the [github repository](https://github.com/paymill/paymill-js) of the project.
 
-Business Logic
+We have to enter our PAYMILL private key in the main.js file:
 
-In iOS part our Business Logic is represented by PMLProduct and PMLStoreController. Products are items that we sell on our store. When application runs, we download them from PARSE and then show them in our store. We use StoreController to store all data that we need in our store like purchases and available products.
+```javascript
+  paymill.initialize("PAYMILL_PRIVATE_KEY");
+```
 
-There is another part of Business Logic, which is implemented in our back end(PARSE) code. You can find this code in '.\Parse\main.js', here we have methods for client info, register our user in PAYMILL and create transactions.
+It is important to understand, that the PAYMILL private key gives  access to all functions of the PAYMILL Rest API, including refunds. That is the reason why we call the API from Parse and not directly from within the iOS App - to not expose our private key.
 
-Screens
+We can now open a terminal and execute following command, which will deploy our cloud code on the Parse servers.
 
-All screen that user sees are implemented in iOS project.
+```dos
+   parse deploy
+```
 
-Resources
-
-For iOS we have images, icons, storyboard and plist file, for backend we need PAYMILL's library for PARSE i.e 'paymill.parse.js'.
-
-**Database**
-
-Because our database is located in PARSE cloud, you must have valid user and password for it. After the registration you must create application for example 'HoneyStore' and get application keys. Please find the [installation of PARSE Cloud](https://parse.com/docs/cloud_code_guide)
-
-After the installation please find your application keys at *[Application Name]->Settings->Application Keys*. Then copy productDB.js, main.js, paymill.parse.js in your *cloud* directory and run in console
+Once the cloud code is deployed we can execute the following command, to fill our database with the pre-defined honey jars:
 
 ```dos
     curl -X POST \
@@ -94,27 +118,38 @@ After the installation please find your application keys at *[Application Name]-
       --data-binary @productDB.json \
       https://api.parse.com/1/batch
 ```
-This will create your database. After that, open main.js and fill your private PAYMILL key, then run:
+We can locate our application keys at *[Application Name]->Settings->Application Keys*. 
 
-```dos
-   parse deploy
+### Setting up the iOS app
+
+For dependency management we use the de-facto standard in iOS: **CocoaPods**. 
+*Honey Store* depends on the following libraries:
+* [CardIO](https://github.com/card-io/card.io-iOS-SDK) - We use card.io for credit card scanning.
+* [Parse](https://parse.com/) - simplifies the connection with our backend (Parse) and includes built-in login / registration screens and logic.
+* [PAYMILL iOS SDK](https://github.com/paymill/paymill-ios) - We use the SDK to create a payment token from the user's credit card information.
+
+Before we start, we must install **CocoaPods**, please read how to install it on http://cocoapods.org/.
+
+After successful installation, we need to locate the *Honey Store* pod file and run the following command:
+```objective-c
+  pod install
 ```
-This will upload all code that you need for the backend.
 
-**Models**
+As you can see **CocoaPods** prepares our project file and downloads all dependencies. After everything is complete, we are ready to go. Open the xcworkspace file and you will see the main project *Honey on Sale* .
 
-In our app we have 2 different Models
 
-* User: for user management we have PARSE's PFUser, by this class we can take current user and all info about him. In our app users are extended with one more property 'paymillClientId'.
-* Product: contains information from PARSE server. All products are stored in our database.
+### Application internals
 
-User management is very boring issue, we can escape from this by using PARSE functionality. It is very easy to use and will save us a lot of time. Here is very simple way to use it.
-When application start we check if there is current user:
+#### User management 
+
+For easy and fast implementation of the user management we use the built-in functions of the Parse iOS SDK. There are ready to use Login, SignUp controllers and views, which saves us hours of coding. You can find more about the built in Parse user management in [this](https://parse.com/tutorials/login-and-signup-views) tutorial.
+
+When the application starts we check if there is an active user:
 
 ```objective-c
   if (![PFUser currentUser])
 ```
-If there is no active user we use PARSE *PFLogInViewController* for login screen (on this screen there is also functionality to SignUp). When user creates an account, it automatically calls backend and saves the new user in our database. But before save, we call PAYMILL to get client Id. We need this *client Id* when we create transactions and payments, that's why we save it with the user.
+If there is no active user we use the Parse *PFLogInViewController* for a login screen (on this screen there is also the functionality to SignUp). When the user creates an account, it automatically calls our backend and saves the new user in our database. As we need to associate a PAYMILL client with our new user, we use a the *beforeSave* hook in our cloud code. We create a client in PAYMILL and assign it's id to our new user, as shown below:
 
 ```javascript
 Parse.Cloud.beforeSave("_User", function(request, response) {
@@ -127,7 +162,10 @@ Parse.Cloud.beforeSave("_User", function(request, response) {
 });
 ```
 
-In your database we have 4 hardcoded products, to show them in our store we make a request to PARSE. When the user logs in, we make following call in *PMLStoreController*. By this code we pull all Products from database and save them as PMLProduct in memory
+#### Listing the products 
+
+In our database we have 4 products. To show them in our store we make a request to Parse. When the user logs in, we make following call in *PMLStoreController*. 
+
 
 ```objective-c
 - (void)getProductsWithComplte:(ControllerCompleteBlock)complete{
@@ -147,38 +185,30 @@ In your database we have 4 hardcoded products, to show them in our store we make
   }];
 }
 ```
+The code pulls all products from the Parse database and saves them as PMLProduct in-memory.
 
-**Store Controller**
+#### iOS view controllers
 
-* StoreController: contains information about our store, here we contain orders, products and total amount. To save all products and purchases we use PMLStoreController, this is logical prepresentation of our store. For example when user adds product to his card, we save it in our controller. When user goes to payment screen, we calculate the amount of all orders and put it in the payment. When we want to pull products from database we call:
-
-```objective-c
-  - (void)getProductsWithComplte:(ControllerCompleteBlock)complete
-```
-
-**View Controllers**
-
-Our iOS application has 5 view controllers
+Our iOS application has 5 view controllers:
 
 * PMLDefaultViewController: This is main controller of our application, on this controller we decide if there is active user, or ask user to SignIn.
-* PMLCheckoutViewController: This is base class for view controllers where we have cart button, for example PMLProductDetailsViewController and PMLStoreViewController .
-* PMLStoreViewController: in this view controller we are dealing with products that user can buy, this is the front screen of our store. It present simple table controller with predefined cells.
-For better view we predefine every cell and implement them in PMLProductTableViewCell.
-* PMLProductDetailsViewController: On this view we show detailed information for selected product, here we have 'add to cart' button, so user can add this product in his cart.
-* PMLPaymentViewController: This controller takes care for our payments and orders, on it we make actual checkout.
+* PMLCheckoutViewController: This is the base class for our view controllers, for example PMLProductDetailsViewController and PMLStoreViewController .
+* PMLStoreViewController: In this view controller we are dealing with the products that a user can buy. It is a simple table controller with pre-defined cells. 
+* PMLProductDetailsViewController: In this view we show detailed information about the selected product.
+* PMLPaymentViewController: This is the actual checkout.
 
 
-**Handling the credit cards**
+#### Payment: entering a new credit card
 
- Once the user selects his orders, he goes to *PMLPaymentViewController*. And here we use another very useful library: CardIo.
- Using CardIo you avoid the boring implementation of all controls that are needed for entering credit card info. Before use it, you must register in CardIo website and get CardIoToken.
- After that put your TOKEN in
+Once the user selects his honey jar, he goes to the *PMLPaymentViewController*. Here we use another very useful library: card.io. card.io allows the user to scan his credit card with the camera of his device. This saves him a lot of time and is less error prone. 
+
+Before we can use card.io, we must register on their [website](https://www.card.io/) and create an app token. We enter our token as shown below:
 
 ```objective-c
  #define CARDIO_TOKEN @"CARD_IO_TOKEN"
 ```
-To receive credit card info our controller must inplement *CardIOPaymentViewControllerDelegate* @protocol.
-After all the data is entered we procced to sent the data to PAYMILL and get payment token.
+To receive the credit card info our controller must implement the *CardIOPaymentViewControllerDelegate* @protocol.
+After all the data is entered we proceed to send the data to PAYMILL and get payment token.
 
 ```objective-c
 - (void)createTransactionForAccHolder:(NSString *)ccHolder cardNumber:(NSString*)cardNumber
@@ -220,8 +250,11 @@ After all the data is entered we procced to sent the data to PAYMILL and get pay
 }
 ```
 
-First we generate payment with client's info, after that we add amount and description to your payment. On next step we get the encoded representation of the credit card as token.
-This token is valid for 5 minutes and can be used only one time. Then we call *createTransactionWithToken* on our backend to create the transaction.
+*Important!* We should never send the actual credit card information to our server, as this will require our server to be PCI compliant.
+
+First, we need to generate a *PMPaymentMethod* object. It represents the credit card information. We also need a  *PMPaymentParams*  object; it contains the amount, currency and description for the transaction. Then, we call the *generateTokenWithPublicKey* method, which sends the information to the PAYMILL bridge and returns a token. This token is valid for 5 minutes and can be used only one time. 
+
+To create the actual transaction we call *createTransactionWithToken* on Parse (executed in the cloud). 
 
 ```objective-c
 - (void)createTransactionWithToken:(NSString*)token {
@@ -246,27 +279,27 @@ This token is valid for 5 minutes and can be used only one time. Then we call *c
 }
 ```
 
-**Dealing with old credit cards**
+#### Payment: Handling old credit cards
 
-When user made one payment, PAYMILL saves this payment as unique ID. With this id we can make another payment, this means that if user enters his credit card info, he can use it again without entering card info.
-On our backend we have method to get all previous payments:
+Each time a user makes a purchase, we create a PAYMILL transaction. The PAYMILL server will also create a [Payment](https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-payments) object and associate it with a [Client](https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-clients). As described earlier, we can use the payment object to create another transaction with the same credit card information, without having the user re-enter it.
+
+In our cloud code we have a method to get all previous payments:
 
 ```javascript
 Parse.Cloud.define("getPayments", function(request, response) {
-  Parse.Cloud.useMasterKey();
-  var clientId = Parse.User.current().get("paymillClientId");
-  paymill.clients.detail(clientId).then(function(client) {
-    var result = [];
-    for (var i = 0; i < client.payment.length; i++) {
-      result.push(client.payment[i]);
-    }
-    response.success(result);
-  }, function(error) {
-    response.error("couldnt list payments:" + error);
-  });
+	Parse.Cloud.useMasterKey();
+	var clientId = Parse.User.current().get("paymillClientId");
+	paymill.clients.detail(clientId).then(function(client) {
+		response.success(client.payment);
+	}, function(error) {
+		response.error("couldnt list payments:" + error);
+	});
 });
 ```
-To call this method we implement method(*getOldPayments*) to get all previous payments when *PMLPaymentViewController* appear.
+Note, that we use the user's PAYMILL client Id to retrieve only the payment objects that belong to him.
+
+
+We get the list of the user's payment objects in the method *getOldPayments* and show them in the *PMLPaymentViewController*.
 When the user selects one of these payments, we only need to send the payment Id and amount to PAYMILL to create the transaction.
 
 ```objective-c
@@ -291,15 +324,3 @@ When the user selects one of these payments, we only need to send the payment Id
 }
 ```
 
-**Adding PAYMILL’s API Key**
-
-To use PAYMILL in our application, we need to register as merchant in PAYMILL's website. Put your Public Key in the iOS application.
-
-```objective-c
-  NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
-```
-
-and your Private Key in backend
-```javascript
-  paymill.initialize("PAYMILL_PRIVATE_KEY");
-```
