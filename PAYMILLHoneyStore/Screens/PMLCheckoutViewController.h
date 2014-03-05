@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PMLAccessoryBadge.h"
 #import "PMLPaymentViewController.h"
 
 @interface PMLCheckoutViewController : UIViewController<PMLPaymentViewControllerDelegate>
 
-- (void)updateBadge;
+
 @end

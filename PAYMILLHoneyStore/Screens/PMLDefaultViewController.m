@@ -19,8 +19,8 @@
 
 @implementation PMLDefaultViewController
 
-static NSString *ParseApplicationId = @"PARSE_API_KEY";
-static NSString *ParseClientKey = @"PARSE_CLIENT_KEY";
+static NSString *PARSE_APPLICATION_ID = @"PARSE_APPLICATION_ID";
+static NSString *PARSE_CLIENT_KEY = @"PARSE_CLIENT_KEY";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,8 +36,8 @@ static NSString *ParseClientKey = @"PARSE_CLIENT_KEY";
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
     // Init Parse
-    [Parse setApplicationId:ParseApplicationId
-                  clientKey:ParseClientKey];
+    [Parse setApplicationId:PARSE_APPLICATION_ID
+                  clientKey:PARSE_CLIENT_KEY];
     
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -84,13 +84,6 @@ static NSString *ParseClientKey = @"PARSE_CLIENT_KEY";
        // [self goToStore];
     }];
     
-}
-
-#pragma mark-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

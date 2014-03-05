@@ -25,7 +25,6 @@
 		229BBF2A18B505580094E8D6 /* product.png in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2718B505580094E8D6 /* product.png */; };
 		229BBF2B18B505580094E8D6 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2818B505580094E8D6 /* product@2x.png */; };
 		229BBF2D18B505D00094E8D6 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */; };
-		229BBF3118B506600094E8D6 /* PMLAccessoryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF3018B506600094E8D6 /* PMLAccessoryBadge.m */; };
 		229BBF3418B508180094E8D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF3318B508180094E8D6 /* AppDelegate.m */; };
 		46F7B80D51CB4CCFA2A15CA5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229DDDBD733C4F408BEF9322 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -61,8 +60,6 @@
 		229BBF2718B505580094E8D6 /* product.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product.png; sourceTree = "<group>"; };
 		229BBF2818B505580094E8D6 /* product@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "product@2x.png"; sourceTree = "<group>"; };
 		229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryBoard.storyboard; path = PAYMILLHoneyStore/MainStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
-		229BBF2F18B506600094E8D6 /* PMLAccessoryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLAccessoryBadge.h; sourceTree = "<group>"; };
-		229BBF3018B506600094E8D6 /* PMLAccessoryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLAccessoryBadge.m; sourceTree = "<group>"; };
 		229BBF3218B508180094E8D6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		229BBF3318B508180094E8D6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		229DDDBD733C4F408BEF9322 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +117,6 @@
 			children = (
 				229BBF0A18B504520094E8D6 /* BusinessLogic */,
 				229BBF1118B505400094E8D6 /* Screens */,
-				229BBF2E18B506600094E8D6 /* PMLAccessoryBadge */,
 				229BBF2518B505580094E8D6 /* Resources */,
 			);
 			path = PAYMILLHoneyStore;
@@ -190,15 +186,6 @@
 			name = Resources;
 			path = PAYMILLHoneyStore/Resources;
 			sourceTree = SOURCE_ROOT;
-		};
-		229BBF2E18B506600094E8D6 /* PMLAccessoryBadge */ = {
-			isa = PBXGroup;
-			children = (
-				229BBF2F18B506600094E8D6 /* PMLAccessoryBadge.h */,
-				229BBF3018B506600094E8D6 /* PMLAccessoryBadge.m */,
-			);
-			path = PMLAccessoryBadge;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -307,7 +294,6 @@
 				229BBF2118B505400094E8D6 /* PMLDefaultViewController.m in Sources */,
 				229BBF2218B505400094E8D6 /* PMLProductDetailsViewController.m in Sources */,
 				229BBF1018B504520094E8D6 /* PMLStoreController.m in Sources */,
-				229BBF3118B506600094E8D6 /* PMLAccessoryBadge.m in Sources */,
 				229BBF2418B505400094E8D6 /* PMLStoreViewController.m in Sources */,
 				229BBF0F18B504520094E8D6 /* PMLProduct.m in Sources */,
 				229BBEE818B502B50094E8D6 /* main.m in Sources */,

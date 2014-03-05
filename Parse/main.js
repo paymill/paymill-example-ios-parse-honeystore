@@ -45,10 +45,10 @@ Parse.Cloud.define("createTransactionWithPayment", function(request, response) {
 		paymill.transactions.createWithPayment(payment.id, request.params.amount, request.params.currency, request.params.description, paymillClientId).then(function(transaction) {
 			// we need to verify if the transaction was sucessfull
 			// more information here: https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-statuscodes
-			if (transaction.response_code==20000) {
+			if (transaction.response_code == 20000) {
 				response.success("success");
 			} else {
-				response.error("Transaction (" + transaction.id +") failed with code:"+transaction.response_code);
+				response.error("Transaction (" + transaction.id +") failed with code:" + transaction.response_code);
 			}
 		});
 	}, function(error) {

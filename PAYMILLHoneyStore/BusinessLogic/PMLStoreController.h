@@ -16,19 +16,13 @@ typedef void (^ControllerCompleteBlock)(NSError *error);
 
 // tems from Parse, that are visible for sale
 @property (nonatomic, strong, readonly, getter = getProducts) NSArray* Products;
-
-// items in card
-@property (nonatomic, strong) NSMutableArray *itemsInCard;
+@property (nonatomic, strong) PMLProduct *productInCard;
 
 // pull items for sale from backend
 - (void)getProductsWithComplte:(ControllerCompleteBlock)complete;
 
-/*get total in cents*/
-- (int)getTotal;
-
 /* cart methods*/
 - (void)clearCart;
-- (void)addProductToCartd:(PMLProduct*)product;
 
 + (PMLStoreController*)sharedInstance;
 

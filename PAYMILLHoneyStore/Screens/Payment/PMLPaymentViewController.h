@@ -24,7 +24,7 @@
                                         UITextFieldDelegate>
 
 @property (nonatomic, strong) NSNumber *amount;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *productName;
 @property (nonatomic, strong) NSString *currency;
 @property (nonatomic, strong) NSArray *existingPayments;
 @property (nonatomic, strong) id<PMLPaymentViewControllerDelegate> delegate;

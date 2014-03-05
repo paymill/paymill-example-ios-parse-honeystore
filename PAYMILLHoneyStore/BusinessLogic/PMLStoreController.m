@@ -23,8 +23,6 @@
 
 - (PMLStoreController*)init{
 	if(self = [super init]){
-        // Init Parse Library
-        _itemsInCard = [[NSMutableArray alloc] init];
         return self;
 	}
 	return nil;
@@ -46,11 +44,7 @@
 
 /*get total in cents*/
 - (int)getTotal{
-    int result = 0;
-    for (PMLProduct *product in self.itemsInCard) {
-        result += product.amount;
-    }
-    return result;
+    return self.productInCard.amount;
 }
 #pragma mark- Get Items from Parse
 
@@ -72,10 +66,11 @@
 }
 #pragma mark-
 - (void)clearCart{
-    [self.itemsInCard removeAllObjects];
+    self.productInCard = nil;
 }
 - (void)addProductToCartd:(PMLProduct*)product{
-    [self.itemsInCard addObject:product];
+    [self clearCart];
+    self.productInCard = product;
 }
 
 @end

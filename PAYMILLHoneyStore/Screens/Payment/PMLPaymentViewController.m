@@ -42,16 +42,11 @@
 
 @end
 
-#define CARDIO_TOKEN @"CARD_IO_TOKEN"
-NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
 
 @implementation PMLPaymentViewController
 
-
-- (IBAction)chooseExistingClient:(id)sender {
-    
-}
-
+#define CARDIO_TOKEN @"CARDIO_TOKEN"
+NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
 
 - (void)viewDidLoad
 {
@@ -74,8 +69,31 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
- }
+}
+- (void)clearCardInfo{
+    self.cardVerificationLabel.text = @"";
+    self.cardExpireLabel.text = @"";
+    self.cardExpireLabel.text = @"";
+    self.cardNumberLabel.text = @"";
+    self.selectedPaymentId = nil;
+}
 - (IBAction)selectDidFinish:(id)sender{
+    int selectedRow = [self.paymentsPickerView selectedRowInComponent:0];
+    if(selectedRow > 0)
+    {
+        PMPayment *payment = [self.oldPayments objectAtIndex: selectedRow -1];
+        self.cardNumberLabel.text = [NSString stringWithFormat:@"*****%@", payment.last4 ];
+        self.cardVerificationLabel.text = payment.code;
+        self.cardExpireLabel.text = [NSString stringWithFormat:@"Exp: %@/%@", payment.expire_month, payment.expire_year];
+        self.cardVerificationLabel.text = @"****";
+        // save card info
+        self.cardExpireMonth = payment.expire_month;
+        self.cardExpireYear = payment.expire_year;
+        self.selectedPaymentId = payment.id;
+    }
+    else {
+        [self clearCardInfo];
+    }
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:.50];
     [UIView setAnimationDelegate:self];
@@ -116,6 +134,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
     PMPayment *payment = [self.oldPayments objectAtIndex:row-1];
     return [NSString stringWithFormat:@"*****%@", payment.last4 ];
 }
+/*
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
     PMPayment *payment = [self.oldPayments objectAtIndex:row-1];
@@ -129,7 +148,7 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
      self.selectedPaymentId = payment.id;
    [self.existingClientTextField resignFirstResponder];
     
-}
+}*/
 #pragma mark- Get Old Payments
 - (PMPayment*)parsePayment:(PFObject*)parseObject{
 	
@@ -248,17 +267,21 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
     }
     
 }
+- (NSString*)paymentDescription{
+    NSString* clientId = [[PFUser currentUser] objectForKey:@"paymillClientId"];
+    return [NSString stringWithFormat:@"client:%@ purchase:%@", clientId, self.productName];
+}
 - (void)createTransactionWithToken:(NSString*)token {
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:token forKey:@"token"];
     [parameters setObject:self.amount forKey:@"amount"];
     [parameters setObject:self.currency forKey:@"currency"];
-    [parameters setObject:self.description forKey:@"descrition"];
+    [parameters setObject:[self paymentDescription] forKey:@"descrition"];
 
     [PFCloud callFunctionInBackground:@"createTransactionWithToken" withParameters:parameters
                                 block:^(id object, NSError *error) {
-                                    if(error == nil){
+                                    if(error == nil && [(NSString*)object isEqualToString:@"success"] ){
                                         [self transactionSucceed];
                                     }
                                     else {
@@ -274,11 +297,11 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
     [parameters setObject:paymentId forKey:@"paymillPaymentId"];
     [parameters setObject:self.amount forKey:@"amount"];
     [parameters setObject:self.currency forKey:@"currency"];
-    [parameters setObject:self.description forKey:@"descrition"];
+    [parameters setObject:[self paymentDescription] forKey:@"descrition"];
     [PFCloud callFunctionInBackground:@"createTransactionWithPayment" withParameters:parameters
                                 block:^(id object, NSError *error) {
                                     
-                                    if(error == nil){
+                                    if(error == nil && [(NSString*)object isEqualToString:@"success"] ){
                                         [self transactionSucceed];
                                      }
                                     else {
@@ -335,10 +358,10 @@ NSString *PAYMILL_PUBLIC_KEY = @"PAYMILL_PUBLIC_KEY";
     [UIView setAnimationDelegate:self];
     self.paymentsView.frame = CGRectMake(0, self.view.frame.size.height - self.paymentsView.frame.size.height,
                                  self.paymentsView.frame.size.width, self.paymentsView.frame.size.height);
-     [UIView commitAnimations];
+    [UIView commitAnimations];
 }
 - (BOOL)formIsValid{
-    if(self.cardNumber == nil || self.cardNumber.length == 0){
+    if(self.cardNumberLabel.text.length == 0){
         NSString *msg = @"Please enter credit card";
         if([self.oldPayments count] > 0){
             msg = [msg stringByAppendingString:@" or select existing"];

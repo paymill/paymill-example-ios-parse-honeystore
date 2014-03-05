@@ -53,26 +53,24 @@
 	}
 
 }
-// Add Selected Item To Cart
-- (IBAction)addToCart:(id)sender {
-    [[PMLStoreController sharedInstance] addProductToCartd:self.product];
-    NSString *msg = [NSString stringWithFormat:@"%@ has been added to your Cart.", self.product.name];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                            message:msg delegate:nil
-                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [self updateBadge];
-    [alert show];
+// Add Selected Product To Cart
+- (IBAction)addProductToCart:(id)sender {
+    [PMLStoreController sharedInstance].productInCard = self.product;
+    [self performSegueWithIdentifier:@"CheckOutSeque" sender:sender];
+
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender   {
+    if ([[segue identifier] isEqualToString:@"CheckOutSeque"])
+    {
+        PMLPaymentViewController *vc = [segue destinationViewController];
+        vc.amount = [NSNumber numberWithInt:[PMLStoreController sharedInstance].productInCard.amount];
+        vc.productName = [PMLStoreController sharedInstance].productInCard.name;
+        vc.currency = [PMLStoreController sharedInstance].productInCard.currency;
+        vc.delegate = self;
+        
+    }
 }
-
-#pragma mark - Split view
-
 
 
 @end
