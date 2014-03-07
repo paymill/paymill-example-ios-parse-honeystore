@@ -12,7 +12,6 @@
 		229BBEE018B502B50094E8D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229BBEDF18B502B50094E8D6 /* UIKit.framework */; };
 		229BBEE618B502B50094E8D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229BBEE418B502B50094E8D6 /* InfoPlist.strings */; };
 		229BBEE818B502B50094E8D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBEE718B502B50094E8D6 /* main.m */; };
-		229BBEEE18B502B50094E8D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229BBEED18B502B50094E8D6 /* Images.xcassets */; };
 		229BBF0F18B504520094E8D6 /* PMLProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF0C18B504520094E8D6 /* PMLProduct.m */; };
 		229BBF1018B504520094E8D6 /* PMLStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF0E18B504520094E8D6 /* PMLStoreController.m */; };
 		229BBF1F18B505400094E8D6 /* PMLPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF1418B505400094E8D6 /* PMLPaymentViewController.m */; };
@@ -26,6 +25,8 @@
 		229BBF2B18B505580094E8D6 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2818B505580094E8D6 /* product@2x.png */; };
 		229BBF2D18B505D00094E8D6 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */; };
 		229BBF3418B508180094E8D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF3318B508180094E8D6 /* AppDelegate.m */; };
+		22A80A0B18CA0D640039634B /* bee.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A80A0A18CA0D640039634B /* bee.png */; };
+		22A80A0D18CA0DD10039634B /* beе_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A80A0C18CA0DD10039634B /* beе_icon.png */; };
 		46F7B80D51CB4CCFA2A15CA5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229DDDBD733C4F408BEF9322 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +39,6 @@
 		229BBEE518B502B50094E8D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		229BBEE718B502B50094E8D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		229BBEE918B502B50094E8D6 /* PAYMILLHoneyStore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PAYMILLHoneyStore-Prefix.pch"; sourceTree = "<group>"; };
-		229BBEED18B502B50094E8D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		229BBEF418B502B50094E8D6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		229BBF0B18B504520094E8D6 /* PMLProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLProduct.h; sourceTree = "<group>"; };
 		229BBF0C18B504520094E8D6 /* PMLProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLProduct.m; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		229BBF3218B508180094E8D6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		229BBF3318B508180094E8D6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		229DDDBD733C4F408BEF9322 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22A80A0A18CA0D640039634B /* bee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee.png; sourceTree = "<group>"; };
+		22A80A0C18CA0DD10039634B /* beе_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beе_icon.png"; sourceTree = "<group>"; };
 		542399CA38CF4CABADB01952 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,8 +179,9 @@
 		229BBF2518B505580094E8D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				22A80A0C18CA0DD10039634B /* beе_icon.png */,
+				22A80A0A18CA0D640039634B /* bee.png */,
 				229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */,
-				229BBEED18B502B50094E8D6 /* Images.xcassets */,
 				229BBF2618B505580094E8D6 /* honey-for-sale-sign.jpg */,
 				229BBF2718B505580094E8D6 /* product.png */,
 				229BBF2818B505580094E8D6 /* product@2x.png */,
@@ -244,8 +247,9 @@
 				229BBF2D18B505D00094E8D6 /* MainStoryBoard.storyboard in Resources */,
 				229BBEE618B502B50094E8D6 /* InfoPlist.strings in Resources */,
 				229BBF2918B505580094E8D6 /* honey-for-sale-sign.jpg in Resources */,
+				22A80A0D18CA0DD10039634B /* beе_icon.png in Resources */,
 				229BBF2B18B505580094E8D6 /* product@2x.png in Resources */,
-				229BBEEE18B502B50094E8D6 /* Images.xcassets in Resources */,
+				22A80A0B18CA0D640039634B /* bee.png in Resources */,
 				229BBF2A18B505580094E8D6 /* product.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +397,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 542399CA38CF4CABADB01952 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PAYMILLHoneyStore/PAYMILLHoneyStore-Prefix.pch";
@@ -408,7 +411,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 542399CA38CF4CABADB01952 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PAYMILLHoneyStore/PAYMILLHoneyStore-Prefix.pch";

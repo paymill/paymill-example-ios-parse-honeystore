@@ -54,11 +54,11 @@ The application flow is:
 3. Setup the Parse application locally: 
 
  ```dos
-   $ parse new HonneyStore
+   $ parse new HoneyStore
  
   Email: your_email@mail.com
   Password:your_password
-  1:HonneyStore
+  1:HoneyStore
   Select an App: 1
 
   $ cd HonneyStore
@@ -70,7 +70,8 @@ The application flow is:
  ```dos
    parse deploy
 ```
-7. Deploy the initial database (replace with your own application keys):
+7. Deploy the initial database (replace with your own application keys) in [Parse folder](Parse/) folder:
+
 
  ```dos
     curl -X POST -H "X-Parse-Application-Id: APPLICATION_ID"  -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" -H "Content-Type: application/json"  --data-binary @productDB.json https://api.parse.com/1/batch
