@@ -73,12 +73,7 @@ The application flow is:
 7. Deploy the initial database (replace with your own application keys):
 
  ```dos
-    curl -X POST \
-      -H "X-Parse-Application-Id: APPLICATION_ID" \
-      -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" \
-      -H "Content-Type: application/json" \
-      --data-binary @productDB.json \
-      https://api.parse.com/1/batch
+    curl -X POST -H "X-Parse-Application-Id: APPLICATION_ID"  -H "X-Parse-REST-API-Key: APPLICATION_REST_API_KEY" -H "Content-Type: application/json"  --data-binary @productDB.json https://api.parse.com/1/batch
 ```
 
 8. Install [CocoaPods](http://cocoapods.org/)
