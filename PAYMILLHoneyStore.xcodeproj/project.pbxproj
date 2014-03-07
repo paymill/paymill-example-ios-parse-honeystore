@@ -20,7 +20,6 @@
 		229BBF2218B505400094E8D6 /* PMLProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF1A18B505400094E8D6 /* PMLProductDetailsViewController.m */; };
 		229BBF2318B505400094E8D6 /* PMLProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF1C18B505400094E8D6 /* PMLProductTableViewCell.m */; };
 		229BBF2418B505400094E8D6 /* PMLStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF1E18B505400094E8D6 /* PMLStoreViewController.m */; };
-		229BBF2918B505580094E8D6 /* honey-for-sale-sign.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2618B505580094E8D6 /* honey-for-sale-sign.jpg */; };
 		229BBF2A18B505580094E8D6 /* product.png in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2718B505580094E8D6 /* product.png */; };
 		229BBF2B18B505580094E8D6 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2818B505580094E8D6 /* product@2x.png */; };
 		229BBF2D18B505D00094E8D6 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */; };
@@ -56,7 +55,6 @@
 		229BBF1C18B505400094E8D6 /* PMLProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLProductTableViewCell.m; sourceTree = "<group>"; };
 		229BBF1D18B505400094E8D6 /* PMLStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLStoreViewController.h; sourceTree = "<group>"; };
 		229BBF1E18B505400094E8D6 /* PMLStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLStoreViewController.m; sourceTree = "<group>"; };
-		229BBF2618B505580094E8D6 /* honey-for-sale-sign.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "honey-for-sale-sign.jpg"; sourceTree = "<group>"; };
 		229BBF2718B505580094E8D6 /* product.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product.png; sourceTree = "<group>"; };
 		229BBF2818B505580094E8D6 /* product@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "product@2x.png"; sourceTree = "<group>"; };
 		229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryBoard.storyboard; path = PAYMILLHoneyStore/MainStoryBoard.storyboard; sourceTree = SOURCE_ROOT; };
@@ -182,7 +180,6 @@
 				22A80A0C18CA0DD10039634B /* beе_icon.png */,
 				22A80A0A18CA0D640039634B /* bee.png */,
 				229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */,
-				229BBF2618B505580094E8D6 /* honey-for-sale-sign.jpg */,
 				229BBF2718B505580094E8D6 /* product.png */,
 				229BBF2818B505580094E8D6 /* product@2x.png */,
 			);
@@ -246,7 +243,6 @@
 			files = (
 				229BBF2D18B505D00094E8D6 /* MainStoryBoard.storyboard in Resources */,
 				229BBEE618B502B50094E8D6 /* InfoPlist.strings in Resources */,
-				229BBF2918B505580094E8D6 /* honey-for-sale-sign.jpg in Resources */,
 				22A80A0D18CA0DD10039634B /* beе_icon.png in Resources */,
 				229BBF2B18B505580094E8D6 /* product@2x.png in Resources */,
 				22A80A0B18CA0D640039634B /* bee.png in Resources */,
