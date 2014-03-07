@@ -94,12 +94,35 @@ After the installation please find your application keys at *[Application Name]-
       --data-binary @productDB.json \
       https://api.parse.com/1/batch
 ```
-This will create your database. After that, open main.js and fill your private PAYMILL key, then run:
+This will create your database. After that, copy open Parse/main.js and fill your private PAYMILL key, then you must create your application on Parse for that run:
 
 ```dos
-   parse deploy
+   $ parse new HonneyStore
+ 
+  Email: your_email@mail.com
+  Password:your_password
+  1:HonneyStore
+  Select an App: 1
+
+  $ cd HonneyStore
+
 ```
-This will upload all code that you need for the backend.
+
+This will create application HonneyStore in Parse and will create  directory called HonneyStore in the current directory. Several files are automatically created for you:
+```dos
+-config/
+  global.json
+-cloud/
+  main.js
+-public/
+  index.html
+
+```
+Copy files Parse/main.js and Parse/paymill.parse.js to HonneyStore/cloud, confirm replacement of main.js. To finish setup and deploy the code from your machine to the Parse Cloud, run:
+
+```dos
+$ parse deploy
+```
 
 **Models**
 
