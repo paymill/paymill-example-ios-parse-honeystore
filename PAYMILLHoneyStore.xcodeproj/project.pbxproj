@@ -24,8 +24,10 @@
 		229BBF2B18B505580094E8D6 /* product@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2818B505580094E8D6 /* product@2x.png */; };
 		229BBF2D18B505D00094E8D6 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */; };
 		229BBF3418B508180094E8D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 229BBF3318B508180094E8D6 /* AppDelegate.m */; };
-		22A80A0B18CA0D640039634B /* bee.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A80A0A18CA0D640039634B /* bee.png */; };
-		22A80A0D18CA0DD10039634B /* beе_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A80A0C18CA0DD10039634B /* beе_icon.png */; };
+		22CBD13E18CA35D2009BD8E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CBD13D18CA35D2009BD8E5 /* Default-568h@2x.png */; };
+		22CBD14A18CA3970009BD8E5 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CBD14718CA3970009BD8E5 /* 58x58.png */; };
+		22CBD14B18CA3970009BD8E5 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CBD14818CA3970009BD8E5 /* 80x80.png */; };
+		22CBD14C18CA3970009BD8E5 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 22CBD14918CA3970009BD8E5 /* 120x120.png */; };
 		46F7B80D51CB4CCFA2A15CA5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229DDDBD733C4F408BEF9322 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +63,10 @@
 		229BBF3218B508180094E8D6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		229BBF3318B508180094E8D6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		229DDDBD733C4F408BEF9322 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		22A80A0A18CA0D640039634B /* bee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bee.png; sourceTree = "<group>"; };
-		22A80A0C18CA0DD10039634B /* beе_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beе_icon.png"; sourceTree = "<group>"; };
+		22CBD13D18CA35D2009BD8E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		22CBD14718CA3970009BD8E5 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
+		22CBD14818CA3970009BD8E5 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
+		22CBD14918CA3970009BD8E5 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
 		542399CA38CF4CABADB01952 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,8 +181,10 @@
 		229BBF2518B505580094E8D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				22A80A0C18CA0DD10039634B /* beе_icon.png */,
-				22A80A0A18CA0D640039634B /* bee.png */,
+				22CBD14718CA3970009BD8E5 /* 58x58.png */,
+				22CBD14818CA3970009BD8E5 /* 80x80.png */,
+				22CBD14918CA3970009BD8E5 /* 120x120.png */,
+				22CBD13D18CA35D2009BD8E5 /* Default-568h@2x.png */,
 				229BBF2C18B505D00094E8D6 /* MainStoryBoard.storyboard */,
 				229BBF2718B505580094E8D6 /* product.png */,
 				229BBF2818B505580094E8D6 /* product@2x.png */,
@@ -243,9 +249,11 @@
 			files = (
 				229BBF2D18B505D00094E8D6 /* MainStoryBoard.storyboard in Resources */,
 				229BBEE618B502B50094E8D6 /* InfoPlist.strings in Resources */,
-				22A80A0D18CA0DD10039634B /* beе_icon.png in Resources */,
+				22CBD14C18CA3970009BD8E5 /* 120x120.png in Resources */,
+				22CBD14B18CA3970009BD8E5 /* 80x80.png in Resources */,
 				229BBF2B18B505580094E8D6 /* product@2x.png in Resources */,
-				22A80A0B18CA0D640039634B /* bee.png in Resources */,
+				22CBD13E18CA35D2009BD8E5 /* Default-568h@2x.png in Resources */,
+				22CBD14A18CA3970009BD8E5 /* 58x58.png in Resources */,
 				229BBF2A18B505580094E8D6 /* product.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -383,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -399,6 +407,7 @@
 				INFOPLIST_FILE = "PAYMILLHoneyStore/PAYMILLHoneyStore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -413,6 +422,7 @@
 				INFOPLIST_FILE = "PAYMILLHoneyStore/PAYMILLHoneyStore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
