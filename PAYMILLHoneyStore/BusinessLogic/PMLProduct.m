@@ -19,11 +19,10 @@
     result.description = [dict objectForKey:@"descrition"];
     result.Id = [dict objectForKey:@"objectId"];
     result.amount = [[dict objectForKey:@"amount"] doubleValue] * 100;
-    PFFile *image = [dict objectForKey:@"image"];
+    NSString *imageURL = [dict objectForKey:@"image"];
     
-	if(image){
-		NSError *error = [[NSError alloc] init];
-		result.imageData = [image getData:&error];
+	if(imageURL){
+		result.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
 	}
 	return result;
 }
