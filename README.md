@@ -1,5 +1,4 @@
-bplist00—_WebMainResource’	
-_WebResourceFrameName^WebResourceURL_WebResourceData_WebResourceMIMEType_WebResourceTextEncodingNameP_Thttps://raw.github.com/paymill/paymill-example-ios-parse-honeystore/master/README.mdOB<html><head></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;"># Recurrent Billing with PAYMILL
+# Recurrent Billing with PAYMILL
 
 PAYMILL is a full-stack payment solution with very reasonable pricing and is easy to setup. This example shows you, how to add it to an iOS application. For backend we use [Parse](https://parse.com). For an example implementation without a backend take a look at [VoucherMill](https://github.com/paymill/paymill-ios/tree/master/samples/vouchermill)
 
@@ -11,27 +10,27 @@ The application, which we are going to implement, is a simple store that sells j
 
 First step is for the user to login or register in the HoneyStore Application.
 
-&lt;img src="./docs-assets/01.signup_screen.png" alt="register screen" width="250px" /&gt;
+<img src="./docs-assets/01.signup_screen.png" alt="register screen" width="250px" />
 
 There are four different products that the user can choose from.
 
-&lt;img src="./docs-assets/03.store_screen.png" alt="main store screen" width="250px" /&gt;
+<img src="./docs-assets/03.store_screen.png" alt="main store screen" width="250px" />
 
 When the user selects on one of the products, he will be redirected to the details page, where he can read more about his choice and purchase it.
 
-&lt;img src="./docs-assets/04.product_details_screen.png" alt="product details screen" width="250px" /&gt;
+<img src="./docs-assets/04.product_details_screen.png" alt="product details screen" width="250px" />
 
 On the checkout page the user has to provide a credit card, if none exists.
 
-&lt;img src="./docs-assets/05.payment_screen.png" alt="payment screen" width="250px" /&gt;
+<img src="./docs-assets/05.payment_screen.png" alt="payment screen" width="250px" />
 
 He can scan it, or he can enter the requested information manually.
 
-&lt;img src="./docs-assets/06.enter_credit_card_screen.png" alt="enter card manually screen" width="250px" /&gt;
+<img src="./docs-assets/06.enter_credit_card_screen.png" alt="enter card manually screen" width="250px" />
 
 If the user has previously entered a credit card, he can just select it.
 
-&lt;img src="./docs-assets/07.existing_cards.png" alt="select existing card screen" width="250px" /&gt;
+<img src="./docs-assets/07.existing_cards.png" alt="select existing card screen" width="250px" />
 
 ### Architecture
 
@@ -52,10 +51,17 @@ The application flow is:
  * [Parse](https://parse.com/) We have to create an application and get the application keys.
  * [card.io](https://www.card.io/) We login into our account and create an app token.
 2. Install the Parse command line tool, as described [here](https://parse.com/docs/cloud_code_guide)
-3. Setup the Parse application locally:
+3. Setup the Parse application locally: 
 
  ```dos
-   parse deploy
+   $ parse new HonneyStore
+ 
+  Email: your_email@mail.com
+  Password:your_password
+  1:HonneyStore
+  Select an App: 1
+
+  $ cd HonneyStore
 ```
 4. Copy the contents of the [Parse folder](Parse/) in your application's *cloud* folder.
 5. Open *cloud/main.js* and replace *PAYMILL_PRIVATE_KEY* with your private key from PAYMILL.
@@ -119,7 +125,7 @@ Once the cloud code is deployed we can execute the following command, to fill ou
       --data-binary @productDB.json \
       https://api.parse.com/1/batch
 ```
-We can locate our application keys at *[Application Name]-&gt;Settings-&gt;Application Keys*. 
+We can locate our application keys at *[Application Name]->Settings->Application Keys*. 
 
 ### Setting up the iOS app
 
@@ -223,11 +229,11 @@ After all the data is entered we proceed to send the data to PAYMILL and get pay
                                                   expiryMonth:expiryMonth
                                                    expiryYear:expiryYear
                                                  verification:cardCvv
-                                                        error:&amp;error];
+                                                        error:&error];
     if(!error) {
         // 2. generate params
         params = [PMFactory genPaymentParamsWithCurrency:self.currency amount:[self.amount intValue]
-                                             description:self.description error:&amp;error];
+                                             description:self.description error:&error];
     }
 
     if(!error) {
@@ -325,4 +331,3 @@ When the user selects one of these payments, we only need to send the payment Id
 }
 ```
 
-</pre></body></html>Ztext/plainUUTF-8    ( ? N ` v î ï ÏBÛB˛                           C
