@@ -23,7 +23,7 @@
     
 	if(imageURL){
 		result.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
-	}
+    }
 	return result;
 }
 
