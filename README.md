@@ -1,4 +1,4 @@
-# Recurrent Billing with PAYMILL
+# Returning (1-click)  Payments with PAYMILL for iOS
 
 PAYMILL is a full-stack payment solution with very reasonable pricing and is easy to setup. This example shows you, how to add it to an iOS application. For backend we use [Parse](https://parse.com). For an example implementation without a backend take a look at [VoucherMill](https://github.com/paymill/paymill-ios/tree/master/samples/vouchermill)
 
