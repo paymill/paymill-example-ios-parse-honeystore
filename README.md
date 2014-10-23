@@ -40,7 +40,7 @@ Unlike the VoucherMill application, we want to create transactions from our back
 The application flow is:
 
 1. When a user registers for the application, we create a corresponding [client](https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-clients) object. 
-2. When a user the reaches checkout, we query the PAYMILL Rest API for existing [payment](https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-payments) objects and show them in a list.
+2. When a user the reaches checkout, we query the PAYMILL Rest API for existing [payment](https://www.paymill.com/en-gb/documentation-3/reference/api-reference/#document-payments) objects and show them in a list. Note, that we can alternatively have a list of payment ids, associated with the client in our database. This will make your application run faster, saving you the extra API call.
 3. The user can then:
  1. select an existing payment. In this case we send the 'pay_XXX' Id to our backend and create the transaction with it.
  2. choose to enter a new credit card. In this case we use the [iOS SDK](https://github.com/paymill/paymill-ios) to create a [token](https://www.paymill.com/en-gb/documentation-3/reference/paymill-bridge/). Then we send the token to our backend and create the transaction with it and the 'client_XXX' id, associated with our user. By using the client Id we make sure, that the payment object will appear in the list of payments next time.
