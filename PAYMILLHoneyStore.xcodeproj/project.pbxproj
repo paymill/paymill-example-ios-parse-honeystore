@@ -32,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0000BDCD2CFE4EA8C13B285F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		229BBED818B502B50094E8D6 /* PAYMILLHoneyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PAYMILLHoneyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229BBEDB18B502B50094E8D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		229BBEDD18B502B50094E8D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,7 +68,7 @@
 		22CBD14718CA3970009BD8E5 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
 		22CBD14818CA3970009BD8E5 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
 		22CBD14918CA3970009BD8E5 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
-		542399CA38CF4CABADB01952 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E320FAA52244A0224169EBFD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +93,7 @@
 				229BBEE218B502B50094E8D6 /* Supporting Files */,
 				229BBEDA18B502B50094E8D6 /* Frameworks */,
 				229BBED918B502B50094E8D6 /* Products */,
-				542399CA38CF4CABADB01952 /* Pods.xcconfig */,
+				A11B4635A38F1BD73994AC64 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +194,15 @@
 			path = PAYMILLHoneyStore/Resources;
 			sourceTree = SOURCE_ROOT;
 		};
+		A11B4635A38F1BD73994AC64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E320FAA52244A0224169EBFD /* Pods.debug.xcconfig */,
+				0000BDCD2CFE4EA8C13B285F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +215,7 @@
 				229BBED518B502B50094E8D6 /* Frameworks */,
 				229BBED618B502B50094E8D6 /* Resources */,
 				CA98DD4118494757AECA2DC8 /* Copy Pods Resources */,
+				4255BBB7575BE382A40EFBD5 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +287,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		4255BBB7575BE382A40EFBD5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CA98DD4118494757AECA2DC8 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -399,7 +425,7 @@
 		};
 		229BBF0518B502B50094E8D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 542399CA38CF4CABADB01952 /* Pods.xcconfig */;
+			baseConfigurationReference = E320FAA52244A0224169EBFD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -414,7 +440,7 @@
 		};
 		229BBF0618B502B50094E8D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 542399CA38CF4CABADB01952 /* Pods.xcconfig */;
+			baseConfigurationReference = 0000BDCD2CFE4EA8C13B285F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
