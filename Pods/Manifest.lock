@@ -1,0 +1,22 @@
+PODS:
+  - CardIO (3.4.4)
+  - Facebook-iOS-SDK (3.12.0)
+  - MBProgressHUD (0.8)
+  - Parse (1.2.18):
+    - Facebook-iOS-SDK (~> 3.11)
+  - PayMillSDK (2.0.0)
+
+DEPENDENCIES:
+  - CardIO
+  - MBProgressHUD (~> 0.8)
+  - Parse (~> 1.2.18)
+  - PayMillSDK (~> 2.0.0)
+
+SPEC CHECKSUMS:
+  CardIO: 0389aa415473822ad2926700cdf3d29f2d5f3c8c
+  Facebook-iOS-SDK: 04c54a073a2920b2a7bc2257312916b1ac0e7a17
+  MBProgressHUD: 8688c331cb64702283be37ab8d7d329cdd25f251
+  Parse: ed2b5139839eb53ac7124994f3a580f5c7750bea
+  PayMillSDK: b07e91ee5a4f0c24630fce38a9d6bc0338d987f9
+
+COCOAPODS: 0.39.0

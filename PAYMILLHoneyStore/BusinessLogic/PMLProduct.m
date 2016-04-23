@@ -11,6 +11,7 @@
 
 @implementation PMLProduct
 
+@synthesize description = customDescription;
 
 + (PMLProduct*)parse:(PFObject*)dict{
 	PMLProduct *result = [[PMLProduct alloc] init];
